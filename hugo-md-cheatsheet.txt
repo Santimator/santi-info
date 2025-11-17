@@ -1,0 +1,266 @@
+Markdown essentials for Hugo content
+====================================
+
+This is a plain-text cheat sheet. Everything you see here is literal text.
+
+--------------------------------------------------
+1. Emphasis, strong, code, strikethrough
+--------------------------------------------------
+
+Italic (emphasis)
+-----------------
+*italic*
+_italic_
+
+Bold (strong)
+-------------
+**bold**
+__bold__
+
+Bold + italic
+-------------
+***bold italic***
+___bold italic___
+
+Inline code
+-----------
+`inline code`
+
+Strikethrough
+-------------
+~~strikethrough~~
+
+--------------------------------------------------
+2. Headings
+--------------------------------------------------
+
+# Heading level 1
+## Heading level 2
+### Heading level 3
+#### Heading level 4
+##### Heading level 5
+###### Heading level 6
+
+These map to HTML <h1> ... <h6>.
+
+--------------------------------------------------
+3. Lists
+--------------------------------------------------
+
+Unordered list
+--------------
+- item one
+- item two
+- item three
+
+You can also use * or + instead of -:
+
+* item one
+* item two
+
++ item one
++ item two
+
+Ordered list
+------------
+1. first
+2. second
+3. third
+
+Nested list (indent with spaces)
+--------------------------------
+- item 1
+  - subitem 1.1
+  - subitem 1.2
+- item 2
+
+--------------------------------------------------
+4. Links
+--------------------------------------------------
+
+Inline link
+-----------
+[link text](https://example.com)
+
+Inline link with title
+----------------------
+[link text](https://example.com "optional title")
+
+Reference-style link
+--------------------
+This is an [example link][myref].
+
+[myref]: https://example.com "optional title"
+
+--------------------------------------------------
+5. Images
+--------------------------------------------------
+
+Basic image
+-----------
+![alt text](image.jpg)
+
+Image with absolute path
+------------------------
+![alt text](/images/photo.png)
+
+You can always fall back to HTML:
+<img src="/images/photo.png" alt="alt text" width="300">
+
+--------------------------------------------------
+6. Code blocks (fenced)
+--------------------------------------------------
+
+Code block without language
+---------------------------
+``` 
+some code
+more code
+```
+
+Code block with language (for highlighting)
+-------------------------------------------
+```python
+print("hello")
+for i in range(3):
+    print(i)
+```
+
+You can replace "python" with: bash, sh, html, javascript, js, css, etc.
+
+--------------------------------------------------
+7. Blockquotes
+--------------------------------------------------
+
+> This is a quote.
+> It can have multiple lines.
+>
+> Blank lines create new paragraphs inside the same quote.
+
+You can nest things inside blockquotes, like lists:
+
+> - item 1
+> - item 2
+
+--------------------------------------------------
+8. Horizontal rules
+--------------------------------------------------
+
+Each of these on a line by itself creates a horizontal rule:
+
+---
+***
+___
+
+--------------------------------------------------
+9. Tables (GitHub-style, supported by Hugo/Goldmark)
+--------------------------------------------------
+
+Basic table
+-----------
+| Col A | Col B | Col C |
+|-------|-------|-------|
+|  1    |  2    |  3    |
+|  4    |  5    |  6    |
+
+Aligned table
+-------------
+| Left | Center | Right |
+|:-----|:------:|------:|
+| 1    |   2    |     3 |
+| 10   |  20    |    30 |
+
+:-----   = left aligned
+:-----:  = centered
+------:  = right aligned
+
+--------------------------------------------------
+10. Line breaks
+--------------------------------------------------
+
+Paragraphs
+----------
+A blank line between lines creates a new paragraph.
+
+Line one (paragraph 1).
+
+Line two (paragraph 2).
+
+Forced line breaks (without new paragraph)
+-----------------------------------------
+Use two spaces at the end of a line:
+
+Line oneÂ·Â·
+Line two
+
+(In the above, "Â·Â·" represents two literal spaces.)
+
+Or use raw HTML:
+
+Line one<br>
+Line two
+
+--------------------------------------------------
+11. Raw HTML inside Markdown
+--------------------------------------------------
+
+You can insert HTML directly:
+
+<div class="note">
+This is a note block written in raw HTML.
+</div>
+
+Hugo/Goldmark will pass this HTML through (unless HTML is disabled in config).
+
+--------------------------------------------------
+12. Hugo shortcodes inside Markdown
+--------------------------------------------------
+
+Shortcodes look like this:
+
+{{< shortcode-name param="value" >}}
+
+Common examples:
+
+{{< youtube id="bgEcI0i8aP4" >}}
+
+{{< figure src="/images/photo.jpg" caption="Nice image" >}}
+
+Shortcodes are defined as template files in:
+layouts/shortcodes/shortcode-name.html
+
+They output HTML that becomes part of the rendered content.
+
+--------------------------------------------------
+13. Hugo template expressions in Markdown (if enabled)
+--------------------------------------------------
+
+If Hugo is configured to allow it, you can sometimes use template expressions:
+
+{{ .Title }}
+
+{{ .Params.someparam }}
+
+These are more advanced and depend on your Hugo configuration
+(enableInlineShortcodes or render hooks).
+
+--------------------------------------------------
+14. Practical core subset
+--------------------------------------------------
+
+The syntax you will use all the time when writing content:
+
+- *italic* and **bold**
+- # headings (H1âH3 usually enough)
+- - and 1. lists
+- [links](https://example.com)
+- ![images](image.jpg)
+- ``` fenced code blocks ```
+- > blockquotes
+- --- horizontal rules
+- | tables |
+- Hugo shortcodes like {{< youtube id="..." >}}
+
+Everything else is niche.
+
+End of file.
