@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    <!-- Basic responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Optional: global stylesheet -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <!-- Top navigation bar -->
+    {{ partial "nav.html" . }}
+
+    <!-- Main content area -->
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- Footer -->
+    {{ partial "footer.html" . }}
+
+    <!-- Optional: global JS -->
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
