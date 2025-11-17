@@ -6,7 +6,7 @@ title = "Santiago Moreno"
 [menu]
 
   [[menu.main]]
-    name   = "CV"
+    name   = "Experience"
     url    = "/cv/"
     weight = 10
 
@@ -26,6 +26,6 @@ title = "Santiago Moreno"
     weight = 40
 
   [[menu.main]]
-    name   = "Astrology"
+    name   = "My sky"
     url    = "/astrology/"
     weight = 50
