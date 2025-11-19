@@ -1,0 +1,18 @@
+// _layout.scss
+// Purpose: Base layout styles referencing variables.
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  background: $color-body-bg;
+  color: $color-body-text;
+  line-height: 1.6;
+}
+
+main {
+  padding: $space-4;
+}
