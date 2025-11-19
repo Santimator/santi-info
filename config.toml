@@ -29,3 +29,8 @@ title = "Santiago Moreno"
     name   = "My sky"
     url    = "/astrology/"
     weight = 50
+
+  [[menu.main]]
+    name   = "The artist"
+    url    = "/the-artist/"
+    weight = 60
