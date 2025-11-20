@@ -18,7 +18,9 @@ main.page-main {
 }
 
 .content-shell {
-  width: min(100%, 900px);
+  // Avoid Sass unit conflicts by separating width and max constraint.
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 $space-3;
 }
