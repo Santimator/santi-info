@@ -6,6 +6,11 @@ title = "Santiago Moreno"
 [menu]
 
   [[menu.main]]
+    name   = "SMJ"
+    url    = "/smj/"
+    weight = 1
+
+  [[menu.main]]
     name   = "Engineering"
     url    = "/engineering/"
     weight = 10
