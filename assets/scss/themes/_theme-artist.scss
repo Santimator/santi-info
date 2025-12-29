@@ -59,14 +59,15 @@
   .intro-card,
   .cv-card {
     border: none;
-    border-left: 4px solid var(--secondary);
+    border-left: 5px solid var(--secondary);
     border-radius: 0;
     box-shadow: var(--shadow);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
     &:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px) rotate(-1deg);
       box-shadow: var(--shadow-lg);
+      border-left-color: var(--accent);
     }
   }
 
@@ -74,15 +75,58 @@
   .cv-list li::before {
     content: "◆";
     color: var(--gold);
+    font-size: 0.7em;
   }
 
   // Color block accents on links
   a {
     color: var(--accent);
     position: relative;
+    font-weight: 600;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background: var(--coral);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
 
     &:hover {
       color: var(--secondary);
+
+      &::before {
+        transform: translateY(-50%) scale(1.5);
+      }
+    }
+  }
+
+  // Artistic card borders
+  .cv-cards {
+    .cv-card {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        width: 20px;
+        height: 20px;
+        border-right: 2px solid var(--gold);
+        border-bottom: 2px solid var(--gold);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 }

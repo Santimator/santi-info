@@ -13,7 +13,8 @@ body {
   line-height: 1.7;
   font-size: 1rem;
   min-height: 100vh;
-  padding-bottom: calc($space-4 + 5rem); // Reserve room for the fixed footer.
+  padding-bottom: calc($space-4 + 5rem);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -49,12 +50,35 @@ p {
   color: var(--text-muted);
 }
 
+// Accessibility improvements
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+// Skip link for keyboard users
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 1001;
+  transition: top 0.3s ease;
+
+  &:focus {
+    top: 0;
+  }
+}
+
 main.page-main {
   padding: $space-4 0 $space-4;
 }
 
 .content-shell {
-  // Avoid Sass unit conflicts by separating width and max constraint.
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -81,7 +105,6 @@ main.page-main {
 }
 
 .cv-section {
-  // Section bands use alt backgrounds to separate logical blocks.
   background: var(--bg-alt);
   padding: $space-4 0;
 }
@@ -101,6 +124,7 @@ main.page-main {
   display: flex;
   flex-direction: column;
   gap: $space-1;
+  position: relative;
 }
 
 .cv-cards {
@@ -108,16 +132,6 @@ main.page-main {
   gap: $space-3;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
-.cv-card {
-  // Card styling mirrors existing info-card but in a reusable CV context.
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  padding: $space-3;
-}
-
 .cv-card h2,
 .cv-card h3 {
   margin: 0 0 $space-2;
@@ -143,21 +157,11 @@ main.page-main {
   padding-left: $space-2;
 }
 
-.cv-list li::before {
-  // Subtle marker replaces heavy bullets.
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--text-muted);
-}
-
-.cv-list strong {
-  color: var(--text-main);
-}
-
-.cv-card p:last-child,
-.cv-list li:last-child {
-  margin-bottom: 0;
+.quote-note {
+  display: block;
+  color: var(--accent);
+  font-style: italic;
+  margin: 0;
 }
 
 .site-credits {
@@ -167,10 +171,35 @@ main.page-main {
   color: var(--text-muted);
 }
 
-// Brief styling for highlighted intro notes.
-.quote-note {
-  display: block;
-  color: var(--accent);
-  font-style: italic;
-  margin: 0;
+// Responsive improvements
+@media (max-width: 760px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-shell {
+    padding: 0 $space-2;
+  }
+}
+
+// Print styles
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .site-nav,
+  .site-footer {
+    display: none;
+  }
+
+  .cv-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }

@@ -1,43 +1,43 @@
 // _variables.scss
-// Purpose: Concise theme tokens with light/dark palettes and typography roles.
+// Purpose: Base CSS custom properties that themes can override
 
-// Theme variables rely on CSS custom properties so prefers-color-scheme can swap palettes.
+// Default theme (Classic) values - applied when no theme class or as fallback
 :root {
-  --bg: #f4f6f2;
-  --bg-alt: #e8eee6;
-  --card-bg: #ffffff;
-  --border: #d8e0d4;
-  --text-main: #1f2a21;
-  --text-muted: #556258;
-  --accent: #2f6f4e;
-  --tone-a: #eef3ec;
-  --tone-b: #e3ebe1;
-  --tone-c: #dde7dc;
-  --nav-bg: #f1f5f0;
-  --shadow: 0 4px 12px rgba(22, 43, 31, 0.12);
-  --font-heading: "Playfair Display", "Times New Roman", serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  // Core colors
+  --bg: #f5f0e6;
+  --bg-alt: #ebe5d8;
+  --card-bg: #fdfbf7;
+  --border: #d4cbb8;
+  --text-main: #2a2a28;
+  --text-muted: #5a5a55;
+  --accent: #2d5a3d;
+  --accent-hover: #3d7a52;
+  --secondary: #8b2942;
+
+  // Tone variations for subtle backgrounds
+  --tone-a: #f0ebe0;
+  --tone-b: #e5ddd0;
+  --tone-c: #d9d0c0;
+
+  // Component-specific
+  --nav-bg: #fdfbf7;
+  --shadow: 0 2px 8px rgba(42, 42, 40, 0.08);
+  --shadow-lg: 0 10px 20px rgba(42, 42, 40, 0.12);
+
+  // Typography
+  --font-heading: 'Georgia', 'Playfair Display', serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #06180f;
-    --bg-alt: #0b2417;
-    --card-bg: rgba(255, 255, 255, 0.04);
-    --border: rgba(255, 255, 255, 0.09);
-    --text-main: #f3f0e7;
-    --text-muted: #c3ccb9;
-    --accent: #b6d27a;
-    --tone-a: #0c2016;
-    --tone-b: #0f291c;
-    --tone-c: #123223;
-    --nav-bg: #0b2618;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  }
-}
+// Spacing scale (Sass variables for calculations)
+$space-1: 0.5rem;   // 8px
+$space-2: 1rem;     // 16px
+$space-3: 1.5rem;   // 24px
+$space-4: 3rem;     // 48px
+$space-5: 4rem;     // 64px
 
-// Spacing scale remains Sass for brevity.
-$space-1: 0.25rem;
-$space-2: 0.5rem;
-$space-3: 1rem;
-$space-4: 2rem;
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 760px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;

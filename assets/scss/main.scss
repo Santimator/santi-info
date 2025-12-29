@@ -1,7 +1,25 @@
 // main.scss
-// Purpose: Entry point importing partials for Hugo pipeline.
+// Master stylesheet - imports all modules in correct order
 
+// 1. Variables (base CSS custom properties)
 @import "variables";
+
+// 2. Layout (base structure)
 @import "layout";
+
+// 3. Components
+@import "cards";
 @import "navbar";
 @import "footer";
+
+// 4. Transitions (page animations, theme transitions)
+@import "transitions";
+
+// 5. Theme overrides (each theme redefines CSS custom properties)
+@import "themes/theme-classic";
+@import "themes/theme-terminal";
+@import "themes/theme-blackboard";
+@import "themes/theme-organic";
+@import "themes/theme-celestial";
+@import "themes/theme-artist";
+@import "themes/theme-hyperion";

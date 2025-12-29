@@ -42,12 +42,40 @@
   .intro-card,
   .cv-card {
     border-radius: 20px;
-    border-left: 4px solid var(--accent);
+    border-left: 5px solid var(--accent);
+    border: none;
+    box-shadow: var(--shadow);
   }
 
   // Nature-inspired list markers
   .cv-list li::before {
     content: "🌱";
-    font-size: 0.8em;
+    font-size: 0.85em;
+    margin-right: 0.4em;
+  }
+
+  // Gentle flowing background
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg) 100%);
+  background-size: 400% 400%;
+  animation: organicFlow 20s ease infinite;
+
+  @keyframes organicFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  // Soft link styling
+  a {
+    color: var(--accent);
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 2px 6px;
+    margin: -2px -6px;
+
+    &:hover {
+      background: var(--accent);
+      color: var(--cream);
+    }
   }
 }

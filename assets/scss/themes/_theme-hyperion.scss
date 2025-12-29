@@ -43,8 +43,9 @@
   // Time Tombs inspired geometric pattern (subtle)
   background-image:
     linear-gradient(30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%),
-    linear-gradient(-30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%);
-  background-size: 60px 40px;
+    linear-gradient(-30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%),
+    radial-gradient(ellipse at center, rgba(114, 47, 55, 0.05) 0%, transparent 70%);
+  background-size: 60px 40px, 60px 40px, 100% 100%;
   background-color: var(--bg);
 
   // Epic pilgrimage-style cards
@@ -77,16 +78,60 @@
     content: "†";
     color: var(--bronze);
     font-weight: bold;
+    font-size: 0.9em;
   }
 
   // Links with metallic feel
   a {
     color: var(--accent);
     text-decoration: none;
+    position: relative;
+    letter-spacing: 0.05em;
+
+    &::after {
+      content: " →";
+      margin-left: 0.3em;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
     &:hover {
       color: var(--bronze);
       text-shadow: 0 0 8px rgba(201, 162, 39, 0.3);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Shrike-inspired subtle decoration
+  .cv-section-header::after {
+    content: "⟡";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--shrike-silver);
+    opacity: 0.3;
+    font-size: 1.5rem;
+  }
+
+  // Mysterious glow on key elements
+  h1 {
+    text-shadow: 0 0 15px rgba(201, 162, 39, 0.2);
+  }
+
+  // Time Tombs corner accents
+  .cv-card {
+    &::before {
+      content: "◈";
+      position: absolute;
+      top: -5px;
+      left: 10px;
+      color: var(--accent);
+      opacity: 0.3;
+      font-size: 0.8rem;
     }
   }
 }

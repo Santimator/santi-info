@@ -1,5 +1,5 @@
 // _navbar.scss
-// Purpose: Sticky top navigation with collapsible menu.
+// Purpose: Sticky top navigation with collapsible menu and theme adaptation
 
 .site-nav {
   position: sticky;
@@ -9,6 +9,7 @@
   background: var(--nav-bg);
   border-bottom: 1px solid var(--border);
   box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-inner {
@@ -46,16 +47,17 @@
   padding: $space-2 $space-3;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: var(--nav-bg); // Match bar color for a seamless toggle.
+  background: var(--nav-bg);
   color: var(--text-main);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 
   &:hover,
   &:focus {
     background: var(--tone-b);
     transform: translateY(-1px);
+    border-color: var(--accent);
   }
 }
 
@@ -86,17 +88,20 @@
     letter-spacing: 0.03rem;
     padding: $space-2;
     border-radius: 4px;
-    transition: color 0.2s ease, background 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 
     &:hover,
     &:focus {
       color: var(--accent);
       background: var(--tone-a);
+      transform: translateX(4px);
     }
 
     &.is-active {
       color: var(--accent);
-      border-bottom: 2px solid var(--accent);
+      background: var(--tone-a);
+      border-left: 3px solid var(--accent);
+      padding-left: $space-1.5;
     }
   }
 }
@@ -140,5 +145,44 @@
 
   .nav-menu a {
     padding: $space-2 0;
+
+    &:hover {
+      transform: none;
+    }
+
+    &.is-active {
+      border-left: none;
+      border-bottom: 3px solid var(--accent);
+      padding-left: $space-2;
+    }
   }
+}
+
+// Theme-specific nav styles
+.theme-terminal .nav-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+}
+
+.theme-blackboard .nav-brand {
+  font-family: 'Caveat', cursive;
+}
+
+.theme-celestial .nav-brand {
+  text-shadow: 0 0 10px var(--accent);
+}
+
+.theme-artist .nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.theme-hyperion .nav-brand {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.3rem;
+}
+
+.theme-organic .nav-brand {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
 }

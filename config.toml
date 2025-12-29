@@ -1,18 +1,18 @@
 baseURL = "https://santimator.github.io/santi-info/"
 languageCode = "en"
 title = "Santiago Moreno"
-# theme = ""  # vacío si usas tus propios layouts
+# theme = ""  # Empty - using custom layouts
 
 [menu]
 
   [[menu.main]]
-    name   = "Experience"
-    url    = "/cv/"
+    name   = "Engineering"
+    url    = "/engineering/"
     weight = 10
 
   [[menu.main]]
-    name   = "Education"
-    url    = "/education/"
+    name   = "Teaching"
+    url    = "/teaching/"
     weight = 20
 
   [[menu.main]]
@@ -21,16 +21,16 @@ title = "Santiago Moreno"
     weight = 30
 
   [[menu.main]]
-    name   = "Other Interests & Skills"
-    url    = "/other-interests/"
+    name   = "The Artist"
+    url    = "/the-artist/"
     weight = 40
 
   [[menu.main]]
-    name   = "My sky"
+    name   = "My Sky"
     url    = "/astrology/"
     weight = 50
 
   [[menu.main]]
-    name   = "The artist"
-    url    = "/the-artist/"
+    name   = "Other Interests"
+    url    = "/other-interests/"
     weight = 60
