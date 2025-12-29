@@ -1,18 +1,69 @@
 // _theme-blackboard.scss
-// Theme: Blackboard (Teaching)
-// Feel: Classroom warmth, chalk on black, approachable teaching environment
+// Theme: Teaching - Whiteboard (light) / Blackboard (dark)
+// Feel: Classroom warmth, approachable teaching environment
 
 .theme-blackboard {
-  // Color palette: Deep black, chalk white, muted chalk colors
+  // Light mode: Whiteboard with blue marker
+  --bg: #f8f8f8;
+  --bg-alt: #eeeeee;
+  --card-bg: #ffffff;
+  --border: #d0d0d0;
+  --text-main: #1e1e1e;
+  --text-muted: #6a6a6a;
+  --accent: #2563eb; // Blue marker
+  --accent-hover: #1d4ed8;
+  --secondary: #0891b2; // Cyan marker
+  --tone-a: #f3f3f3;
+  --tone-b: #e8e8e8;
+  --tone-c: #dddddd;
+  --nav-bg: #ffffff;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+
+  --marker-blue: #2563eb;
+  --marker-green: #16a34a;
+  --marker-red: #dc2626;
+  --marker-black: #1e1e1e;
+  --marker-cyan: #0891b2;
+
+  // Dark mode: Blackboard with chalk
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #1a1a1a;
+      --bg-alt: #222222;
+      --card-bg: #2a2a2a;
+      --border: #3d3d3d;
+      --text-main: #e8e8e8;
+      --text-muted: #b0b0b0;
+      --accent: #f0e68c;
+      --accent-hover: #fff8dc;
+      --secondary: #ffb6c1;
+      --tone-a: #252525;
+      --tone-b: #2d2d2d;
+      --tone-c: #353535;
+      --nav-bg: #1a1a1a;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
+
+      --marker-blue: #87ceeb;
+      --marker-green: #98fb98;
+      --marker-red: #ffb6c1;
+      --marker-black: #e8e8e8;
+      --marker-cyan: #87ceeb;
+    }
+  }
+}
+
+body.force-dark .theme-blackboard {
   --bg: #1a1a1a;
   --bg-alt: #222222;
   --card-bg: #2a2a2a;
   --border: #3d3d3d;
   --text-main: #e8e8e8;
   --text-muted: #b0b0b0;
-  --accent: #f0e68c; // Chalk yellow
+  --accent: #f0e68c;
   --accent-hover: #fff8dc;
-  --secondary: #ffb6c1; // Chalk pink
+  --secondary: #ffb6c1;
   --tone-a: #252525;
   --tone-b: #2d2d2d;
   --tone-c: #353535;
@@ -20,14 +71,15 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
 
-  // Additional chalk colors
-  --chalk-white: #e8e8e8;
-  --chalk-yellow: #f0e68c;
-  --chalk-pink: #ffb6c1;
-  --chalk-blue: #87ceeb;
-  --chalk-green: #98fb98;
+  --marker-blue: #87ceeb;
+  --marker-green: #98fb98;
+  --marker-red: #ffb6c1;
+  --marker-black: #e8e8e8;
+  --marker-cyan: #87ceeb;
+}
 
-  // Typography: Handwritten for headings, clean for body
+.theme-blackboard {
+  // Typography: Handwritten (keep in both modes)
   --font-heading: 'Caveat', 'Architects Daughter', cursive, sans-serif;
   --font-body: system-ui, -apple-system, sans-serif;
 
@@ -38,13 +90,7 @@
     letter-spacing: 0.02em;
   }
 
-  // Chalk dust texture effect
-  background-image: 
-    radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.02) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(255,255,255,0.02) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.01) 0%, transparent 100%);
-
-  // Cards styled as chalkboard sections
+  // Cards with dashed border (both modes)
   .intro-card,
   .cv-card {
     border: 2px dashed var(--border);
@@ -52,20 +98,20 @@
     position: relative;
   }
 
-  // Chalk-style list markers
+  // Check mark list markers
   .cv-list li::before {
     content: "✓";
-    color: var(--chalk-green);
+    color: var(--marker-green);
     font-size: 1.2em;
     margin-right: 0.3em;
   }
 
-  // Chalk-dust effect on headings
+  // Handwriting effect on headings
   h1 {
-    text-shadow: 0 0 1px rgba(255,255,255,0.3), 1px 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 0 0 1px var(--text-main);
   }
 
-  // Imperfect underline effect
+  // Underline effect on card titles
   .cv-card h3 {
     position: relative;
 

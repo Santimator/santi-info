@@ -3,7 +3,58 @@
 // Feel: Modern developer terminal, clean TUI aesthetic (Tokyo Night inspired)
 
 .theme-terminal {
-  // Color palette: Dark charcoal, steel blue, cyan highlights
+  // Light mode: Light terminal (VS Code light inspired)
+  --bg: #f8f8f8;
+  --bg-alt: #eeeeee;
+  --card-bg: #ffffff;
+  --border: #d0d0d0;
+  --text-main: #1e1e1e;
+  --text-muted: #6a6a6a;
+  --accent: #0066cc;
+  --accent-hover: #0078e7;
+  --secondary: #007acc;
+  --tone-a: #f3f3f3;
+  --tone-b: #e8e8e8;
+  --tone-c: #dddddd;
+  --nav-bg: #f8f8f8;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+
+  --terminal-green: #008000;
+  --terminal-red: #cd3131;
+  --terminal-yellow: #949800;
+  --terminal-magenta: #bc05bc;
+  --terminal-cyan: #0598bc;
+
+  // Dark mode (Tokyo Night)
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #1a1b26;
+      --bg-alt: #16161e;
+      --card-bg: #1f2335;
+      --border: #3b4261;
+      --text-main: #a9b1d6;
+      --text-muted: #565f89;
+      --accent: #7aa2f7;
+      --accent-hover: #89b4fa;
+      --secondary: #7dcfff;
+      --tone-a: #1f2335;
+      --tone-b: #24283b;
+      --tone-c: #292e42;
+      --nav-bg: #16161e;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+
+      --terminal-green: #9ece6a;
+      --terminal-red: #f7768e;
+      --terminal-yellow: #e0af68;
+      --terminal-magenta: #bb9af7;
+      --terminal-cyan: #7dcfff;
+    }
+  }
+}
+
+body.force-dark .theme-terminal {
   --bg: #1a1b26;
   --bg-alt: #16161e;
   --card-bg: #1f2335;
@@ -20,12 +71,14 @@
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
 
-  // Additional terminal colors
   --terminal-green: #9ece6a;
   --terminal-red: #f7768e;
   --terminal-yellow: #e0af68;
   --terminal-magenta: #bb9af7;
   --terminal-cyan: #7dcfff;
+}
+
+.theme-terminal {
 
   // Typography: Monospace
   --font-heading: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;

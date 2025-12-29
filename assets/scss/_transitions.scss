@@ -1,7 +1,7 @@
 // _transitions.scss
 // Purpose: Page transition animations for smooth theme switching
 
-// Main content fade-in animation
+// Main content fade-in animation (opacity only, no movement)
 main.page-main {
   animation: pageEnter 0.3s ease-out;
 }
@@ -9,11 +9,9 @@ main.page-main {
 @keyframes pageEnter {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

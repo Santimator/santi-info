@@ -3,7 +3,7 @@
 // Feel: Welcoming, warm, like an 18th-century invitation letter
 
 .theme-classic {
-  // Color palette: Cream, forest green, burgundy accents
+  // Light mode (default): Cream, forest green, burgundy accents
   --bg: #f5f0e6;
   --bg-alt: #ebe5d8;
   --card-bg: #fdfbf7;
@@ -19,6 +19,49 @@
   --nav-bg: #fdfbf7;
   --shadow: 0 2px 8px rgba(42, 42, 40, 0.08);
   --shadow-lg: 0 10px 20px rgba(42, 42, 40, 0.12);
+
+  // Dark mode: Aged dark parchment, muted greens
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #1a1816;
+      --bg-alt: #252320;
+      --card-bg: #2d2a26;
+      --border: #3d3a35;
+      --text-main: #e8e5dc;
+      --text-muted: #a8a59c;
+      --accent: #5a8a6a;
+      --accent-hover: #6a9a7a;
+      --secondary: #b85970;
+      --tone-a: #232120;
+      --tone-b: #2a2826;
+      --tone-c: #32302c;
+      --nav-bg: #1a1816;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+// Manual dark mode override
+body.force-dark .theme-classic {
+  --bg: #1a1816;
+  --bg-alt: #252320;
+  --card-bg: #2d2a26;
+  --border: #3d3a35;
+  --text-main: #e8e5dc;
+  --text-muted: #a8a59c;
+  --accent: #5a8a6a;
+  --accent-hover: #6a9a7a;
+  --secondary: #b85970;
+  --tone-a: #232120;
+  --tone-b: #2a2826;
+  --tone-c: #32302c;
+  --nav-bg: #1a1816;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.theme-classic {
 
   // Typography: Elegant serifs
   --font-heading: 'Georgia', 'Playfair Display', serif;

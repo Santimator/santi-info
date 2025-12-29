@@ -3,16 +3,16 @@
 // Feel: Creative, bold but refined, like a well-curated exhibition
 
 .theme-artist {
-  // Color palette: Deep teal, coral, gold, cream - rich but harmonious
+  // Light mode: Cream, teal, coral
   --bg: #faf7f2;
   --bg-alt: #f0ebe3;
   --card-bg: #ffffff;
   --border: #e0d5c5;
   --text-main: #2a2a2a;
   --text-muted: #5a5a5a;
-  --accent: #1a4a5e; // Deep teal
+  --accent: #1a4a5e;
   --accent-hover: #2a6a7e;
-  --secondary: #e07a5f; // Coral
+  --secondary: #e07a5f;
   --tone-a: #f5f0e8;
   --tone-b: #ebe3d8;
   --tone-c: #e0d5c5;
@@ -20,13 +20,63 @@
   --shadow: 0 4px 16px rgba(26, 74, 94, 0.1);
   --shadow-lg: 0 12px 32px rgba(26, 74, 94, 0.15);
 
-  // Additional artistic colors
   --teal: #1a4a5e;
   --coral: #e07a5f;
   --gold: #d4a373;
   --cream: #faf7f2;
 
-  // Typography: Elegant display for headings
+  // Dark mode: Dark canvas, jewel tones
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #1a1816;
+      --bg-alt: #242220;
+      --card-bg: #2d2a28;
+      --border: #3d3a35;
+      --text-main: #e8e0d8;
+      --text-muted: #a8a098;
+      --accent: #4a8a9e;
+      --accent-hover: #5a9aae;
+      --secondary: #f09a8f;
+      --tone-a: #222120;
+      --tone-b: #2a2826;
+      --tone-c: #322f2c;
+      --nav-bg: #1a1816;
+      --shadow: 0 4px 16px rgba(74, 138, 158, 0.2);
+      --shadow-lg: 0 12px 32px rgba(74, 138, 158, 0.3);
+
+      --teal: #5a9aae;
+      --coral: #f09a8f;
+      --gold: #e4b383;
+      --cream: #2d2a28;
+    }
+  }
+}
+
+body.force-dark .theme-artist {
+  --bg: #1a1816;
+  --bg-alt: #242220;
+  --card-bg: #2d2a28;
+  --border: #3d3a35;
+  --text-main: #e8e0d8;
+  --text-muted: #a8a098;
+  --accent: #4a8a9e;
+  --accent-hover: #5a9aae;
+  --secondary: #f09a8f;
+  --tone-a: #222120;
+  --tone-b: #2a2826;
+  --tone-c: #322f2c;
+  --nav-bg: #1a1816;
+  --shadow: 0 4px 16px rgba(74, 138, 158, 0.2);
+  --shadow-lg: 0 12px 32px rgba(74, 138, 158, 0.3);
+
+  --teal: #5a9aae;
+  --coral: #f09a8f;
+  --gold: #e4b383;
+  --cream: #2d2a28;
+}
+
+.theme-artist {
+  // Typography: Elegant display
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Source Sans Pro', system-ui, sans-serif;
 

@@ -1,9 +1,11 @@
 // _variables.scss
 // Purpose: Base CSS custom properties that themes can override
 
-// Default theme (Classic) values - applied when no theme class or as fallback
+// Browser hint for color scheme support
 :root {
-  // Core colors
+  color-scheme: light dark;
+  
+  // Core colors - Light mode defaults
   --bg: #f5f0e6;
   --bg-alt: #ebe5d8;
   --card-bg: #fdfbf7;

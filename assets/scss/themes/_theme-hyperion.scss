@@ -1,18 +1,69 @@
 // _theme-hyperion.scss
 // Theme: Hyperion (Other Interests)
-// Feel: Epic, literary, timeless yet otherworldly - Dan Simmons inspired
+// Feel: Epic, literary, timeless yet otherworldly
 
 .theme-hyperion {
-  // Color palette: Aged gold, bronze, deep crimson, cosmic dark
+  // Light mode: Aged bronze, cream parchment
+  --bg: #f0e8d8;
+  --bg-alt: #e8e0d0;
+  --card-bg: #f8f4ec;
+  --border: #c8c0b0;
+  --text-main: #2a2620;
+  --text-muted: #6a6660;
+  --accent: #b8862a;
+  --accent-hover: #c8963a;
+  --secondary: #924047;
+  --tone-a: #ebe5d8;
+  --tone-b: #e0d8c8;
+  --tone-c: #d8d0c0;
+  --nav-bg: #f8f4ec;
+  --shadow: 0 2px 12px rgba(184, 134, 42, 0.15);
+  --shadow-lg: 0 10px 30px rgba(184, 134, 42, 0.25);
+
+  --gold: #b8862a;
+  --bronze: #cd7f32;
+  --crimson: #924047;
+  --cosmic-dark: #f0e8d8;
+  --shrike-silver: #888890;
+
+  // Dark mode: Cosmic dark, aged gold
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #0d1117;
+      --bg-alt: #131920;
+      --card-bg: #1a222c;
+      --border: #2d3640;
+      --text-main: #d4c5a9;
+      --text-muted: #8b8070;
+      --accent: #c9a227;
+      --accent-hover: #e0b830;
+      --secondary: #722f37;
+      --tone-a: #161d25;
+      --tone-b: #1d252f;
+      --tone-c: #242d38;
+      --nav-bg: #0d1117;
+      --shadow: 0 2px 12px rgba(201, 162, 39, 0.1);
+      --shadow-lg: 0 10px 30px rgba(201, 162, 39, 0.15);
+
+      --gold: #c9a227;
+      --bronze: #cd7f32;
+      --crimson: #722f37;
+      --cosmic-dark: #0d1117;
+      --shrike-silver: #708090;
+    }
+  }
+}
+
+body.force-dark .theme-hyperion {
   --bg: #0d1117;
   --bg-alt: #131920;
   --card-bg: #1a222c;
   --border: #2d3640;
-  --text-main: #d4c5a9; // Aged parchment
+  --text-main: #d4c5a9;
   --text-muted: #8b8070;
-  --accent: #c9a227; // Aged gold
+  --accent: #c9a227;
   --accent-hover: #e0b830;
-  --secondary: #722f37; // Deep crimson
+  --secondary: #722f37;
   --tone-a: #161d25;
   --tone-b: #1d252f;
   --tone-c: #242d38;
@@ -20,13 +71,14 @@
   --shadow: 0 2px 12px rgba(201, 162, 39, 0.1);
   --shadow-lg: 0 10px 30px rgba(201, 162, 39, 0.15);
 
-  // Additional Hyperion colors
   --gold: #c9a227;
   --bronze: #cd7f32;
   --crimson: #722f37;
   --cosmic-dark: #0d1117;
   --shrike-silver: #708090;
+}
 
+.theme-hyperion {
   // Typography: Classic serif with futuristic touches
   --font-heading: 'Cinzel', 'Times New Roman', serif;
   --font-body: 'Crimson Text', Georgia, serif;
@@ -42,9 +94,9 @@
 
   // Time Tombs inspired geometric pattern (subtle)
   background-image:
-    linear-gradient(30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%),
-    linear-gradient(-30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%),
-    radial-gradient(ellipse at center, rgba(114, 47, 55, 0.05) 0%, transparent 70%);
+    linear-gradient(30deg, transparent 49%, rgba(184, 134, 42, 0.02) 49%, rgba(184, 134, 42, 0.02) 51%, transparent 51%),
+    linear-gradient(-30deg, transparent 49%, rgba(184, 134, 42, 0.02) 49%, rgba(184, 134, 42, 0.02) 51%, transparent 51%),
+    radial-gradient(ellipse at center, rgba(146, 64, 71, 0.03) 0%, transparent 70%);
   background-size: 60px 40px, 60px 40px, 100% 100%;
   background-color: var(--bg);
 
@@ -97,7 +149,7 @@
 
     &:hover {
       color: var(--bronze);
-      text-shadow: 0 0 8px rgba(201, 162, 39, 0.3);
+      text-shadow: 0 0 8px rgba(184, 134, 42, 0.2);
 
       &::after {
         opacity: 1;
@@ -119,7 +171,7 @@
 
   // Mysterious glow on key elements
   h1 {
-    text-shadow: 0 0 15px rgba(201, 162, 39, 0.2);
+    text-shadow: 0 0 15px rgba(184, 134, 42, 0.15);
   }
 
   // Time Tombs corner accents

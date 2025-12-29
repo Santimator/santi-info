@@ -3,16 +3,16 @@
 // Feel: Calm, mindful, growth-oriented, earthy tones
 
 .theme-organic {
-  // Color palette: Sand, sage green, warm brown, soft cream
+  // Light mode: Sand, sage green, warm brown
   --bg: #f5f1ea;
   --bg-alt: #ebe5db;
   --card-bg: #faf8f4;
   --border: #d4cbb8;
   --text-main: #4a4a42;
   --text-muted: #7a7a70;
-  --accent: #6b8e6b; // Sage green
+  --accent: #6b8e6b;
   --accent-hover: #5a7d5a;
-  --secondary: #8b7355; // Warm brown
+  --secondary: #8b7355;
   --tone-a: #f0ebe3;
   --tone-b: #e5ddd3;
   --tone-c: #d9cfc3;
@@ -20,13 +20,63 @@
   --shadow: 0 2px 12px rgba(74, 74, 66, 0.08);
   --shadow-lg: 0 10px 30px rgba(74, 74, 66, 0.12);
 
-  // Additional organic colors
   --leaf-green: #87a878;
   --earth-brown: #6b5344;
   --sand: #d4c4a8;
   --cream: #faf8f4;
 
-  // Typography: Soft, rounded, generous spacing
+  // Dark mode: Dark earth, forest green
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      --bg: #1a1916;
+      --bg-alt: #242220;
+      --card-bg: #2d2b28;
+      --border: #3d3a35;
+      --text-main: #e0dcd0;
+      --text-muted: #a09c90;
+      --accent: #8ba888;
+      --accent-hover: #9bb898;
+      --secondary: #a89070;
+      --tone-a: #222120;
+      --tone-b: #292826;
+      --tone-c: #312f2c;
+      --nav-bg: #1a1916;
+      --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+      --leaf-green: #97b888;
+      --earth-brown: #8b7355;
+      --sand: #d4c4a8;
+      --cream: #2d2b28;
+    }
+  }
+}
+
+body.force-dark .theme-organic {
+  --bg: #1a1916;
+  --bg-alt: #242220;
+  --card-bg: #2d2b28;
+  --border: #3d3a35;
+  --text-main: #e0dcd0;
+  --text-muted: #a09c90;
+  --accent: #8ba888;
+  --accent-hover: #9bb898;
+  --secondary: #a89070;
+  --tone-a: #222120;
+  --tone-b: #292826;
+  --tone-c: #312f2c;
+  --nav-bg: #1a1916;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  --leaf-green: #97b888;
+  --earth-brown: #8b7355;
+  --sand: #d4c4a8;
+  --cream: #2d2b28;
+}
+
+.theme-organic {
+  // Typography: Soft, rounded
   --font-heading: 'Nunito', system-ui, sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
 
