@@ -52,7 +52,7 @@
 
   // Command prompt style for headings
   h1::before {
-    content: "user@santi-info:~$ ";
+    content: "santi@work:~$ ";
     color: var(--terminal-green);
     font-size: 0.85em;
   }
