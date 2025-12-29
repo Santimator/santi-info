@@ -48,19 +48,6 @@
     border-left: 3px solid var(--accent);
     border-radius: 4px;
     position: relative;
-
-    // Terminal window title bar effect
-    &::before {
-      content: "┌──────────────────────────────────────┐";
-      display: block;
-      font-size: 0.5rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      letter-spacing: 0.05em;
-      line-height: 1;
-    }
   }
 
   // Command prompt style for headings
@@ -79,22 +66,9 @@
     content: "";
   }
 
-  // Blinking cursor effect for page title
-  h1::after {
-    content: "▊";
-    animation: blink 1s step-end infinite;
-    color: var(--accent);
-    margin-left: 0.25em;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
   // List items as command output
   .cv-list li::before {
-    content: "→";
+    content: ">";
     color: var(--terminal-cyan);
   }
 
