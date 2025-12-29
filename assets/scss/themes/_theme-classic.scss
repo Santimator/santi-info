@@ -115,10 +115,7 @@ body.force-dark .theme-classic {
     }
   }
 
-  // Paper texture effect
-  background-image: 
-    radial-gradient(ellipse at top left, rgba(255,255,255,0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(139, 41, 66, 0.03) 0%, transparent 50%);
+  // No background effects for classic theme
 
   // Subtle border decorations on cards
   .cv-card {

@@ -86,23 +86,59 @@ body.force-dark .theme-celestial {
     letter-spacing: 0.05em;
   }
 
-  // Subtle starfield effect (lighter in light mode, adjust via background-color)
+  // Light mode: Subtle dawn gradient
+  background: linear-gradient(
+    180deg,
+    #e8f4f8 0%,
+    #f0e8f8 30%,
+    #f8f0e8 60%,
+    #e8f4f8 100%
+  );
+
+  // Dark mode: Starfield effect
+  @media (prefers-color-scheme: dark) {
+    &:not(.force-light) {
+      background-image:
+        radial-gradient(1px 1px at 20px 30px, white, transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 160px 120px, white, transparent),
+        radial-gradient(2px 2px at 200px 50px, rgba(255,215,0,0.8), transparent),
+        radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 250px 150px, white, transparent),
+        radial-gradient(1.5px 1.5px at 280px 40px, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 310px 100px, rgba(107,76,154,0.6), transparent),
+        radial-gradient(1px 1px at 350px 60px, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 380px 140px, rgba(255,215,0,0.6), transparent);
+      background-size: 400px 200px;
+      background-color: var(--bg);
+    }
+  }
+}
+
+// Force dark mode starfield
+body.force-dark .theme-celestial {
   background-image:
-    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(1px 1px at 160px 120px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(2px 2px at 200px 50px, rgba(212,160,23,0.4), transparent),
-    radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 250px 150px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1.5px 1.5px at 280px 40px, rgba(255,255,255,0.3), transparent),
-    radial-gradient(1px 1px at 310px 100px, rgba(139,122,168,0.3), transparent),
-    radial-gradient(1px 1px at 350px 60px, rgba(255,255,255,0.4), transparent),
-    radial-gradient(2px 2px at 380px 140px, rgba(212,160,23,0.3), transparent);
+    radial-gradient(1px 1px at 20px 30px, white, transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, white, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 160px 120px, white, transparent),
+    radial-gradient(2px 2px at 200px 50px, rgba(255,215,0,0.8), transparent),
+    radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 250px 150px, white, transparent),
+    radial-gradient(1.5px 1.5px at 280px 40px, rgba(255,255,255,0.5), transparent),
+    radial-gradient(1px 1px at 310px 100px, rgba(107,76,154,0.6), transparent),
+    radial-gradient(1px 1px at 350px 60px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 380px 140px, rgba(255,215,0,0.6), transparent);
   background-size: 400px 200px;
   background-color: var(--bg);
+}
+
+.theme-celestial {
 
   // Glowing cards
   .intro-card,
