@@ -78,8 +78,8 @@
     font-size: 0.7em;
   }
 
-  // Color block accents on links
-  a {
+  // Color block accents on links (content only, not nav)
+  .page-main a {
     color: var(--accent);
     position: relative;
     font-weight: 600;

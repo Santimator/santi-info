@@ -47,8 +47,8 @@
     }
   }
 
-  // Elegant link styling with subtle underline
-  a {
+  // Elegant link styling with subtle underline (content only, not nav)
+  .page-main a {
     color: var(--accent);
     position: relative;
 

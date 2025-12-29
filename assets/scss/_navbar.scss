@@ -88,7 +88,15 @@
     letter-spacing: 0.03rem;
     padding: $space-2;
     border-radius: 4px;
+    white-space: nowrap;
     transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+
+    // Reset any theme-specific ::before and ::after on nav links
+    &::before,
+    &::after {
+      content: none !important;
+      display: none !important;
+    }
 
     &:hover,
     &:focus {
@@ -169,7 +177,7 @@
 }
 
 .theme-celestial .nav-brand {
-  text-shadow: 0 0 10px var(--accent);
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
 }
 
 .theme-artist .nav-brand {

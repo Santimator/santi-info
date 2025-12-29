@@ -98,8 +98,8 @@
     color: var(--terminal-cyan);
   }
 
-  // Links styled as terminal commands
-  a {
+  // Links styled as terminal commands (content only, not nav)
+  .page-main a {
     color: var(--secondary);
     text-decoration: none;
     position: relative;

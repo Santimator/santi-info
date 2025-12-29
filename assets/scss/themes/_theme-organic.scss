@@ -65,8 +65,8 @@
     100% { background-position: 0% 50%; }
   }
 
-  // Soft link styling
-  a {
+  // Soft link styling (content only, not nav)
+  .page-main a {
     color: var(--accent);
     transition: all 0.3s ease;
     border-radius: 12px;

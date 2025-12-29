@@ -81,8 +81,8 @@
     font-size: 0.9em;
   }
 
-  // Links with metallic feel
-  a {
+  // Links with metallic feel (content only, not nav)
+  .page-main a {
     color: var(--accent);
     text-decoration: none;
     position: relative;
