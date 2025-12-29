@@ -78,8 +78,7 @@ Each tab is a **themed experience** — distinct in look and feel, yet unified b
 assets/scss/
 ├── main.scss                 # Master entry - imports all
 ├── _variables.scss           # Base CSS custom properties
-├── _base.scss                # Reset, typography, core elements
-├── _layout.scss              # Page structure, content-shell, grids
+├── _layout.scss              # Page structure, content-shell, grids, typography
 ├── _navbar.scss              # Navigation (with theme adaptation hooks)
 ├── _footer.scss              # Footer (with theme adaptation hooks)
 ├── _cards.scss               # Reusable card components
@@ -105,26 +104,30 @@ content/
 data/
 ├── engineering/
 │   ├── experience.toml       # Engineering work experience
-│   └── education.toml        # Engineering-related education
+│   ├── education.toml        # Engineering-related education
+│   └── links.toml            # Engineering links
 ├── teaching/
 │   ├── experience.toml       # Teaching work experience
-│   └── education.toml        # Teaching-related education/training
+│   ├── education.toml        # Teaching-related education/training
+│   └── links.toml            # Teaching links
 ├── personal_development/
-│   └── practices.toml        # Practices, trainings, certifications
+│   ├── practices.toml        # Practices, trainings, certifications
+│   └── links.toml            # Personal development links
 ├── astrology/
-│   └── content.toml          # Chart info, readings (optional)
+│   ├── content.toml          # Chart info, readings
+│   └── links.toml            # Astrology links
 ├── the_artist/
 │   ├── projects.toml         # Theatre, music, dance projects
-│   └── media.toml            # Links to videos, performances
+│   └── links.toml            # Artist links
 └── other_interests/
     ├── languages.toml        # Language skills
     ├── certifications.toml   # Other certifications
-    └── hobbies.toml          # Hobbies, misc interests
+    ├── hobbies.toml          # Hobbies, misc interests
+    └── links.toml            # Other interests links
 
 layouts/
 ├── _default/
 │   ├── baseof.html           # Base template - applies theme class to <body>
-│   ├── single.html           # Generic single page (fallback)
 │   ├── engineering.html      # Engineering layout (terminal cards)
 │   ├── teaching.html         # Teaching layout (blackboard cards)
 │   ├── personal-development.html
@@ -134,22 +137,16 @@ layouts/
 ├── partials/
 │   ├── nav.html              # Navigation (theme-aware)
 │   ├── footer.html           # Footer (theme-aware)
-│   ├── head.html             # <head> content (fonts, meta)
-│   ├── theme-background.html # Theme-specific background elements
+│   ├── theme-background.html # Theme-specific background elements (stars, etc.)
 │   └── cards/
 │       ├── experience.html   # Experience card partial
 │       ├── education.html    # Education card partial
-│       ├── project.html      # Project card (artist)
 │       └── generic.html      # Generic content card
 └── index.html                # Home page layout
 
 static/
-├── js/
-│   ├── main.js               # Menu toggle, core interactions
-│   └── theme-effects.js      # Theme-specific effects (stars, etc.)
-├── fonts/                    # Custom fonts if needed
-└── images/
-    └── textures/             # Background textures (paper, chalk, etc.)
+└── js/
+    └── main.js               # Menu toggle, core interactions
 ```
 
 ---

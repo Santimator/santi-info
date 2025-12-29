@@ -5,7 +5,8 @@
 {{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
 {{ $sectionName := index $dataMap $theme | default "engineering" }}
 
-{{ with .Page.Site.Data.index $sectionName "education" }}
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ with $data.education }}
   {{ with .items }}
     <section class="cv-section">
       <div class="cv-inner">

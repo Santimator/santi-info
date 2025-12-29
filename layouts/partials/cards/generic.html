@@ -18,26 +18,27 @@
         </div>
         <div class="cv-cards">
           {{ range . }}
+            {{ $item := . }}
             <article class="cv-card">
               {{/* Handle different data structures based on available fields */}}
-              {{ with .label }}<h3>{{ . }}</h3>{{ end }}
-              {{ with .title }}<h3>{{ . }}</h3>{{ end }}
-              {{ with .name }}<h3>{{ . }}</h3>{{ end }}
-              {{ with .planet }}<h3>{{ . }} ({{ .sign }})</h3>{{ end }}
-              {{ with .language }}<h3>{{ . }} — {{ .level }}</h3>{{ end }}
-              {{ with .description }}<p>{{ . }}</p>{{ end }}
-              {{ with .notes }}<p>{{ . }}</p>{{ end }}
-              {{ with .details }}
+              {{ with $item.label }}<h3>{{ . }}</h3>{{ end }}
+              {{ with $item.title }}<h3>{{ . }}</h3>{{ end }}
+              {{ with $item.name }}<h3>{{ . }}</h3>{{ end }}
+              {{ if $item.language }}<h3>{{ $item.language }} — {{ $item.level }}</h3>{{ end }}
+              {{ if $item.planet }}<h3>{{ $item.planet }} in {{ $item.sign }}</h3>{{ end }}
+              {{ with $item.description }}<p>{{ . }}</p>{{ end }}
+              {{ with $item.notes }}<p>{{ . }}</p>{{ end }}
+              {{ with $item.details }}
                 <ul class="cv-list">
                   {{ range . }}<li>{{ . }}</li>{{ end }}
                 </ul>
               {{ end }}
-              {{ with .responsibilities }}
+              {{ with $item.responsibilities }}
                 <ul class="cv-list">
                   {{ range . }}<li>{{ . }}</li>{{ end }}
                 </ul>
               {{ end }}
-              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">Visit</a>{{ end }}
+              {{ with $item.url }}<a href="{{ . }}" target="_blank" rel="noopener">Visit</a>{{ end }}
             </article>
           {{ end }}
         </div>
