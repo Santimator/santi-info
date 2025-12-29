@@ -86,13 +86,14 @@ body.force-dark .theme-celestial {
     letter-spacing: 0.05em;
   }
 
-  // Light mode: Subtle dawn gradient
+  // Light mode: Dawn gradient (more visible)
   background: linear-gradient(
     180deg,
-    #e8f4f8 0%,
-    #f0e8f8 30%,
-    #f8f0e8 60%,
-    #e8f4f8 100%
+    #cce4f0 0%,
+    #e0d0e8 25%,
+    #f0e0d8 50%,
+    #f8e8c8 75%,
+    #e8d8e0 100%
   );
 
   // Dark mode: Starfield effect

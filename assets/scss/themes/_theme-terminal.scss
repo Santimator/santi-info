@@ -103,14 +103,14 @@ body.force-dark .theme-terminal {
     position: relative;
   }
 
-  // Command prompt style for headings
-  h1::before {
+  // Command prompt style for headings (content only, not nav)
+  .page-main h1::before {
     content: "santi@work:~$ ";
     color: var(--terminal-green);
     font-size: 0.85em;
   }
 
-  h2::before {
+  .page-main h2::before {
     content: "├─ ";
     color: var(--accent);
   }

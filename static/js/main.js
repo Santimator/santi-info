@@ -18,90 +18,66 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
   })();
 
-  // Dark mode toggle with localStorage persistence
+  // Dark mode toggle with localStorage persistence (2 states: light/dark)
   (() => {
     const STORAGE_KEY = 'theme-preference';
-    const MODES = { LIGHT: 'light', DARK: 'dark', SYSTEM: 'system' };
-    const ICONS = { LIGHT: '☀️', DARK: '🌙', SYSTEM: '🌗' };
+    const ICONS = { light: '☀️', dark: '🌙' };
 
     const themeToggle = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle-icon');
     
     if (!themeToggle || !themeIcon) {
-      console.warn('Theme toggle elements not found');
       return;
     }
 
-    // Get current mode from localStorage or default to system
+    // Get system preference
+    function getSystemPreference() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    // Get current mode from localStorage or system preference
     function getCurrentMode() {
-      return localStorage.getItem(STORAGE_KEY) || MODES.SYSTEM;
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === 'light' || saved === 'dark') {
+        return saved;
+      }
+      return getSystemPreference();
     }
 
     // Apply mode to body element
     function applyMode(mode) {
       document.body.classList.remove('force-light', 'force-dark');
       
-      if (mode === MODES.LIGHT) {
+      if (mode === 'light') {
         document.body.classList.add('force-light');
-      } else if (mode === MODES.DARK) {
+      } else {
         document.body.classList.add('force-dark');
       }
-      // SYSTEM mode = no class, CSS @media query handles it
     }
 
     // Update icon based on current mode
     function updateIcon(mode) {
-      const icon = ICONS[mode.toUpperCase()] || ICONS.SYSTEM;
-      themeIcon.textContent = icon;
-      themeToggle.setAttribute('aria-label', `Theme: ${mode} (click to toggle)`);
+      themeIcon.textContent = ICONS[mode] || ICONS.light;
+      themeToggle.setAttribute('aria-label', `Current: ${mode} mode (click to toggle)`);
     }
 
-    // Get next mode in cycle: system → light → dark → system
-    function getNextMode(current) {
-      if (current === MODES.SYSTEM) return MODES.LIGHT;
-      if (current === MODES.LIGHT) return MODES.DARK;
-      return MODES.SYSTEM;
-    }
-
-    // Toggle between modes
+    // Toggle between light and dark
     function toggleMode() {
       const current = getCurrentMode();
-      const next = getNextMode(current);
+      const next = current === 'light' ? 'dark' : 'light';
       
       localStorage.setItem(STORAGE_KEY, next);
       applyMode(next);
       updateIcon(next);
-      
-      console.log(`Theme toggled: ${current} → ${next}`);
     }
 
-    // Listen for system preference changes (when in system mode)
-    function handleSystemChange(e) {
-      const current = getCurrentMode();
-      if (current === MODES.SYSTEM) {
-        // Force re-render by toggling a dummy class
-        document.body.classList.toggle('_dummy');
-      }
-    }
-
-    // Initialize on page load
+    // Initialize
     function init() {
       const mode = getCurrentMode();
       applyMode(mode);
       updateIcon(mode);
       
       themeToggle.addEventListener('click', toggleMode);
-      
-      // Listen for system preference changes
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      if (mediaQuery.addEventListener) {
-        mediaQuery.addEventListener('change', handleSystemChange);
-      } else {
-        // Fallback for older browsers
-        mediaQuery.addListener(handleSystemChange);
-      }
-      
-      console.log('Dark mode toggle initialized, current mode:', mode);
     }
 
     init();
