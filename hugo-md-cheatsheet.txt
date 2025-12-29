@@ -1,266 +1,418 @@
-Markdown essentials for Hugo content
-====================================
+================================================================================
+                    HUGO MARKDOWN CHEAT SHEET
+                    Quick Reference for Content Writers
+================================================================================
 
-This is a plain-text cheat sheet. Everything you see here is literal text.
+This file shows you exactly what to type in your .md files.
+Copy-paste these examples directly into your content.
 
---------------------------------------------------
-1. Emphasis, strong, code, strikethrough
---------------------------------------------------
+================================================================================
+                         QUICK START - THE ESSENTIALS
+================================================================================
 
-Italic (emphasis)
------------------
-*italic*
-_italic_
+Most of your writing will use just these:
 
-Bold (strong)
+    **bold text**                     Makes text bold
+    *italic text*                     Makes text italic
+    [Click here](https://url.com)     Creates a clickable link
+    ![Photo](image.jpg)               Displays an image
+
+    ## Section Title                  Creates a heading
+    - First item                      Creates a bullet list
+    1. First step                     Creates a numbered list
+
+That's it! The rest below is for when you need more.
+
+================================================================================
+                              TEXT FORMATTING
+================================================================================
+
+BOLD & ITALIC
 -------------
-**bold**
-__bold__
+What you type:                        What you get:
+**bold**                              bold (strong)
+*italic*                              italic (emphasis)
+***bold and italic***                 bold and italic combined
 
-Bold + italic
--------------
-***bold italic***
-___bold italic___
-
-Inline code
+INLINE CODE
 -----------
-`inline code`
+Use backticks for code, commands, or technical terms:
 
-Strikethrough
+    Type `npm install` to begin.
+    The `config.toml` file controls settings.
+
+STRIKETHROUGH
 -------------
-~~strikethrough~~
+    ~~deleted text~~                  Shows text as crossed out
 
---------------------------------------------------
-2. Headings
---------------------------------------------------
 
-# Heading level 1
-## Heading level 2
-### Heading level 3
-#### Heading level 4
-##### Heading level 5
-###### Heading level 6
+================================================================================
+                                 HEADINGS
+================================================================================
 
-These map to HTML <h1> ... <h6>.
+Use # symbols at the start of a line. More # = smaller heading.
 
---------------------------------------------------
-3. Lists
---------------------------------------------------
+    # Page Title           (largest - use once per page)
+    ## Main Section        (use for major sections)
+    ### Subsection         (use for topics within sections)
+    #### Minor heading     (rarely needed)
 
-Unordered list
---------------
-- item one
-- item two
-- item three
+TIP: Most pages only need ## and ### headings.
 
-You can also use * or + instead of -:
 
-* item one
-* item two
+================================================================================
+                                  LISTS
+================================================================================
 
-+ item one
-+ item two
-
-Ordered list
+BULLET LISTS
 ------------
-1. first
-2. second
-3. third
+    - First item
+    - Second item
+    - Third item
 
-Nested list (indent with spaces)
---------------------------------
-- item 1
-  - subitem 1.1
-  - subitem 1.2
-- item 2
+NUMBERED LISTS
+--------------
+    1. First step
+    2. Second step
+    3. Third step
 
---------------------------------------------------
-4. Links
---------------------------------------------------
+NESTED LISTS (indent with 2 or 4 spaces)
+----------------------------------------
+    - Main item
+      - Sub-item
+      - Another sub-item
+    - Next main item
 
-Inline link
------------
-[link text](https://example.com)
+CHECKLIST (GitHub-style, may need Hugo config)
+----------------------------------------------
+    - [ ] Not done yet
+    - [x] Completed task
 
-Inline link with title
-----------------------
-[link text](https://example.com "optional title")
 
-Reference-style link
---------------------
-This is an [example link][myref].
+================================================================================
+                                  LINKS
+================================================================================
 
-[myref]: https://example.com "optional title"
-
---------------------------------------------------
-5. Images
---------------------------------------------------
-
-Basic image
------------
-![alt text](image.jpg)
-
-Image with absolute path
-------------------------
-![alt text](/images/photo.png)
-
-You can always fall back to HTML:
-<img src="/images/photo.png" alt="alt text" width="300">
-
---------------------------------------------------
-6. Code blocks (fenced)
---------------------------------------------------
-
-Code block without language
----------------------------
-``` 
-some code
-more code
-```
-
-Code block with language (for highlighting)
--------------------------------------------
-```python
-print("hello")
-for i in range(3):
-    print(i)
-```
-
-You can replace "python" with: bash, sh, html, javascript, js, css, etc.
-
---------------------------------------------------
-7. Blockquotes
---------------------------------------------------
-
-> This is a quote.
-> It can have multiple lines.
->
-> Blank lines create new paragraphs inside the same quote.
-
-You can nest things inside blockquotes, like lists:
-
-> - item 1
-> - item 2
-
---------------------------------------------------
-8. Horizontal rules
---------------------------------------------------
-
-Each of these on a line by itself creates a horizontal rule:
-
----
-***
-___
-
---------------------------------------------------
-9. Tables (GitHub-style, supported by Hugo/Goldmark)
---------------------------------------------------
-
-Basic table
------------
-| Col A | Col B | Col C |
-|-------|-------|-------|
-|  1    |  2    |  3    |
-|  4    |  5    |  6    |
-
-Aligned table
--------------
-| Left | Center | Right |
-|:-----|:------:|------:|
-| 1    |   2    |     3 |
-| 10   |  20    |    30 |
-
-:-----   = left aligned
-:-----:  = centered
-------:  = right aligned
-
---------------------------------------------------
-10. Line breaks
---------------------------------------------------
-
-Paragraphs
+BASIC LINK
 ----------
-A blank line between lines creates a new paragraph.
+    [Link text](https://example.com)
 
-Line one (paragraph 1).
+    Example: Visit [Hugo docs](https://gohugo.io/documentation/) for help.
 
-Line two (paragraph 2).
+LINK WITH TOOLTIP
+-----------------
+    [Link text](https://example.com "Tooltip shown on hover")
 
-Forced line breaks (without new paragraph)
+LINK TO ANOTHER PAGE IN YOUR SITE
+---------------------------------
+    [See my CV](/engineering/)
+    [Go home](/)
+
+EMAIL LINK
+----------
+    [Email me](mailto:you@example.com)
+
+
+================================================================================
+                                  IMAGES
+================================================================================
+
+BASIC IMAGE
+-----------
+    ![Description of image](/images/photo.jpg)
+
+    The text in brackets is "alt text" - describes the image for
+    accessibility and shows if image fails to load.
+
+IMAGE WITH CAPTION (using Hugo shortcode)
 -----------------------------------------
-Use two spaces at the end of a line:
+    {{< figure src="/images/photo.jpg" caption="My caption here" >}}
 
-Line oneÂ·Â·
-Line two
+IMAGE FROM EXTERNAL URL
+-----------------------
+    ![Logo](https://example.com/logo.png)
 
-(In the above, "Â·Â·" represents two literal spaces.)
+TIP: Store images in your /static/images/ folder, then reference as /images/
 
-Or use raw HTML:
 
-Line one<br>
-Line two
+================================================================================
+                               CODE BLOCKS
+================================================================================
 
---------------------------------------------------
-11. Raw HTML inside Markdown
---------------------------------------------------
+For longer code, use three backticks (```) on their own lines:
 
-You can insert HTML directly:
+WITHOUT SYNTAX HIGHLIGHTING
+---------------------------
+    ```
+    any code here
+    no colors applied
+    ```
 
-<div class="note">
-This is a note block written in raw HTML.
-</div>
+WITH SYNTAX HIGHLIGHTING
+------------------------
+Add the language name after the opening backticks:
 
-Hugo/Goldmark will pass this HTML through (unless HTML is disabled in config).
+    ```python
+    def greet(name):
+        print(f"Hello, {name}!")
+    ```
 
---------------------------------------------------
-12. Hugo shortcodes inside Markdown
---------------------------------------------------
+    ```javascript
+    function greet(name) {
+        console.log(`Hello, ${name}!`);
+    }
+    ```
 
-Shortcodes look like this:
+    ```bash
+    npm install
+    hugo server -D
+    ```
 
-{{< shortcode-name param="value" >}}
+Common languages: python, javascript, js, bash, sh, html, css, yaml, toml, go
 
-Common examples:
 
-{{< youtube id="bgEcI0i8aP4" >}}
+================================================================================
+                               BLOCKQUOTES
+================================================================================
 
-{{< figure src="/images/photo.jpg" caption="Nice image" >}}
+Use > at the start of each line:
 
-Shortcodes are defined as template files in:
-layouts/shortcodes/shortcode-name.html
+    > This is a quote.
+    > It can span multiple lines.
 
-They output HTML that becomes part of the rendered content.
+    > "The only way to do great work is to love what you do."
+    > - Steve Jobs
 
---------------------------------------------------
-13. Hugo template expressions in Markdown (if enabled)
---------------------------------------------------
+NESTED QUOTE
+------------
+    > Someone said:
+    >> This is a quote within a quote.
 
-If Hugo is configured to allow it, you can sometimes use template expressions:
 
-{{ .Title }}
+================================================================================
+                                 TABLES
+================================================================================
 
-{{ .Params.someparam }}
+BASIC TABLE
+-----------
+    | Name    | Role      | Years |
+    |---------|-----------|-------|
+    | Alice   | Engineer  | 5     |
+    | Bob     | Designer  | 3     |
 
-These are more advanced and depend on your Hugo configuration
-(enableInlineShortcodes or render hooks).
+ALIGNED COLUMNS
+---------------
+    | Left      | Center    | Right     |
+    |:----------|:---------:|----------:|
+    | text      | text      | text      |
+    | aligned   | aligned   | aligned   |
+    | left      | center    | right     |
 
---------------------------------------------------
-14. Practical core subset
---------------------------------------------------
+    :---  = left align
+    :---: = center align
+    ---:  = right align
 
-The syntax you will use all the time when writing content:
 
-- *italic* and **bold**
-- # headings (H1âH3 usually enough)
-- - and 1. lists
-- [links](https://example.com)
-- ![images](image.jpg)
-- ``` fenced code blocks ```
-- > blockquotes
-- --- horizontal rules
-- | tables |
-- Hugo shortcodes like {{< youtube id="..." >}}
+================================================================================
+                             LINE BREAKS
+================================================================================
 
-Everything else is niche.
+NEW PARAGRAPH
+-------------
+Leave a blank line between paragraphs:
 
-End of file.
+    First paragraph ends here.
+
+    Second paragraph starts here.
+
+FORCE LINE BREAK (same paragraph)
+---------------------------------
+End a line with two spaces, or use <br>:
+
+    Line one  
+    Line two (still same paragraph)
+
+Or:
+
+    Line one<br>
+    Line two
+
+
+================================================================================
+                            HORIZONTAL RULES
+================================================================================
+
+Any of these create a horizontal line divider:
+
+    ---
+    ***
+    ___
+
+Use them to separate major sections.
+
+
+================================================================================
+                              RAW HTML
+================================================================================
+
+You can write HTML directly when Markdown isn't enough:
+
+    <div class="special-box">
+      <p>Custom styled content here.</p>
+    </div>
+
+    <span style="color: red;">Red text</span>
+
+    <img src="/images/photo.jpg" alt="Photo" width="400">
+
+
+================================================================================
+                            HUGO FRONT MATTER
+================================================================================
+
+Every content file starts with front matter between --- marks:
+
+    ---
+    title: "My Page Title"
+    layout: "engineering"
+    theme: "terminal"
+    date: 2024-01-15
+    draft: false
+    ---
+
+    Your content starts here...
+
+COMMON FRONT MATTER FIELDS
+--------------------------
+    title       Page title (required)
+    layout      Which template to use
+    theme       Which theme to apply (for this site)
+    date        Publication date
+    draft       Set to true to hide from production
+    description Short summary for SEO
+    tags        ["tag1", "tag2"]
+    categories  ["category1"]
+
+
+================================================================================
+                            HUGO SHORTCODES
+================================================================================
+
+Shortcodes are Hugo's special tags for embedding content:
+
+YOUTUBE VIDEO
+-------------
+    {{< youtube id="dQw4w9WgXcQ" >}}
+
+FIGURE WITH CAPTION
+-------------------
+    {{< figure src="/images/photo.jpg" 
+               caption="Photo caption" 
+               alt="Description" >}}
+
+INTERNAL PAGE LINK (by file)
+----------------------------
+    {{< ref "engineering.md" >}}
+
+TIP: Shortcodes use {{< >}} or {{% %}} delimiters.
+     - {{< >}} = output raw HTML
+     - {{% %}} = process content as Markdown
+
+
+================================================================================
+                          ESCAPING SPECIAL CHARACTERS
+================================================================================
+
+To show special characters literally (not as formatting):
+
+    \*not italic\*          Shows: *not italic*
+    \# not a heading        Shows: # not a heading
+    \[not a link\]          Shows: [not a link]
+
+Backslash (\) escapes: * _ # [ ] ( ) ` > + - . !
+
+
+================================================================================
+                               COMMENTS
+================================================================================
+
+HTML comments are hidden from the final page:
+
+    <!-- This text won't appear on the website -->
+
+    <!-- 
+    Multi-line comments work too.
+    Useful for notes to yourself.
+    -->
+
+
+================================================================================
+                              QUICK EXAMPLES
+================================================================================
+
+EXAMPLE: Simple Blog Post
+-------------------------
+    ---
+    title: "My First Post"
+    date: 2024-01-15
+    ---
+
+    Welcome to my blog!
+
+    ## What I Learned Today
+
+    I discovered that **Hugo** is great for building static sites.
+    Here's why:
+
+    - It's fast
+    - It's flexible
+    - It has great themes
+
+    Check out the [official docs](https://gohugo.io/) for more.
+
+
+EXAMPLE: Page with Image and Quote
+----------------------------------
+    ---
+    title: "About Me"
+    ---
+
+    ## Hello!
+
+    ![My photo](/images/me.jpg)
+
+    I'm a developer who loves clean code.
+
+    > "Simplicity is the ultimate sophistication."
+    > - Leonardo da Vinci
+
+    ### My Skills
+
+    | Skill      | Level        |
+    |------------|--------------|
+    | Hugo       | Intermediate |
+    | Markdown   | Expert       |
+
+
+================================================================================
+                            TROUBLESHOOTING
+================================================================================
+
+COMMON MISTAKES
+---------------
+1. Forgetting blank lines before/after lists and code blocks
+2. Not closing code blocks (missing final ```)
+3. Spaces in image/link paths (use %20 or rename file)
+4. Missing alt text in images
+5. Incorrect front matter syntax (use quotes for strings with special chars)
+
+WHEN IN DOUBT
+-------------
+- Check Hugo docs: https://gohugo.io/documentation/
+- Goldmark (Hugo's Markdown parser): https://github.com/yuin/goldmark
+- Run `hugo server -D` and check browser for live preview
+
+
+================================================================================
+                              END OF CHEAT SHEET
+================================================================================
