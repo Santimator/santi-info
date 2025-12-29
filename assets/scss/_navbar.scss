@@ -178,6 +178,10 @@
     width: 100%;
   }
 
+  .nav-menu li:first-child a {
+    padding-left: 0;
+  }
+
   .nav-menu a {
     padding: $space-2 0;
 
@@ -190,6 +194,10 @@
       border-bottom: 3px solid var(--accent);
       padding-left: $space-2;
     }
+  }
+
+  .nav-menu li:first-child a.is-active {
+    padding-left: 0;
   }
 }
 
