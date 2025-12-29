@@ -1,0 +1,124 @@
+// _theme-terminal.scss
+// Theme: Terminal/TUI (Engineering)
+// Feel: Modern developer terminal, clean TUI aesthetic (Tokyo Night inspired)
+
+.theme-terminal {
+  // Color palette: Dark charcoal, steel blue, cyan highlights
+  --bg: #1a1b26;
+  --bg-alt: #16161e;
+  --card-bg: #1f2335;
+  --border: #3b4261;
+  --text-main: #a9b1d6;
+  --text-muted: #565f89;
+  --accent: #7aa2f7;
+  --accent-hover: #89b4fa;
+  --secondary: #7dcfff;
+  --tone-a: #1f2335;
+  --tone-b: #24283b;
+  --tone-c: #292e42;
+  --nav-bg: #16161e;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+
+  // Additional terminal colors
+  --terminal-green: #9ece6a;
+  --terminal-red: #f7768e;
+  --terminal-yellow: #e0af68;
+  --terminal-magenta: #bb9af7;
+  --terminal-cyan: #7dcfff;
+
+  // Typography: Monospace
+  --font-heading: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --font-body: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  // Apply monospace throughout
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  // Terminal-style cards
+  .intro-card,
+  .cv-card {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    position: relative;
+
+    // Terminal window title bar effect
+    &::before {
+      content: "●  ●  ●";
+      display: block;
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.3em;
+    }
+  }
+
+  // Command prompt style for headings
+  h1::before {
+    content: "$ ";
+    color: var(--terminal-green);
+  }
+
+  h2::before {
+    content: "> ";
+    color: var(--accent);
+  }
+
+  // Blinking cursor effect for page title
+  h1::after {
+    content: "▊";
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+    margin-left: 0.25em;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  // List items as command output
+  .cv-list li::before {
+    content: "→";
+    color: var(--terminal-cyan);
+  }
+
+  // Links styled as terminal commands
+  a {
+    color: var(--secondary);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--terminal-green);
+      text-decoration: underline;
+    }
+  }
+
+  // Subtle scanline effect (optional, very subtle)
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.03) 2px,
+      rgba(0, 0, 0, 0.03) 4px
+    );
+    z-index: 1000;
+  }
+}

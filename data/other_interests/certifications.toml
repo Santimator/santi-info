@@ -1,0 +1,13 @@
+# Certifications
+
+[[items]]
+name = "PMP"
+issuer = "Project Management Institute"
+year = "2023"
+status = "In progress"
+
+[[items]]
+name = "Agile/Scrum"
+issuer = "Scrum Alliance"
+year = "2021"
+status = "Certified"

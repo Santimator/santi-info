@@ -1,0 +1,30 @@
+{{/* Render education cards from theme-specific data */}}
+{{ $theme := .Page.Params.theme }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "engineering" }}
+
+{{ with .Page.Site.Data.index $sectionName "education" }}
+  {{ with .items }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>Education</h2>
+        </div>
+        <div class="cv-cards">
+          {{ range . }}
+            <article class="cv-card">
+              <h3>{{ .title }} — {{ .institution }}, {{ .location }} ({{ .years }})</h3>
+              {{ with .details }}
+                <ul class="cv-list">
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="content-shell">
+  <article class="page-article">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    {{/* Intro card presents other interests overview. */}}
+    <section class="intro-card">
+      {{ .Content }}
+    </section>
+
+    {{ partial "cards/generic.html" (dict "Page" . "key" "languages") }}
+    {{ partial "cards/generic.html" (dict "Page" . "key" "certifications") }}
+    {{ partial "cards/generic.html" (dict "Page" . "key" "hobbies") }}
+    {{ partial "cards/generic.html" (dict "Page" . "key" "links") }}
+  </article>
+</div>
+{{ end }}

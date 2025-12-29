@@ -1,0 +1,88 @@
+// _theme-artist.scss
+// Theme: Expressive Classy (The Artist)
+// Feel: Creative, bold but refined, like a well-curated exhibition
+
+.theme-artist {
+  // Color palette: Deep teal, coral, gold, cream - rich but harmonious
+  --bg: #faf7f2;
+  --bg-alt: #f0ebe3;
+  --card-bg: #ffffff;
+  --border: #e0d5c5;
+  --text-main: #2a2a2a;
+  --text-muted: #5a5a5a;
+  --accent: #1a4a5e; // Deep teal
+  --accent-hover: #2a6a7e;
+  --secondary: #e07a5f; // Coral
+  --tone-a: #f5f0e8;
+  --tone-b: #ebe3d8;
+  --tone-c: #e0d5c5;
+  --nav-bg: #ffffff;
+  --shadow: 0 4px 16px rgba(26, 74, 94, 0.1);
+  --shadow-lg: 0 12px 32px rgba(26, 74, 94, 0.15);
+
+  // Additional artistic colors
+  --teal: #1a4a5e;
+  --coral: #e07a5f;
+  --gold: #d4a373;
+  --cream: #faf7f2;
+
+  // Typography: Elegant display for headings
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', system-ui, sans-serif;
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  // Dynamic diagonal accent
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 70%,
+      rgba(224, 122, 95, 0.05) 70%,
+      rgba(224, 122, 95, 0.1) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  // Gallery-style cards
+  .intro-card,
+  .cv-card {
+    border: none;
+    border-left: 4px solid var(--secondary);
+    border-radius: 0;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  // Artistic list markers
+  .cv-list li::before {
+    content: "◆";
+    color: var(--gold);
+  }
+
+  // Color block accents on links
+  a {
+    color: var(--accent);
+    position: relative;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}

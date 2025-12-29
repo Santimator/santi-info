@@ -1,0 +1,17 @@
+# Hobbies & Interests
+
+[[items]]
+name = "Hiking"
+description = "Exploring nature through trails and mountain paths."
+
+[[items]]
+name = "Reading"
+description = "Science fiction, philosophy, and technical literature."
+
+[[items]]
+name = "Cooking"
+description = "Experimenting with recipes from different cultures."
+
+[[items]]
+name = "Board Games"
+description = "Strategy games and social gaming with friends."

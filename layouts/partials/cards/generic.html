@@ -1,0 +1,47 @@
+{{/* Generic card renderer for links, projects, practices, etc. */}}
+{{ $theme := .Page.Params.theme }}
+{{ $key := .key }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "engineering" }}
+
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ $dataset := index $data $key }}
+
+{{ with $dataset }}
+  {{ with .items }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>{{ title $key }}</h2>
+        </div>
+        <div class="cv-cards">
+          {{ range . }}
+            <article class="cv-card">
+              {{/* Handle different data structures based on available fields */}}
+              {{ with .label }}<h3>{{ . }}</h3>{{ end }}
+              {{ with .title }}<h3>{{ . }}</h3>{{ end }}
+              {{ with .name }}<h3>{{ . }}</h3>{{ end }}
+              {{ with .planet }}<h3>{{ . }} ({{ .sign }})</h3>{{ end }}
+              {{ with .language }}<h3>{{ . }} — {{ .level }}</h3>{{ end }}
+              {{ with .description }}<p>{{ . }}</p>{{ end }}
+              {{ with .notes }}<p>{{ . }}</p>{{ end }}
+              {{ with .details }}
+                <ul class="cv-list">
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+              {{ with .responsibilities }}
+                <ul class="cv-list">
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+              {{ with .url }}<a href="{{ . }}" target="_blank" rel="noopener">Visit</a>{{ end }}
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

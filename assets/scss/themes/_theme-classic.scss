@@ -1,0 +1,41 @@
+// _theme-classic.scss
+// Theme: Classic XVIII (Home)
+// Feel: Welcoming, warm, like an 18th-century invitation letter
+
+.theme-classic {
+  // Color palette: Cream, forest green, burgundy accents
+  --bg: #f5f0e6;
+  --bg-alt: #ebe5d8;
+  --card-bg: #fdfbf7;
+  --border: #d4cbb8;
+  --text-main: #2a2a28;
+  --text-muted: #5a5a55;
+  --accent: #2d5a3d;
+  --accent-hover: #3d7a52;
+  --secondary: #8b2942;
+  --tone-a: #f0ebe0;
+  --tone-b: #e5ddd0;
+  --tone-c: #d9d0c0;
+  --nav-bg: #fdfbf7;
+  --shadow: 0 2px 8px rgba(42, 42, 40, 0.08);
+  --shadow-lg: 0 10px 20px rgba(42, 42, 40, 0.12);
+
+  // Typography: Elegant serifs
+  --font-heading: 'Georgia', 'Playfair Display', serif;
+  --font-body: 'Georgia', serif;
+
+  // Classic theme specific styles
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 0.02em;
+  }
+
+  .intro-card {
+    border-left-color: var(--secondary);
+  }
+
+  // Elegant link styling
+  a:hover {
+    color: var(--secondary);
+  }
+}

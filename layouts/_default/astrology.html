@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="content-shell">
+  <article class="page-article">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    {{/* Intro card presents the astrological context. */}}
+    <section class="intro-card">
+      {{ .Content }}
+    </section>
+
+    {{ partial "cards/generic.html" (dict "Page" . "key" "content") }}
+    {{ partial "cards/generic.html" (dict "Page" . "key" "links") }}
+  </article>
+</div>
+{{ end }}

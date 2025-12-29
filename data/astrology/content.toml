@@ -1,0 +1,37 @@
+# Astrology Content
+
+[chart]
+sun = "Aquarius"
+moon = "Scorpio"
+ascendant = "Virgo"
+description = "A blend of analytical precision, emotional depth, and unconventional thinking."
+
+[[placements]]
+planet = "Sun"
+sign = "Aquarius"
+house = "5"
+notes = "Creative expression through unconventional means."
+
+[[placements]]
+planet = "Moon"
+sign = "Scorpio"
+house = "3"
+notes = "Deep emotional processing through communication."
+
+[[placements]]
+planet = "Mercury"
+sign = "Aquarius"
+house = "5"
+notes = "Innovative thinking and unique perspectives."
+
+[[placements]]
+planet = "Venus"
+sign = "Pisces"
+house = "6"
+notes = "Service-oriented love and artistic sensitivity."
+
+[[placements]]
+planet = "Mars"
+sign = "Sagittarius"
+house = "4"
+notes = "Adventurous spirit rooted in home and family."

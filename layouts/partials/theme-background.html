@@ -1,0 +1,82 @@
+{{/* Theme-specific background elements */}}
+{{/* Conditionally add canvas effects based on current theme */}}
+{{ $theme := .Params.theme }}
+
+{{ if eq $theme "celestial" }}
+<script>
+(function() {
+  const canvas = document.createElement('canvas');
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '-1';
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initStars();
+  }
+
+  function initStars() {
+    stars = [];
+    const numStars = Math.floor((canvas.width * canvas.height) / 3000);
+    for (let i = 0; i < numStars; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5 + 0.5,
+        alpha: Math.random(),
+        twinkleSpeed: Math.random() * 0.02 + 0.01
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    stars.forEach(star => {
+      star.alpha += star.twinkleSpeed;
+      const opacity = 0.3 + Math.abs(Math.sin(star.alpha)) * 0.7;
+      
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+{{ end }}
+
+{{ if eq $theme "terminal" }}
+<script>
+(function() {
+  // Subtle CRT scanline effect for terminal theme
+  if (document.body.classList.contains('theme-terminal')) {
+    const scanlines = document.createElement('div');
+    scanlines.style.position = 'fixed';
+    scanlines.style.top = '0';
+    scanlines.style.left = '0';
+    scanlines.style.width = '100%';
+    scanlines.style.height = '100%';
+    scanlines.style.pointerEvents = 'none';
+    scanlines.style.zIndex = '1000';
+    scanlines.style.background = 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px)';
+    document.body.appendChild(scanlines);
+  }
+})();
+</script>
+{{ end }}

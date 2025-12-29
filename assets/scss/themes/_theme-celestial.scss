@@ -1,0 +1,71 @@
+// _theme-celestial.scss
+// Theme: Celestial (My Sky / Astrology)
+// Feel: Mysterious, cosmic, contemplative, deep space
+
+.theme-celestial {
+  // Color palette: Deep space, star white, nebula purples, cosmic gold
+  --bg: #0a0a1a;
+  --bg-alt: #0f0f24;
+  --card-bg: #14142b;
+  --border: #2a2a4a;
+  --text-main: #e8e8f0;
+  --text-muted: #9090a8;
+  --accent: #ffd700; // Cosmic gold
+  --accent-hover: #ffe44d;
+  --secondary: #6b4c9a; // Nebula purple
+  --tone-a: #12122a;
+  --tone-b: #181838;
+  --tone-c: #1e1e48;
+  --nav-bg: #0a0a1a;
+  --shadow: 0 2px 12px rgba(107, 76, 154, 0.2);
+  --shadow-lg: 0 10px 30px rgba(107, 76, 154, 0.3);
+
+  // Additional celestial colors
+  --star-white: #ffffff;
+  --nebula-purple: #6b4c9a;
+  --cosmic-blue: #4a6fa5;
+  --moon-silver: #c0c0d0;
+
+  // Typography: Clean with slight sci-fi feel
+  --font-heading: 'Orbitron', system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  // Starfield background effect (CSS only)
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, white, transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, white, transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 160px 120px, white, transparent),
+    radial-gradient(2px 2px at 200px 50px, rgba(255,215,0,0.8), transparent),
+    radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.6), transparent),
+    radial-gradient(1px 1px at 250px 150px, white, transparent);
+  background-size: 300px 200px;
+  background-color: var(--bg);
+
+  // Glowing cards
+  .intro-card,
+  .cv-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(107, 76, 154, 0.2);
+  }
+
+  // Cosmic list markers
+  .cv-list li::before {
+    content: "★";
+    color: var(--accent);
+  }
+
+  // Glow effect on headings
+  h1 {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+}

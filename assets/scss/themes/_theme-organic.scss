@@ -1,0 +1,53 @@
+// _theme-organic.scss
+// Theme: Organic/Zen (Personal Development)
+// Feel: Calm, mindful, growth-oriented, earthy tones
+
+.theme-organic {
+  // Color palette: Sand, sage green, warm brown, soft cream
+  --bg: #f5f1ea;
+  --bg-alt: #ebe5db;
+  --card-bg: #faf8f4;
+  --border: #d4cbb8;
+  --text-main: #4a4a42;
+  --text-muted: #7a7a70;
+  --accent: #6b8e6b; // Sage green
+  --accent-hover: #5a7d5a;
+  --secondary: #8b7355; // Warm brown
+  --tone-a: #f0ebe3;
+  --tone-b: #e5ddd3;
+  --tone-c: #d9cfc3;
+  --nav-bg: #faf8f4;
+  --shadow: 0 2px 12px rgba(74, 74, 66, 0.08);
+  --shadow-lg: 0 10px 30px rgba(74, 74, 66, 0.12);
+
+  // Additional organic colors
+  --leaf-green: #87a878;
+  --earth-brown: #6b5344;
+  --sand: #d4c4a8;
+  --cream: #faf8f4;
+
+  // Typography: Soft, rounded, generous spacing
+  --font-heading: 'Nunito', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  // Organic flowing cards
+  .intro-card,
+  .cv-card {
+    border-radius: 20px;
+    border-left: 4px solid var(--accent);
+  }
+
+  // Nature-inspired list markers
+  .cv-list li::before {
+    content: "🌱";
+    font-size: 0.8em;
+  }
+}

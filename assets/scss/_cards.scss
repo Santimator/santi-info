@@ -1,0 +1,140 @@
+// _cards.scss
+// Purpose: Reusable card components with theme variations
+
+// Base card styles
+.intro-card,
+.cv-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: $space-3;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cv-card h2,
+.cv-card h3 {
+  margin: 0 0 $space-2;
+}
+
+.cv-card h4 {
+  margin: 0 0 $space-1;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.cv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+}
+
+.cv-list li {
+  position: relative;
+  padding-left: $space-2;
+  line-height: 1.6;
+}
+
+.cv-list strong {
+  color: var(--text-main);
+}
+
+.cv-card p:last-child,
+.cv-list li:last-child {
+  margin-bottom: 0;
+}
+
+// Theme-specific card variations
+
+// Terminal theme: Box drawing characters
+.theme-terminal .cv-card {
+  font-family: 'JetBrains Mono', monospace;
+  border-left: 3px solid var(--accent);
+}
+
+// Blackboard theme: Dashed borders
+.theme-blackboard .cv-card {
+  border: 2px dashed var(--border);
+  border-radius: 2px;
+}
+
+// Organic theme: Rounded with soft shadows
+.theme-organic .cv-card {
+  border-radius: 20px;
+  border-left: 5px solid var(--accent);
+  border: none;
+}
+
+// Celestial theme: Glowing cards
+.theme-celestial .cv-card {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 20px rgba(107, 76, 154, 0.2);
+  background: rgba(20, 20, 43, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+// Artist theme: Gallery-style
+.theme-artist .cv-card {
+  border-left: 5px solid var(--secondary);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// Hyperion theme: Epic cards
+.theme-hyperion .cv-card {
+  border-top: 3px solid var(--accent);
+  border-radius: 2px;
+}
+
+// Classic theme: Elegant borders
+.theme-classic .cv-card {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  &::after {
+    content: "✦";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: var(--secondary);
+    opacity: 0.3;
+    font-size: 0.8rem;
+  }
+}
+
+// Responsive card grid
+.cv-cards {
+  display: grid;
+  gap: $space-3;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  transition: all 0.3s ease;
+}
+
+// Mobile adjustments
+@media (max-width: 600px) {
+  .cv-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-card,
+  .cv-card {
+    padding: $space-2;
+  }
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  .cv-card {
+    &:hover {
+      transform: none;
+    }
+  }
+}

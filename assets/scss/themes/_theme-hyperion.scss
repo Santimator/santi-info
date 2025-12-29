@@ -1,0 +1,92 @@
+// _theme-hyperion.scss
+// Theme: Hyperion (Other Interests)
+// Feel: Epic, literary, timeless yet otherworldly - Dan Simmons inspired
+
+.theme-hyperion {
+  // Color palette: Aged gold, bronze, deep crimson, cosmic dark
+  --bg: #0d1117;
+  --bg-alt: #131920;
+  --card-bg: #1a222c;
+  --border: #2d3640;
+  --text-main: #d4c5a9; // Aged parchment
+  --text-muted: #8b8070;
+  --accent: #c9a227; // Aged gold
+  --accent-hover: #e0b830;
+  --secondary: #722f37; // Deep crimson
+  --tone-a: #161d25;
+  --tone-b: #1d252f;
+  --tone-c: #242d38;
+  --nav-bg: #0d1117;
+  --shadow: 0 2px 12px rgba(201, 162, 39, 0.1);
+  --shadow-lg: 0 10px 30px rgba(201, 162, 39, 0.15);
+
+  // Additional Hyperion colors
+  --gold: #c9a227;
+  --bronze: #cd7f32;
+  --crimson: #722f37;
+  --cosmic-dark: #0d1117;
+  --shrike-silver: #708090;
+
+  // Typography: Classic serif with futuristic touches
+  --font-heading: 'Cinzel', 'Times New Roman', serif;
+  --font-body: 'Crimson Text', Georgia, serif;
+
+  font-family: var(--font-body);
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  // Time Tombs inspired geometric pattern (subtle)
+  background-image:
+    linear-gradient(30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%),
+    linear-gradient(-30deg, transparent 49%, rgba(201, 162, 39, 0.02) 49%, rgba(201, 162, 39, 0.02) 51%, transparent 51%);
+  background-size: 60px 40px;
+  background-color: var(--bg);
+
+  // Epic pilgrimage-style cards
+  .intro-card,
+  .cv-card {
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 2px;
+    position: relative;
+
+    // Subtle metallic sheen effect
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--accent) 0%,
+        var(--bronze) 50%,
+        var(--accent) 100%
+      );
+    }
+  }
+
+  // Pilgrimage-style list markers
+  .cv-list li::before {
+    content: "†";
+    color: var(--bronze);
+    font-weight: bold;
+  }
+
+  // Links with metallic feel
+  a {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--bronze);
+      text-shadow: 0 0 8px rgba(201, 162, 39, 0.3);
+    }
+  }
+}
