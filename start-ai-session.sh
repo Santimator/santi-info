@@ -41,11 +41,10 @@ if [ ! -f "opencode.jsonc" ]; then
         "local-memory",
         "--mcp",
         "--config",
-        "/home/devuser/project/mcp-memory/config.yaml"
-      ],
-      "environment": {
-        "LOCAL_MEMORY_DIR": "/home/devuser/project/mcp-memory"
-      }
+        "/home/devuser/project/mcp-memory/config.yaml",
+        "--db-path",
+        "/home/devuser/project/mcp-memory/memory.db"
+      ]
     }
   }
 }
@@ -69,7 +68,7 @@ else
     echo "--- OpenCode Zen authentication found. Full model access enabled. ---"
     docker run -it --rm \
         -v "$(pwd)":$PROJECT_PATH \
-        -v "$AUTH_PATH":$AUTH_CONTAINER_PATH:ro \
+	-v "$AUTH_PATH":$AUTH_CONTAINER_PATH:ro \
         --name "$CONTAINER_NAME" \
         "$IMAGE_NAME" \
         /home/devuser/.opencode/bin/opencode
