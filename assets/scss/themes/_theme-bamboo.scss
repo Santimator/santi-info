@@ -1,0 +1,195 @@
+// _theme-bamboo.scss
+// Bamboo Chaguan Theme: Serene Asian tea house aesthetic with greens and creams
+
+.theme-bamboo {
+  // Light mode: Cream background with green accents
+  --bg: #f5f3eb;
+  --bg-alt: #ebe8dd;
+  --card-bg: #faf8f2;
+  --border: #d4d0c0;
+  --text-main: #3a4238;
+  --text-muted: #6a7268;
+  --accent: #5a7a4a;
+  --accent-hover: #4a6a3a;
+  --secondary: #8b9d7a;
+  --tone-a: #f0ede3;
+  --tone-b: #e8e3d8;
+  --tone-c: #ddd8cc;
+  --nav-bg: #faf8f2;
+  --shadow: 0 2px 10px rgba(90, 122, 74, 0.08);
+  --shadow-lg: 0 10px 25px rgba(90, 122, 74, 0.12);
+  
+  // Bamboo-specific colors
+  --bamboo-green: #5a7a4a;
+  --bamboo-dark: #3a4a2a;
+  --tea-cream: #f5f3eb;
+  --stone-gray: #9a9a88;
+  --moss-green: #7a8a6a;
+}
+
+// Dark mode: System preference
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme-mode="light"]) .theme-bamboo {
+    --bg: #1a1f1a;
+    --bg-alt: #222822;
+    --card-bg: #2a312a;
+    --border: #3a4238;
+    --text-main: #e8e5dc;
+    --text-muted: #a8a59c;
+    --accent: #8ab87a;
+    --accent-hover: #9ac88a;
+    --secondary: #aabf9a;
+    --tone-a: #252a25;
+    --tone-b: #2d322d;
+    --tone-c: #353a35;
+    --nav-bg: #1a1f1a;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+    
+    --bamboo-green: #8ab87a;
+    --bamboo-dark: #5a7a4a;
+    --tea-cream: #e8e5dc;
+    --stone-gray: #6a6a58;
+    --moss-green: #9aaa8a;
+  }
+}
+
+// Dark mode: Forced via toggle
+html[data-theme-mode="dark"] body.theme-bamboo {
+  --bg: #1a1f1a;
+  --bg-alt: #222822;
+  --card-bg: #2a312a;
+  --border: #3a4238;
+  --text-main: #e8e5dc;
+  --text-muted: #a8a59c;
+  --accent: #8ab87a;
+  --accent-hover: #9ac88a;
+  --secondary: #aabf9a;
+  --tone-a: #252a25;
+  --tone-b: #2d322d;
+  --tone-c: #353a35;
+  --nav-bg: #1a1f1a;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  
+  --bamboo-green: #8ab87a;
+  --bamboo-dark: #5a7a4a;
+  --tea-cream: #e8e5dc;
+  --stone-gray: #6a6a58;
+  --moss-green: #9aaa8a;
+}
+
+// Typography
+.theme-bamboo {
+  --font-heading: 'Noto Serif', 'Georgia', serif;
+  --font-body: 'Noto Sans', system-ui, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.theme-bamboo h1,
+.theme-bamboo h2,
+.theme-bamboo h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+// Bamboo shadow background pattern
+.theme-bamboo {
+  position: relative;
+  background: var(--bg);
+}
+
+.theme-bamboo::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, transparent 0%, transparent 48%, var(--bamboo-green) 48%, var(--bamboo-green) 50%, transparent 50%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, transparent 58%, var(--bamboo-green) 58%, var(--bamboo-green) 60%, transparent 60%, transparent 100%),
+    linear-gradient(90deg, transparent 0%, transparent 78%, var(--bamboo-green) 78%, var(--bamboo-green) 80%, transparent 80%, transparent 100%);
+  background-size: 20px 100%, 25px 100%, 18px 100%;
+  background-position: 0 0, 40px 0, 80px 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// Card styling
+.theme-bamboo .intro-card,
+.theme-bamboo .cv-card {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--bamboo-green);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  background: var(--card-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-bamboo .intro-card::after,
+.theme-bamboo .cv-card::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, var(--bamboo-green) 0%, transparent 70%);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+// List styling with bamboo nodes
+.theme-bamboo .cv-list li::before {
+  content: "◉";
+  color: var(--bamboo-green);
+  font-size: 0.6em;
+  margin-right: 0.5em;
+  opacity: 0.7;
+}
+
+// Links with subtle underline
+.theme-bamboo .page-main a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-bamboo .page-main a:hover {
+  color: var(--bamboo-dark);
+  border-bottom-color: var(--bamboo-green);
+}
+
+// Navigation subtle styling
+.theme-bamboo .site-nav {
+  border-bottom: 2px solid var(--bamboo-green);
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+}
+
+// Footer with bamboo accent
+.theme-bamboo .site-footer {
+  border-top: 2px solid var(--bamboo-green);
+  background: var(--card-bg);
+}
+
+// Smooth card hover
+.theme-bamboo .cv-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-bamboo .cv-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+// Calm, zen-like transitions
+.theme-bamboo * {
+  transition-timing-function: ease-in-out;
+}
