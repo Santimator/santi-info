@@ -1,16 +1,12 @@
 .site-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: static;
   padding: $space-3 $space-4;
   background: var(--nav-bg);
   color: var(--text-main);
   text-align: center;
   font-size: 0.95rem;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 10;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border-top: 1px solid var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-meta {
@@ -39,7 +35,7 @@
   }
 }
 
-.theme-toggle {
+.theme-toggle-footer {
   background: none;
   border: none;
   color: inherit;
@@ -49,9 +45,7 @@
   margin: 0;
   line-height: 1;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: none;
 
   &:hover,
   &:focus {
@@ -61,6 +55,16 @@
 
   .theme-toggle-icon {
     display: block;
+  }
+}
+
+// Footer icons styling
+.footer-meta a {
+  font-size: 1.3rem;
+  font-weight: 700;
+  
+  span {
+    display: inline-block;
   }
 }
 
@@ -102,4 +106,44 @@
 
 .theme-classic .site-footer {
   border-top: 3px double var(--secondary);
+}
+
+// Desktop: Fixed footer with theme toggle, text links
+@media (min-width: 760px) {
+  .site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    border-top: 1px solid var(--border);
+  }
+
+  .theme-toggle-footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-meta a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    
+    span[aria-hidden="true"] {
+      display: none;
+    }
+
+    &::after {
+      content: attr(aria-label);
+    }
+  }
+
+  .footer-meta a[href^="mailto"]::after {
+    content: "santiagomj@gmail.com";
+  }
+
+  .footer-meta a[href*="linkedin"]::after {
+    content: "LinkedIn";
+  }
 }

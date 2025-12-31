@@ -14,33 +14,11 @@
 
 .nav-inner {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: $space-2;
-  padding: $space-2;
-}
-
-.nav-branding {
-  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: $space-3;
-}
-
-.nav-brand {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.2s ease, transform 0.2s ease;
-
-  &:hover,
-  &:focus {
-    color: var(--text-main);
-    transform: translateY(-1px);
-  }
+  gap: $space-2;
+  padding: $space-2;
 }
 
 .nav-toggle {
@@ -77,14 +55,44 @@
 
 .nav-panel {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
   width: 100%;
   border-top: 1px solid var(--border);
   background: var(--nav-bg);
+  box-shadow: var(--shadow);
 }
 
 .site-nav.is-open .nav-panel,
 .nav-panel[aria-hidden="false"] {
   display: block;
+}
+
+.theme-toggle-nav {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: $space-1;
+  margin: 0;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  .theme-toggle-icon {
+    display: block;
+  }
 }
 
 .nav-menu {
@@ -141,20 +149,21 @@
 }
 
 @media (min-width: 760px) {
-  .nav-toggle {
+  .nav-toggle,
+  .theme-toggle-nav {
     display: none;
   }
 
   .nav-panel {
     display: block;
+    position: static;
     flex: 1;
     border-top: none;
     background: transparent;
+    box-shadow: none;
   }
 
   .nav-inner {
-    flex-direction: row;
-    align-items: center;
     gap: $space-3;
     padding: $space-3;
   }
@@ -195,31 +204,4 @@
   }
 }
 
-// Theme-specific nav styles
-.theme-terminal .nav-brand {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.1rem;
-}
-
-.theme-blackboard .nav-brand {
-  font-family: 'Caveat', cursive;
-}
-
-.theme-celestial .nav-brand {
-  text-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
-}
-
-.theme-artist .nav-brand {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-
-.theme-hyperion .nav-brand {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.3rem;
-}
-
-.theme-organic .nav-brand {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-}
+// Theme-specific nav styles removed - no branding element
