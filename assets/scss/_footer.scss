@@ -58,6 +58,11 @@
   }
 }
 
+// Hide separator before toggle on mobile
+.footer-separator-toggle {
+  display: none;
+}
+
 // Footer icons styling
 .footer-meta a {
   font-size: 1.3rem;
@@ -98,9 +103,6 @@
 
 .theme-organic .site-footer {
   border-top: 2px solid var(--leaf-green);
-  border-radius: 20px 20px 0 0;
-  margin-left: $space-3;
-  margin-right: $space-3;
   background: var(--card-bg);
 }
 
@@ -124,6 +126,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .footer-separator-toggle {
+    display: inline;
   }
 
   .footer-meta a {
