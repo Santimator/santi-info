@@ -16,8 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: $space-3;
-  padding: $space-3;
+  gap: $space-2;
+  padding: $space-2;
 }
 
 .nav-branding {
@@ -44,6 +44,9 @@
 }
 
 .nav-toggle {
+  display: flex;
+  align-items: center;
+  gap: $space-1;
   padding: $space-2 $space-3;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -59,6 +62,17 @@
     transform: translateY(-1px);
     border-color: var(--accent);
   }
+}
+
+.hamburger-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.nav-toggle-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
 .nav-panel {
@@ -141,6 +155,8 @@
   .nav-inner {
     flex-direction: row;
     align-items: center;
+    gap: $space-3;
+    padding: $space-3;
   }
 
   .nav-menu {
@@ -172,6 +188,10 @@
 
   .nav-menu li:first-child a.is-active {
     padding-left: 0;
+  }
+
+  .nav-menu li:last-child a.is-active {
+    padding-right: 0;
   }
 }
 
