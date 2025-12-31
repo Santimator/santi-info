@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply mode to HTML element (Safari-compatible)
     function applyMode(mode) {
       document.documentElement.setAttribute('data-theme-mode', mode);
+      // Force Safari to recalculate styles immediately
+      void document.documentElement.offsetHeight;
     }
 
     // Update icon based on current mode
