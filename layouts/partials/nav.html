@@ -15,12 +15,6 @@
                     <a class="{{ if or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}is-active{{ end }}" href="{{ .URL | relURL }}">{{ .Name }}</a>
                 </li>
                 {{ end }}
-                {{/* Theme toggle button at end of menu */}}
-                <li>
-                    <button class="theme-toggle" type="button" aria-label="Toggle theme">
-                        <span class="theme-toggle-icon" aria-hidden="true">🌗</span>
-                    </button>
-                </li>
             </ul>
         </div>
         {{ end }}

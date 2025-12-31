@@ -27,32 +27,6 @@
   gap: $space-3;
 }
 
-.theme-toggle {
-  padding: $space-1 $space-2;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--nav-bg);
-  color: var(--text-main);
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-
-  &:hover,
-  &:focus {
-    background: var(--tone-a);
-    transform: translateY(-1px);
-    border-color: var(--accent);
-  }
-
-  .theme-toggle-icon {
-    display: block;
-  }
-}
-
 .nav-brand {
   font-size: 1.25rem;
   font-weight: 700;

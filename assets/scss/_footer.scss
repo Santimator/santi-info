@@ -39,6 +39,31 @@
   }
 }
 
+.theme-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  .theme-toggle-icon {
+    display: block;
+  }
+}
+
 // Theme-specific footer styles
 .theme-terminal .site-footer {
   border-top: 1px solid var(--border);
