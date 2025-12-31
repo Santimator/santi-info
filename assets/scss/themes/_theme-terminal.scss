@@ -28,7 +28,7 @@
 
   // Dark mode (Tokyo Night)
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #1a1b26;
       --bg-alt: #16161e;
       --card-bg: #1f2335;
@@ -54,7 +54,7 @@
   }
 }
 
-body.force-dark .theme-terminal {
+html[data-theme-mode="dark"] body.theme-terminal {
   --bg: #1a1b26;
   --bg-alt: #16161e;
   --card-bg: #1f2335;

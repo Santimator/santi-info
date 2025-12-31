@@ -22,7 +22,7 @@
 
   // Dark mode: Aged dark parchment, muted greens
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #1a1816;
       --bg-alt: #252320;
       --card-bg: #2d2a26;
@@ -42,8 +42,8 @@
   }
 }
 
-// Manual dark mode override
-body.force-dark .theme-classic {
+// Manual dark mode override (Safari-compatible selector)
+html[data-theme-mode="dark"] body.theme-classic {
   --bg: #1a1816;
   --bg-alt: #252320;
   --card-bg: #2d2a26;

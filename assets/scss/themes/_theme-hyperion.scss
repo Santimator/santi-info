@@ -28,7 +28,7 @@
 
   // Dark mode: Cosmic dark, aged gold
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #0d1117;
       --bg-alt: #131920;
       --card-bg: #1a222c;
@@ -54,7 +54,7 @@
   }
 }
 
-body.force-dark .theme-hyperion {
+html[data-theme-mode="dark"] body.theme-hyperion {
   --bg: #0d1117;
   --bg-alt: #131920;
   --card-bg: #1a222c;

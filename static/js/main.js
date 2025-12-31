@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // Dark mode toggle with localStorage persistence (2 states: light/dark)
+  // Safari-safe implementation using HTML data attributes
   (() => {
     const STORAGE_KEY = 'theme-preference';
     const ICONS = { light: '☀️', dark: '🌙' };
@@ -30,29 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Get system preference
+    // Get system preference (with Safari fallback)
     function getSystemPreference() {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      try {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch (e) {
+        return 'light'; // Fallback for older browsers
+      }
     }
 
     // Get current mode from localStorage or system preference
     function getCurrentMode() {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === 'light' || saved === 'dark') {
-        return saved;
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === 'light' || saved === 'dark') {
+          return saved;
+        }
+      } catch (e) {
+        // localStorage unavailable (Safari Private Browsing, etc.)
+        console.warn('localStorage unavailable:', e);
       }
       return getSystemPreference();
     }
 
-    // Apply mode to body element
+    // Apply mode to HTML element (Safari-compatible)
     function applyMode(mode) {
-      document.body.classList.remove('force-light', 'force-dark');
-      
-      if (mode === 'light') {
-        document.body.classList.add('force-light');
-      } else {
-        document.body.classList.add('force-dark');
-      }
+      document.documentElement.setAttribute('data-theme-mode', mode);
     }
 
     // Update icon based on current mode
@@ -66,7 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const current = getCurrentMode();
       const next = current === 'light' ? 'dark' : 'light';
       
-      localStorage.setItem(STORAGE_KEY, next);
+      try {
+        localStorage.setItem(STORAGE_KEY, next);
+      } catch (e) {
+        console.warn('Cannot persist theme preference:', e);
+      }
+      
       applyMode(next);
       updateIcon(next);
     }

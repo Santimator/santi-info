@@ -27,7 +27,7 @@
 
   // Dark mode: Dark canvas, jewel tones
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #1a1816;
       --bg-alt: #242220;
       --card-bg: #2d2a28;
@@ -52,7 +52,7 @@
   }
 }
 
-body.force-dark .theme-artist {
+html[data-theme-mode="dark"] body.theme-artist {
   --bg: #1a1816;
   --bg-alt: #242220;
   --card-bg: #2d2a28;

@@ -27,7 +27,7 @@
 
   // Dark mode: Deep space
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #0a0a1a;
       --bg-alt: #0f0f24;
       --card-bg: #14142b;
@@ -52,7 +52,7 @@
   }
 }
 
-body.force-dark .theme-celestial {
+html[data-theme-mode="dark"] body.theme-celestial {
   --bg: #0a0a1a;
   --bg-alt: #0f0f24;
   --card-bg: #14142b;
@@ -98,7 +98,7 @@ body.force-dark .theme-celestial {
 
   // Dark mode: Starfield effect
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       background-image:
         radial-gradient(1px 1px at 20px 30px, white, transparent),
         radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
@@ -120,7 +120,7 @@ body.force-dark .theme-celestial {
 }
 
 // Force dark mode starfield
-body.force-dark .theme-celestial {
+html[data-theme-mode="dark"] body.theme-celestial {
   background-image:
     radial-gradient(1px 1px at 20px 30px, white, transparent),
     radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),

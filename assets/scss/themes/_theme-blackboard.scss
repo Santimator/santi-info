@@ -28,7 +28,7 @@
 
   // Dark mode: Blackboard with chalk
   @media (prefers-color-scheme: dark) {
-    &:not(.force-light) {
+    html:not([data-theme-mode="light"]) & {
       --bg: #1a1a1a;
       --bg-alt: #222222;
       --card-bg: #2a2a2a;
@@ -54,7 +54,7 @@
   }
 }
 
-body.force-dark .theme-blackboard {
+html[data-theme-mode="dark"] body.theme-blackboard {
   --bg: #1a1a1a;
   --bg-alt: #222222;
   --card-bg: #2a2a2a;

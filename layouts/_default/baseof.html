@@ -7,7 +7,20 @@
     <!-- Basic responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <!-- Prevent FOUC: Apply saved theme preference immediately (Safari-safe) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme-preference');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.setAttribute('data-theme-mode', saved);
+          }
+        } catch (e) {
+          // Safari Private Browsing or localStorage disabled - graceful degradation
+          console.warn('Theme persistence unavailable:', e);
+        }
+      })();
+    </script>
 
     <!-- Google Fonts for themes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,17 +35,6 @@
 {{/* Determine theme from page params, default to "classic" for home */}}
 {{ $theme := .Params.theme | default "classic" }}
 <body class="theme-{{ $theme }}" data-theme="{{ $theme }}">
-    <!-- Prevent flash: apply saved theme preference immediately -->
-    <script>
-      (function() {
-        var saved = localStorage.getItem('theme-preference');
-        if (saved === 'light') {
-          document.body.classList.add('force-light');
-        } else if (saved === 'dark') {
-          document.body.classList.add('force-dark');
-        }
-      })();
-    </script>
 
     <!-- Top navigation bar -->
     {{ partial "nav.html" . }}
