@@ -20,14 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Dark mode toggle with localStorage persistence (2 states: light/dark)
   // Safari-safe implementation using HTML data attributes
+  // Handles both nav and footer theme toggles
   (() => {
     const STORAGE_KEY = 'theme-preference';
     const ICONS = { light: '☀️', dark: '🌙' };
 
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = document.querySelector('.theme-toggle-icon');
+    const themeToggles = document.querySelectorAll('.theme-toggle-nav, .theme-toggle-footer');
+    const themeIcons = document.querySelectorAll('.theme-toggle-icon');
     
-    if (!themeToggle || !themeIcon) {
+    if (themeToggles.length === 0) {
       return;
     }
 
@@ -61,10 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
       void document.documentElement.offsetHeight;
     }
 
-    // Update icon based on current mode
-    function updateIcon(mode) {
-      themeIcon.textContent = ICONS[mode] || ICONS.light;
-      themeToggle.setAttribute('aria-label', `Current: ${mode} mode (click to toggle)`);
+    // Update all icons based on current mode
+    function updateIcons(mode) {
+      themeIcons.forEach(icon => {
+        icon.textContent = ICONS[mode] || ICONS.light;
+      });
+      themeToggles.forEach(toggle => {
+        toggle.setAttribute('aria-label', `Current: ${mode} mode (click to toggle)`);
+      });
     }
 
     // Toggle between light and dark
@@ -79,16 +84,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       applyMode(next);
-      updateIcon(next);
+      updateIcons(next);
     }
 
     // Initialize
     function init() {
       const mode = getCurrentMode();
       applyMode(mode);
-      updateIcon(mode);
+      updateIcons(mode);
       
-      themeToggle.addEventListener('click', toggleMode);
+      themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', toggleMode);
+      });
     }
 
     init();
