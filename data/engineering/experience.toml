@@ -3,7 +3,7 @@
 [[items]]
 role = "PMO"
 company = "Eviden"
-location = "Madrid"
+location = "Madrid, Spain"
 years = "2023–2025"
 responsibilities = [
   "Power BI modelling and data analysis.",
@@ -13,7 +13,7 @@ responsibilities = [
 [[items]]
 role = "Agent Credit Control"
 company = "Small World FS"
-location = "Madrid"
+location = "Madrid, Spain"
 years = "2022–2023"
 responsibilities = [
   "Managed credit operations for external collaborators and led negotiation plus KPI tracking.",
@@ -24,7 +24,7 @@ responsibilities = [
 [[items]]
 role = "Global Coordination"
 company = "FOSC"
-location = "Madrid"
+location = "Madrid, Spain"
 years = "2018–2021"
 responsibilities = [
   "Coordinated a multi-project environment with effort estimation, resource allocation, and conflict resolution.",
@@ -34,7 +34,7 @@ responsibilities = [
 [[items]]
 role = "Cellular Modelling"
 company = "FIAS"
-location = "Frankfurt"
+location = "Frankfurt, Germany"
 years = "2016–2017"
 responsibilities = [
   "Modelled migration of T. brucei and validated data with biology lab partners.",
@@ -42,18 +42,9 @@ responsibilities = [
 ]
 
 [[items]]
-role = "PhD Student (unfinished)"
-company = "University of Würzburg / Goethe University Frankfurt"
-location = "Germany"
-years = "2016–2017"
-responsibilities = [
-  "Researched modelling and simulation of cell migration over an eight-month period."
-]
-
-[[items]]
 role = "EEG Data Analysis"
 company = "Laboratoire Dynamique du Langage"
-location = "Lyon"
+location = "Lyon, France"
 years = "2015"
 responsibilities = [
   "Studied interactions between tactile stimuli and language processing using ERPLab in MATLAB."
@@ -62,7 +53,7 @@ responsibilities = [
 [[items]]
 role = "Quality Testing Intern"
 company = "The CoSMo Company"
-location = "Lyon"
+location = "Lyon, France"
 years = "2014"
 responsibilities = [
   "Automated code analysis tooling, evaluated state-of-the-art analysers, and built Qt/C++ test bricks."
@@ -71,7 +62,7 @@ responsibilities = [
 [[items]]
 role = "Neural Modelling Intern"
 company = "ZI Mannheim"
-location = "Germany"
+location = "Mannheim, Germany"
 years = "2013"
 responsibilities = [
   "Ported a prefrontal cortex model from C++ to the Python-based NEST environment and learned multithreading."
@@ -80,7 +71,7 @@ responsibilities = [
 [[items]]
 role = "Manual Worker"
 company = "Airbus"
-location = "France"
+location = "Toulouse, France"
 years = "2009"
 responsibilities = [
   "Assisted with assembly of A319/A320 aircraft pylons and gained hands-on workshop experience."

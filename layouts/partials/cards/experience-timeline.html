@@ -11,34 +11,33 @@
     <section class="cv-section">
       <div class="cv-inner">
         <div class="cv-section-header">
-          <h2>Experience</h2>
+          <h2>Working experience & internships</h2>
         </div>
         <div class="git-timeline">
           {{ range $index, $item := . }}
             <article class="git-commit">
+              {{/* Date on the left */}}
+              <div class="git-date-col">
+                <span class="git-date">{{ .years }}</span>
+              </div>
+              
               {{/* Timeline connector */}}
               <div class="git-graph">
                 <span class="git-node"></span>
-                {{ if ne $index (sub (len $) 1) }}
-                  <span class="git-line"></span>
-                {{ end }}
+                <span class="git-line"></span>
               </div>
               
               {{/* Commit content */}}
               <div class="git-content">
                 <div class="git-header">
-                  <span class="git-hash">{{ substr (md5 .role) 0 7 }}</span>
-                  <span class="git-meta">
-                    <span class="git-author">{{ .company }}</span>
-                    <span class="git-separator">·</span>
-                    <span class="git-date">{{ .years }}</span>
-                  </span>
+                  <span class="git-author">{{ .company }}</span>
+                  <span class="git-separator">·</span>
+                  <span class="git-location">{{ .location }}</span>
                 </div>
                 
                 <h3 class="git-message">{{ .role }}</h3>
                 
                 <div class="git-details">
-                  <span class="git-location">{{ .location }}</span>
                   {{ with .responsibilities }}
                     <ul class="git-diff">
                       {{ range . }}

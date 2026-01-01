@@ -161,8 +161,6 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--secondary);
-  border-left: 3px solid var(--secondary);
-  padding-left: $space-1;
   padding-bottom: 0.25rem;
   
   &::before {
@@ -226,13 +224,26 @@
 
 .git-commit {
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 100px 40px 1fr;
   gap: $space-2;
   position: relative;
   
   &:not(:last-child) {
     margin-bottom: 0;
   }
+  
+  &:last-child {
+    .git-line {
+      display: none;
+    }
+  }
+}
+
+.git-date-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 6px;
 }
 
 .git-graph {
@@ -260,7 +271,7 @@
   flex-grow: 1;
   background: var(--border);
   margin-top: 4px;
-  min-height: 40px;
+  min-height: 60px;
 }
 
 .git-content {
@@ -271,40 +282,32 @@
 .git-header {
   display: flex;
   align-items: center;
-  gap: $space-2;
+  gap: 0.75rem;
   margin-bottom: $space-1;
   flex-wrap: wrap;
-}
-
-.git-hash {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.git-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
 }
 
 .git-author {
   font-weight: 600;
   color: var(--text-main);
+  font-size: 0.95rem;
 }
 
 .git-separator {
-  color: var(--border);
+  color: var(--text-muted);
+  font-weight: 300;
 }
 
 .git-date {
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  text-align: right;
+}
+
+.git-location {
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .git-message {
@@ -316,19 +319,7 @@
 }
 
 .git-details {
-  margin-top: $space-2;
-}
-
-.git-location {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: $space-1;
-  
-  &::before {
-    content: "📍 ";
-    opacity: 0.7;
-  }
+  margin-top: $space-1;
 }
 
 .git-diff {
@@ -359,8 +350,12 @@
 // Responsive timeline
 @media (max-width: 600px) {
   .git-commit {
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: 70px 30px 1fr;
     gap: $space-1;
+  }
+  
+  .git-date-col {
+    font-size: 0.8rem;
   }
   
   .git-node {
@@ -378,11 +373,12 @@
     font-size: 1.1rem;
   }
   
-  .git-hash {
-    font-size: 0.8rem;
+  .git-date {
+    font-size: 0.75rem;
   }
   
-  .git-meta {
+  .git-author,
+  .git-location {
     font-size: 0.85rem;
   }
 }
