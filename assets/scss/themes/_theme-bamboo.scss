@@ -176,7 +176,7 @@ html[data-theme-mode="dark"] body.theme-bamboo {
 // Footer with bamboo accent
 .theme-bamboo .site-footer {
   border-top: 2px solid var(--bamboo-green);
-  background: var(--card-bg);
+  background: var(--card-bg) !important;
 }
 
 // Smooth card hover

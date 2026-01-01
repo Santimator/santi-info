@@ -181,8 +181,12 @@
     padding-left: 0;
   }
 
+  .nav-menu li:last-child a {
+    padding-right: 0;
+  }
+
   .nav-menu a {
-    padding: $space-2 0;
+    padding: $space-2 $space-1;
 
     &:hover {
       transform: none;
