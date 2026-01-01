@@ -1,0 +1,65 @@
+{{/* Practice Bubbles - Organic Garden Layout */}}
+{{ $theme := .Page.Params.theme }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "personal_development" }}
+
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ with $data.practices }}
+  {{ with .items }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>Practices</h2>
+        </div>
+        
+        <div class="practice-bubbles-container">
+          {{ range $index, $item := . }}
+            {{/* Calculate duration for size */}}
+            {{ $currentYear := 2026 }}
+            {{ $years := .years }}
+            {{ $startYear := 0 }}
+            
+            {{/* Parse start year from "YYYY–present" format */}}
+            {{ if findRE "^\\d{4}" $years }}
+              {{ $startYear = int (index (findRE "^\\d{4}" $years) 0) }}
+            {{ end }}
+            
+            {{ $duration := sub $currentYear $startYear }}
+            
+            {{/* Assign size class based on duration */}}
+            {{ $sizeClass := "bubble-md" }}
+            {{ if ge $duration 15 }}
+              {{ $sizeClass = "bubble-xl" }}
+            {{ else if ge $duration 10 }}
+              {{ $sizeClass = "bubble-lg" }}
+            {{ else if ge $duration 7 }}
+              {{ $sizeClass = "bubble-md" }}
+            {{ else }}
+              {{ $sizeClass = "bubble-sm" }}
+            {{ end }}
+            
+            {{/* Assign color class (cycle through 4 colors) */}}
+            {{ $colorIndex := mod $index 4 }}
+            {{ $colorClass := printf "bubble-color-%d" (add $colorIndex 1) }}
+            
+            <div class="practice-bubble {{ $sizeClass }} {{ $colorClass }}" data-practice="{{ .name }}">
+              <div class="bubble-content">
+                <h3 class="bubble-title">{{ .name }}</h3>
+                <div class="bubble-text">
+                  <p class="bubble-description">{{ .description }}</p>
+                  {{ with .anecdotes }}
+                    <p class="bubble-anecdote">{{ . }}</p>
+                  {{ else }}
+                    <p class="bubble-anecdote bubble-anecdote-empty">More to come...</p>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

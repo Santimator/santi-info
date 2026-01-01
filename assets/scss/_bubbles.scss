@@ -1,0 +1,270 @@
+// _bubbles.scss
+// Purpose: Organic bubble layout for Personal Development practices
+
+// Container for bubbles
+.practice-bubbles-container {
+  position: relative;
+  min-height: 600px;
+  width: 100%;
+  margin: $space-4 0;
+  padding: $space-3;
+  
+  @media (max-width: $bp-md) {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3;
+    padding: $space-2;
+  }
+}
+
+// Base bubble styles
+.practice-bubble {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  
+  // Mobile: stack vertically
+  @media (max-width: $bp-md) {
+    position: relative;
+    border-radius: 20px;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+  }
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    
+    .bubble-description {
+      opacity: 0;
+      max-height: 0;
+    }
+    
+    .bubble-anecdote {
+      opacity: 1;
+      max-height: 500px;
+    }
+  }
+}
+
+// Bubble content wrapper
+.bubble-content {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+}
+
+.bubble-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.3;
+  
+  @media (max-width: $bp-md) {
+    font-size: 1.4rem;
+  }
+}
+
+.bubble-text {
+  position: relative;
+  width: 100%;
+}
+
+.bubble-description,
+.bubble-anecdote {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--text-main);
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.bubble-description {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.bubble-anecdote {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  @media (max-width: $bp-md) {
+    position: relative;
+    opacity: 1;
+    max-height: none;
+    margin-top: $space-1;
+    padding-top: $space-1;
+    border-top: 1px solid var(--border);
+  }
+}
+
+.bubble-anecdote-empty {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+// Size variants
+.bubble-sm {
+  width: 180px;
+  height: 180px;
+  
+  .bubble-title {
+    font-size: 1rem;
+  }
+  
+  .bubble-description,
+  .bubble-anecdote {
+    font-size: 0.85rem;
+  }
+}
+
+.bubble-md {
+  width: 220px;
+  height: 220px;
+  
+  .bubble-title {
+    font-size: 1.1rem;
+  }
+  
+  .bubble-description,
+  .bubble-anecdote {
+    font-size: 0.9rem;
+  }
+}
+
+.bubble-lg {
+  width: 260px;
+  height: 260px;
+  
+  .bubble-title {
+    font-size: 1.25rem;
+  }
+  
+  .bubble-description,
+  .bubble-anecdote {
+    font-size: 0.95rem;
+  }
+}
+
+.bubble-xl {
+  width: 320px;
+  height: 320px;
+  
+  .bubble-title {
+    font-size: 1.4rem;
+  }
+  
+  .bubble-description,
+  .bubble-anecdote {
+    font-size: 1rem;
+  }
+}
+
+// Color variants (using organic theme colors)
+.bubble-color-1 {
+  background: linear-gradient(135deg, 
+    rgba(107, 142, 107, 0.3), 
+    rgba(107, 142, 107, 0.5));
+  border: 2px solid var(--accent);
+  
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(135deg, 
+      rgba(139, 168, 136, 0.2), 
+      rgba(139, 168, 136, 0.4));
+  }
+}
+
+.bubble-color-2 {
+  background: linear-gradient(135deg, 
+    rgba(139, 115, 85, 0.3), 
+    rgba(139, 115, 85, 0.5));
+  border: 2px solid var(--secondary);
+  
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(135deg, 
+      rgba(168, 144, 112, 0.2), 
+      rgba(168, 144, 112, 0.4));
+  }
+}
+
+.bubble-color-3 {
+  background: linear-gradient(135deg, 
+    rgba(135, 168, 120, 0.3), 
+    rgba(135, 168, 120, 0.5));
+  border: 2px solid var(--leaf-green);
+  
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(135deg, 
+      rgba(151, 184, 136, 0.2), 
+      rgba(151, 184, 136, 0.4));
+  }
+}
+
+.bubble-color-4 {
+  background: linear-gradient(135deg, 
+    rgba(212, 196, 168, 0.3), 
+    rgba(212, 196, 168, 0.5));
+  border: 2px solid var(--sand);
+  
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(135deg, 
+      rgba(212, 196, 168, 0.2), 
+      rgba(212, 196, 168, 0.4));
+  }
+}
+
+// Organic Garden Layout - Fixed Positions
+// Layout pattern (desktop only):
+//    [Family - md]        [Living - xl]
+//
+//              [Taichi - sm]
+//                                   [Enneagram - lg]
+
+.practice-bubble[data-practice="Family Constellations"] {
+  top: 10%;
+  left: 8%;
+}
+
+.practice-bubble[data-practice="Living Abroad & Cross-Cultural Learning"] {
+  top: 5%;
+  right: 15%;
+}
+
+.practice-bubble[data-practice="Taichi & Qigong"] {
+  top: 55%;
+  left: 25%;
+}
+
+.practice-bubble[data-practice="Enneagram"] {
+  bottom: 8%;
+  right: 10%;
+}
+
+// Touch device optimizations
+@media (hover: none) and (pointer: coarse) {
+  .practice-bubble {
+    &:hover {
+      transform: none;
+    }
+  }
+}
