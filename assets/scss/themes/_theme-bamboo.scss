@@ -173,10 +173,10 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   backdrop-filter: blur(10px);
 }
 
-// Footer with bamboo accent
+// Footer with bamboo accent - explicit light mode default
 .theme-bamboo .site-footer {
   border-top: 2px solid var(--bamboo-green);
-  background: var(--card-bg) !important;
+  background: #faf8f2;
 }
 
 // Smooth card hover
@@ -192,4 +192,15 @@ html[data-theme-mode="dark"] body.theme-bamboo {
 // Calm, zen-like transitions
 .theme-bamboo * {
   transition-timing-function: ease-in-out;
+}
+
+// Dark mode footer overrides
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme-mode="light"]) .theme-bamboo .site-footer {
+    background: #2a312a;
+  }
+}
+
+html[data-theme-mode="dark"] body.theme-bamboo .site-footer {
+  background: #2a312a;
 }
