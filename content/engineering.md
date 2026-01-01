@@ -4,4 +4,4 @@ layout: "engineering"
 theme: "terminal"
 ---
 
-Technical roles spanning data analysis, project coordination, and computational research. From modelling cell migration to building Power BI dashboards.
+This is an overview of my technical side. The starting point and where I always return to. A mix of working experience, hobbies, abilities and lots of dedication.

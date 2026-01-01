@@ -26,7 +26,7 @@
   --terminal-magenta: #a855f7;
   --terminal-cyan: #06b6d4;
 
-  // Dark mode (Pure black GitHub style)
+  // Dark mode (Pure black GitHub style with Matrix green)
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
       --bg: #000000;
@@ -37,7 +37,7 @@
       --text-muted: #a1a1a1;
       --accent: #eab308;
       --accent-hover: #fbbf24;
-      --secondary: #10b981;
+      --secondary: #00ff41;
       --tone-a: #0d0d0d;
       --tone-b: #161616;
       --tone-c: #1f1f1f;
@@ -45,7 +45,7 @@
       --shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
       --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.9);
 
-      --terminal-green: #10b981;
+      --terminal-green: #00ff41;
       --terminal-red: #f87171;
       --terminal-yellow: #eab308;
       --terminal-magenta: #c084fc;
@@ -63,7 +63,7 @@ html[data-theme-mode="dark"] body.theme-terminal {
   --text-muted: #a1a1a1;
   --accent: #eab308;
   --accent-hover: #fbbf24;
-  --secondary: #10b981;
+  --secondary: #00ff41;
   --tone-a: #0d0d0d;
   --tone-b: #161616;
   --tone-c: #1f1f1f;
@@ -71,7 +71,7 @@ html[data-theme-mode="dark"] body.theme-terminal {
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.9);
 
-  --terminal-green: #10b981;
+  --terminal-green: #00ff41;
   --terminal-red: #f87171;
   --terminal-yellow: #eab308;
   --terminal-magenta: #c084fc;
@@ -104,12 +104,22 @@ html[data-theme-mode="dark"] body.theme-terminal {
   }
 
   // Command prompt style for headings (content only, not nav)
-  .page-main h1::before {
-    content: "santi | grep ";
-    color: var(--text-muted);
-    font-size: 0.7em;
-    margin-right: 0.5rem;
-    font-family: var(--font-mono);
+  .page-main h1 {
+    &::before {
+      content: "santi | grep \"";
+      color: var(--text-muted);
+      font-size: 1em;
+      margin-right: 0;
+      font-family: var(--font-mono);
+    }
+    
+    &::after {
+      content: "\"";
+      color: var(--text-muted);
+      font-size: 1em;
+      margin-left: 0;
+      font-family: var(--font-mono);
+    }
   }
 
   .page-main h2::before {

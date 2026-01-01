@@ -22,16 +22,6 @@ responsibilities = [
 ]
 
 [[items]]
-role = "Global Coordination"
-company = "FOSC"
-location = "Madrid, Spain"
-years = "2018–2021"
-responsibilities = [
-  "Coordinated a multi-project environment with effort estimation, resource allocation, and conflict resolution.",
-  "Led activity planning, definition, and operational support while engaging stakeholders."
-]
-
-[[items]]
 role = "Cellular Modelling"
 company = "FIAS"
 location = "Frankfurt, Germany"

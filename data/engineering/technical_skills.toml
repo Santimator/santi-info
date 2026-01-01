@@ -2,11 +2,11 @@
 
 [[categories]]
 name = "Programming Languages & Tools"
-skills = ["Java", "C", "C++", "Python", "R", "MATLAB", "MySQL"]
+skills = ["Java", "C", "C++", "Python", "R", "MATLAB", "MySQL", "Git"]
 
 [[categories]]
 name = "Specialized Software"
-skills = ["FIJI (Image Processing)", "KNIME (Data Mining)", "COPASI (Biological Network Modeling)"]
+skills = ["FIJI (Image Processing)", "KNIME (Data Mining)", "COPASI (Biological Network Modeling)", "ComfyUI", "OpenCode"]
 
 [[categories]]
 name = "Mathematical Modeling"
@@ -23,3 +23,7 @@ skills = ["Genomics", "Proteomics", "Phylogenetics", "Drug Design", "Image & Sou
 [[categories]]
 name = "Data & Networks"
 skills = ["Database Design", "Network Applications", "Server-Client Communication", "Graphical Interfaces"]
+
+[[categories]]
+name = "DevOps & Infrastructure"
+skills = ["Docker", "Self-Hosting", "Tailscale", "PC Building"]
