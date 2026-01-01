@@ -1,7 +1,7 @@
 ---
-title: "Other Interests & Skills"
+title: "Complementary Skills & Interests"
 layout: "other-interests"
 theme: "hyperion"
 ---
 
-Quick notes on languages, certifications, and hobbies I continue to cultivate alongside my professional work.
+Languages, certifications, licenses, and hobbies that complement my professional work and enrich my perspective.

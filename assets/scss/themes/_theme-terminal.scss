@@ -1,93 +1,93 @@
 // _theme-terminal.scss
 // Theme: Terminal/TUI (Engineering)
-// Feel: Modern developer terminal, clean TUI aesthetic (Tokyo Night inspired)
+// Feel: Modern developer terminal inspired by OpenCode (VS Code dark theme)
 
 .theme-terminal {
-  // Light mode: Light terminal (VS Code light inspired)
-  --bg: #f8f8f8;
-  --bg-alt: #eeeeee;
+  // Light mode: Clean, professional light theme
+  --bg: #ffffff;
+  --bg-alt: #f3f3f3;
   --card-bg: #ffffff;
-  --border: #d0d0d0;
-  --text-main: #1e1e1e;
-  --text-muted: #6a6a6a;
-  --accent: #0066cc;
-  --accent-hover: #0078e7;
-  --secondary: #007acc;
-  --tone-a: #f3f3f3;
-  --tone-b: #e8e8e8;
-  --tone-c: #dddddd;
-  --nav-bg: #f8f8f8;
+  --border: #e1e4e8;
+  --text-main: #24292e;
+  --text-muted: #586069;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --secondary: #eab308;
+  --tone-a: #fafbfc;
+  --tone-b: #f6f8fa;
+  --tone-c: #e1e4e8;
+  --nav-bg: #ffffff;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
 
-  --terminal-green: #008000;
-  --terminal-red: #cd3131;
-  --terminal-yellow: #949800;
-  --terminal-magenta: #bc05bc;
-  --terminal-cyan: #0598bc;
+  --terminal-green: #22c55e;
+  --terminal-red: #ef4444;
+  --terminal-yellow: #eab308;
+  --terminal-magenta: #a855f7;
+  --terminal-cyan: #06b6d4;
 
-  // Dark mode (Tokyo Night)
+  // Dark mode (OpenCode/VS Code inspired)
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      --bg: #1a1b26;
-      --bg-alt: #16161e;
-      --card-bg: #1f2335;
-      --border: #3b4261;
-      --text-main: #a9b1d6;
-      --text-muted: #565f89;
-      --accent: #7aa2f7;
-      --accent-hover: #89b4fa;
-      --secondary: #7dcfff;
-      --tone-a: #1f2335;
-      --tone-b: #24283b;
-      --tone-c: #292e42;
-      --nav-bg: #16161e;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+      --bg: #1e1e1e;
+      --bg-alt: #252525;
+      --card-bg: #2d2d2d;
+      --border: #3e3e42;
+      --text-main: #cccccc;
+      --text-muted: #858585;
+      --accent: #a78bfa;
+      --accent-hover: #c4b5fd;
+      --secondary: #fbbf24;
+      --tone-a: #252525;
+      --tone-b: #2d2d2d;
+      --tone-c: #333333;
+      --nav-bg: #1e1e1e;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
 
-      --terminal-green: #9ece6a;
-      --terminal-red: #f7768e;
-      --terminal-yellow: #e0af68;
-      --terminal-magenta: #bb9af7;
-      --terminal-cyan: #7dcfff;
+      --terminal-green: #4ade80;
+      --terminal-red: #f87171;
+      --terminal-yellow: #fbbf24;
+      --terminal-magenta: #c084fc;
+      --terminal-cyan: #22d3ee;
     }
   }
 }
 
 html[data-theme-mode="dark"] body.theme-terminal {
-  --bg: #1a1b26;
-  --bg-alt: #16161e;
-  --card-bg: #1f2335;
-  --border: #3b4261;
-  --text-main: #a9b1d6;
-  --text-muted: #565f89;
-  --accent: #7aa2f7;
-  --accent-hover: #89b4fa;
-  --secondary: #7dcfff;
-  --tone-a: #1f2335;
-  --tone-b: #24283b;
-  --tone-c: #292e42;
-  --nav-bg: #16161e;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.6);
+  --bg: #1e1e1e;
+  --bg-alt: #252525;
+  --card-bg: #2d2d2d;
+  --border: #3e3e42;
+  --text-main: #cccccc;
+  --text-muted: #858585;
+  --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
+  --secondary: #fbbf24;
+  --tone-a: #252525;
+  --tone-b: #2d2d2d;
+  --tone-c: #333333;
+  --nav-bg: #1e1e1e;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
 
-  --terminal-green: #9ece6a;
-  --terminal-red: #f7768e;
-  --terminal-yellow: #e0af68;
-  --terminal-magenta: #bb9af7;
-  --terminal-cyan: #7dcfff;
+  --terminal-green: #4ade80;
+  --terminal-red: #f87171;
+  --terminal-yellow: #fbbf24;
+  --terminal-magenta: #c084fc;
+  --terminal-cyan: #22d3ee;
 }
 
 .theme-terminal {
 
-  // Typography: Monospace
-  --font-heading: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  --font-body: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  // Typography: Clean sans-serif with monospace for code elements
+  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
 
-  // Apply monospace throughout
+  // Use readable sans-serif fonts
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.65;
 
   h1, h2, h3 {
     font-family: var(--font-heading);
@@ -105,47 +105,44 @@ html[data-theme-mode="dark"] body.theme-terminal {
 
   // Command prompt style for headings (content only, not nav)
   .page-main h1::before {
-    content: "santi@work:~$ ";
-    color: var(--terminal-green);
-    font-size: 0.85em;
+    content: "▸ ";
+    color: var(--accent);
+    font-size: 0.9em;
+    margin-right: 0.5rem;
   }
 
   .page-main h2::before {
-    content: "├─ ";
-    color: var(--accent);
+    content: "● ";
+    color: var(--secondary);
+    margin-right: 0.4rem;
   }
 
   .cv-section-header h2::before {
     content: "";
   }
 
-  // List items as command output
+  // List items with modern bullet
   .cv-list li::before {
-    content: ">";
-    color: var(--terminal-cyan);
+    content: "▸";
+    color: var(--accent);
+    margin-right: 0.5rem;
   }
 
-  // Links styled as terminal commands (content only, not nav)
+  // Links with modern styling (content only, not nav)
   .page-main a {
-    color: var(--secondary);
+    color: var(--accent);
     text-decoration: none;
     position: relative;
-
-    &::after {
-      content: " [LINK]";
-      font-size: 0.65em;
-      color: var(--text-muted);
-      vertical-align: super;
-      margin-left: 0.25em;
-    }
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
 
     &:hover {
-      color: var(--terminal-green);
-      text-decoration: underline;
+      color: var(--accent-hover);
+      border-bottom-color: var(--accent-hover);
     }
   }
 
-  // Subtle scanline effect
+  // Very subtle texture for modern feel
   &::after {
     content: "";
     position: fixed;
@@ -157,9 +154,9 @@ html[data-theme-mode="dark"] body.theme-terminal {
     background: repeating-linear-gradient(
       0deg,
       transparent,
-      transparent 2px,
-      rgba(0, 0, 0, 0.02) 2px,
-      rgba(0, 0, 0, 0.02) 4px
+      transparent 4px,
+      rgba(0, 0, 0, 0.008) 4px,
+      rgba(0, 0, 0, 0.008) 8px
     );
     z-index: 1000;
   }

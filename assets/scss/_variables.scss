@@ -26,9 +26,10 @@
   --shadow: 0 2px 8px rgba(42, 42, 40, 0.08);
   --shadow-lg: 0 10px 20px rgba(42, 42, 40, 0.12);
 
-  // Typography
-  --font-heading: 'Georgia', 'Playfair Display', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  // Typography - Improved readability with modern fonts
+  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Cascadia Code', 'Consolas', monospace;
 }
 
 // Spacing scale (Sass variables for calculations)

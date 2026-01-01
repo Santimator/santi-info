@@ -1,0 +1,33 @@
+{{/* Technical Skills Card - displays categorized technical skills */}}
+{{ $theme := .Page.Params.theme }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "engineering" }}
+
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ $skillsData := index $data "technical_skills" }}
+
+{{ with $skillsData }}
+  {{ with .categories }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>Technical Skills</h2>
+        </div>
+        <div class="skills-grid">
+          {{ range . }}
+            <article class="skill-category">
+              <h3 class="skill-category-name">{{ .name }}</h3>
+              <ul class="skill-list">
+                {{ range .skills }}
+                  <li class="skill-item">{{ . }}</li>
+                {{ end }}
+              </ul>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

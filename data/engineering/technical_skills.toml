@@ -1,0 +1,25 @@
+# Technical Skills from INSA Lyon Bioinformatics & Modelling Program
+
+[[categories]]
+name = "Programming Languages & Tools"
+skills = ["Java", "C", "C++", "Python", "R", "MATLAB", "MySQL"]
+
+[[categories]]
+name = "Specialized Software"
+skills = ["FIJI (Image Processing)", "KNIME (Data Mining)", "COPASI (Biological Network Modeling)"]
+
+[[categories]]
+name = "Mathematical Modeling"
+skills = ["Differential Equations", "Linear Algebra", "Matrix Analysis", "Game Theory", "Algorithmics"]
+
+[[categories]]
+name = "Statistics & Analysis"
+skills = ["ANOVA", "PCA", "Bayesian Statistics", "Monte Carlo Methods", "Linear & Non-linear Regression"]
+
+[[categories]]
+name = "Computational Biology"
+skills = ["Genomics", "Proteomics", "Phylogenetics", "Drug Design", "Image & Sound Treatment"]
+
+[[categories]]
+name = "Data & Networks"
+skills = ["Database Design", "Network Applications", "Server-Client Communication", "Graphical Interfaces"]
