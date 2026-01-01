@@ -4,7 +4,9 @@ layout: "smj"
 theme: "bamboo"
 ---
 
-Welcome to my site. Feel invited to explore it at your own rhythm. You'll find different facets of my work and interests—each one something I can bring to various kinds of projects, depending on what you need.
+Welcome to my site!
+
+Feel invited to explore it at your own rhythm. You'll find different facets of my work and interests—each one something I can bring to various kinds of projects, depending on what you need.
 
 I'm what you might call highly intellectually gifted, which in practice means I've always been deeply curious about how things work—systems, people, patterns. This has led me to explore many areas, as you'll see in my professional and personal trajectory. It started in Lyon, France, where I studied bioinformatics and modelling at INSA, learned to live abroad, handle a new language, and navigate myself and my emotions in unfamiliar territory.
 
