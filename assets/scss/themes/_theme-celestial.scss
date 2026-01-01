@@ -3,27 +3,27 @@
 // Feel: Mysterious, cosmic, contemplative
 
 .theme-celestial {
-  // Light mode: Day sky, soft cosmic colors
-  --bg: #e8f4f8;
-  --bg-alt: #dce8f0;
-  --card-bg: #f5f9fc;
-  --border: #b8d4e0;
+  // Light mode: Day sky with stronger cosmic colors
+  --bg: #d0e4f0;
+  --bg-alt: #c0d4e8;
+  --card-bg: #e0ecf8;
+  --border: #98b8d0;
   --text-main: #1a1a2a;
   --text-muted: #505068;
   --accent: #d4a017;
   --accent-hover: #e4b027;
-  --secondary: #8b7aa8;
-  --tone-a: #e0f0f8;
-  --tone-b: #d8e8f0;
-  --tone-c: #cce0e8;
-  --nav-bg: #f5f9fc;
-  --shadow: 0 2px 12px rgba(139, 122, 168, 0.12);
-  --shadow-lg: 0 10px 30px rgba(139, 122, 168, 0.18);
+  --secondary: #7b6a98;
+  --tone-a: #c8dce8;
+  --tone-b: #b8d0e0;
+  --tone-c: #a8c4d8;
+  --nav-bg: #e0ecf8;
+  --shadow: 0 2px 12px rgba(139, 122, 168, 0.15);
+  --shadow-lg: 0 10px 30px rgba(139, 122, 168, 0.22);
 
   --star-white: #ffffff;
-  --nebula-purple: #9b8ab8;
-  --cosmic-blue: #6a8fa5;
-  --moon-silver: #a0a0b0;
+  --nebula-purple: #8b7aa8;
+  --cosmic-blue: #5a7f95;
+  --moon-silver: #9090a0;
 
   // Dark mode: Deep space
   @media (prefers-color-scheme: dark) {
@@ -86,14 +86,14 @@ html[data-theme-mode="dark"] body.theme-celestial {
     letter-spacing: 0.05em;
   }
 
-  // Light mode: Dawn gradient (more visible)
+  // Light mode: Dawn gradient with stronger intensity
   background: linear-gradient(
     180deg,
-    #cce4f0 0%,
-    #e0d0e8 25%,
-    #f0e0d8 50%,
-    #f8e8c8 75%,
-    #e8d8e0 100%
+    #a8d4e8 0%,
+    #c8b8d8 25%,
+    #d8c8b8 50%,
+    #e8d8a8 75%,
+    #d8c0d0 100%
   );
 
   // Dark mode: Starfield effect

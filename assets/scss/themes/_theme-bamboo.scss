@@ -173,10 +173,10 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   backdrop-filter: blur(10px);
 }
 
-// Footer with bamboo accent - explicit light mode default
+// Footer with bamboo accent - matches nav background
 .theme-bamboo .site-footer {
   border-top: 2px solid var(--bamboo-green);
-  background: #faf8f2;
+  background: var(--nav-bg);
 }
 
 // Smooth card hover
@@ -187,20 +187,4 @@ html[data-theme-mode="dark"] body.theme-bamboo {
 .theme-bamboo .cv-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
-}
-
-// Calm, zen-like transitions
-.theme-bamboo * {
-  transition-timing-function: ease-in-out;
-}
-
-// Dark mode footer overrides
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme-mode="light"]) .theme-bamboo .site-footer {
-    background: #2a312a;
-  }
-}
-
-html[data-theme-mode="dark"] body.theme-bamboo .site-footer {
-  background: #2a312a;
 }

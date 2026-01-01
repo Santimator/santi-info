@@ -73,41 +73,45 @@
   }
 }
 
-// Theme-specific footer styles
+// Theme-specific footer styles - all match nav background
 .theme-terminal .site-footer {
   border-top: 1px solid var(--border);
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
+  background: var(--nav-bg);
 }
 
 .theme-blackboard .site-footer {
   border-top: 2px dashed var(--border);
+  background: var(--nav-bg);
 }
 
 .theme-celestial .site-footer {
   border-top: 1px solid var(--nebula-purple);
-  background: rgba(10, 10, 26, 0.95);
+  background: var(--nav-bg);
   backdrop-filter: blur(10px);
 }
 
 .theme-artist .site-footer {
   border-top: 4px solid var(--secondary);
-  background: var(--card-bg);
+  background: var(--nav-bg);
 }
 
 .theme-hyperion .site-footer {
   border-top: 2px solid var(--gold);
   font-family: 'Crimson Text', serif;
   font-style: italic;
+  background: var(--nav-bg);
 }
 
 .theme-organic .site-footer {
   border-top: 2px solid var(--leaf-green);
-  background: var(--card-bg);
+  background: var(--nav-bg);
 }
 
 .theme-classic .site-footer {
   border-top: 3px double var(--secondary);
+  background: var(--nav-bg);
 }
 
 // Desktop: Fixed footer with theme toggle, text links
