@@ -6,16 +6,12 @@ level = "Native"
 
 [[items]]
 language = "French"
-level = "C2 (Bilingual)"
+level = "Fluent"
 
 [[items]]
 language = "English"
-level = "C1 (Professional)"
+level = "Fluent"
 
 [[items]]
-language = "German"
-level = "B2 (Independent)"
-
-[[items]]
-language = "Portuguese"
-level = "A2 (Elementary)"
+language = "Chinese"
+level = "Basic"

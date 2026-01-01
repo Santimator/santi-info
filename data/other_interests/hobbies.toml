@@ -1,17 +1,29 @@
 # Hobbies & Interests
 
 [[items]]
-name = "Hiking"
-description = "Exploring nature through trails and mountain paths."
+name = "MENSA Member"
+description = "Intellectual fellowship for high IQ individuals. Member since 2024, scored in the 99th percentile."
 
 [[items]]
-name = "Reading"
-description = "Science fiction, philosophy, and technical literature."
+name = "Licenses & Mobility"
+description = "Driving licenses for car and motorbike, boat license, and diving certification. Freedom to explore by land, water, and sea."
 
 [[items]]
-name = "Cooking"
-description = "Experimenting with recipes from different cultures."
+name = "AI & Technology Exploration"
+description = "Exploring AI applications, self-hosting infrastructure, and PC building. Interested in how AI can transform work systems, economy, ecology, and geopolitics."
 
 [[items]]
-name = "Board Games"
-description = "Strategy games and social gaming with friends."
+name = "Philosophy & Systems Thinking"
+description = "Deep interest in understanding how different systems (social, economic, technological) interact and how they might be reimagined for collective benefit."
+
+[[items]]
+name = "Content Creation"
+description = "YouTube channel (Mr. Menso ES) and podcast (El Camino de Santi) exploring personal development, philosophy, and life experiences."
+
+[[items]]
+name = "Music Performance"
+description = "Clarinetist since childhood. Street performances, collaborative projects, and continuous musical exploration."
+
+[[items]]
+name = "International Living & Cultural Exploration"
+description = "Passionate about experiencing different cultures firsthand. Lived in France, Germany, Mayotte, and China, always eager to learn from diverse perspectives."

@@ -1,13 +1,31 @@
-# Certifications
+# Certifications & Formal Training
 
 [[items]]
-name = "PMP"
-issuer = "Project Management Institute"
-year = "2023"
-status = "In progress"
+name = "Engineering Degree in Bioinformatics and Modelling"
+issuer = "INSA de Lyon"
+year = "2014"
+description = "Master-equivalent five-year program in biology, computer science, and mathematical modelling."
 
 [[items]]
-name = "Agile/Scrum"
-issuer = "Scrum Alliance"
+name = "Family Constellations"
+issuer = "Svagito Liebermeister"
 year = "2021"
-status = "Certified"
+description = "Systemic therapeutic approach to understanding family dynamics and relational patterns."
+
+[[items]]
+name = "University Expert in Taichi y Qigong"
+issuer = "INEF Madrid"
+year = "2022"
+description = "Formal training in traditional Chinese movement and energy cultivation practices."
+
+[[items]]
+name = "Bases de Actuación ante la Cámara I y II"
+issuer = "La Central de Cine de Madrid"
+year = "2017"
+description = "Film acting fundamentals and camera technique training."
+
+[[items]]
+name = "University Expert in Digital Transformation and Business Management"
+issuer = "UPM, Madrid"
+year = "2025"
+description = "Contemporary approaches to digital transformation in business contexts."

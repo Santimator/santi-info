@@ -3,10 +3,32 @@
 [[items]]
 role = "Music Teacher"
 company = "French Government"
-location = "Mayotte"
+location = "Mayotte, Africa"
 years = "2017–2018"
 responsibilities = [
   "Managed classes, prepared and delivered course content, and evaluated students.",
   "Taught clarinet and music theory to students of various ages.",
   "Organized recitals and performances for the local community."
+]
+
+[[items]]
+role = "Rock Dance Instructor"
+company = "University"
+location = "Lyon, France"
+years = "2010–2014"
+responsibilities = [
+  "Taught French couple dancing (rock) to university students.",
+  "Led workshops and practice sessions.",
+  "Served as vice president of student-run dancing club."
+]
+
+[[items]]
+role = "Private Tutor"
+company = "Independent"
+location = "Various"
+years = "2008–2018"
+responsibilities = [
+  "Mathematics, Spanish, and French tutoring for children and private students.",
+  "Personalized lesson plans and progress tracking.",
+  "Adapted teaching methods to individual learning styles."
 ]

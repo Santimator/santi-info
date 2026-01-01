@@ -153,6 +153,10 @@
     content: "santiagomj@gmail.com";
   }
 
+  .footer-meta a[href*="github"]::after {
+    content: "GitHub";
+  }
+
   .footer-meta a[href*="linkedin"]::after {
     content: "LinkedIn";
   }

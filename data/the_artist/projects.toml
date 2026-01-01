@@ -1,25 +1,39 @@
 # Artist Projects
 
 [[items]]
+title = "YouTube Channel: Mr. Menso ES"
+type = "media"
+description = "Personal development, philosophy, and life reflections. Sharing insights from the journey of self-discovery and growth."
+years = "2018–present"
+url = "https://www.youtube.com/@Mr.MensoES"
+
+[[items]]
+title = "Podcast: El Camino de Santi"
+type = "media"
+description = "Audio storytelling exploring personal transformation, cultural experiences, and philosophical reflections on modern life."
+years = "2018–present"
+url = "https://open.spotify.com/show/0ItZvv53G2Rf6k7UpTck4P"
+
+[[items]]
 title = "Dance & Choreography"
 type = "performance"
-description = "Partner dances, solo pieces, and choreographed shows during Lyon years."
+description = "Rock (French couple dancing), partner dances, and choreographed performances. Vice president of student-run dancing club at university, teaching and organizing events."
 years = "2010–2016"
 
 [[items]]
-title = "Theatre"
+title = "Acting & Film"
 type = "performance"
-description = "Acting and physical theatre explorations."
-years = "2012–2015"
+description = "Film acting training at La Central de Cine de Madrid. Explored physical theatre, camera technique, and performance fundamentals."
+years = "2017"
 
 [[items]]
 title = "Music Performance"
 type = "music"
-description = "Clarinet performances, street music, and collaborative projects."
-years = "2000–present"
+description = "Clarinet performances since childhood. Street music, teaching, collaborative projects, and continuous musical exploration across genres and contexts."
+years = "1995–present"
 
 [[items]]
 title = "Video Projects"
 type = "media"
-description = "Short films, mini-series, and creative video experiments."
+description = "Short films, mini-series, and creative video experiments. Early explorations in visual storytelling and content creation."
 years = "2014–2018"

@@ -10,7 +10,104 @@
       {{ .Content }}
     </section>
 
-    {{ partial "cards/generic.html" (dict "Page" . "key" "content") }}
+    {{/* Enneagram Section */}}
+    {{ $enneagramData := .Site.Data.astrology.enneagram }}
+    {{ if $enneagramData }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <header class="cv-section-header">
+          <h2>Enneagram</h2>
+        </header>
+        <div class="cv-cards">
+          {{ if $enneagramData.profile }}
+          <div class="cv-card">
+            <h3>Type {{ $enneagramData.profile.type }}{{ if $enneagramData.profile.wing }} - Wing {{ $enneagramData.profile.wing }}{{ end }}</h3>
+            {{ if $enneagramData.profile.description }}
+            <p>{{ $enneagramData.profile.description }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ range $enneagramData.traits }}
+          <div class="cv-card">
+            <h3>{{ .trait }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* Western Astrology Section */}}
+    {{ $westernData := .Site.Data.astrology.western }}
+    {{ if $westernData }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <header class="cv-section-header">
+          <h2>Western Astrology</h2>
+        </header>
+        {{ if $westernData.chart }}
+        <div class="cv-cards">
+          <div class="cv-card">
+            <h3>Chart Overview</h3>
+            <p><strong>Sun:</strong> {{ $westernData.chart.sun }} | <strong>Moon:</strong> {{ $westernData.chart.moon }} | <strong>Ascendant:</strong> {{ $westernData.chart.ascendant }}</p>
+            {{ if $westernData.chart.description }}
+            <p>{{ $westernData.chart.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ if $westernData.placements }}
+        <div class="cv-cards">
+          {{ range $westernData.placements }}
+          <div class="cv-card">
+            <h3>{{ .planet }} in {{ .sign }}</h3>
+            <h4>House {{ .house }}</h4>
+            {{ if .notes }}
+            <p>{{ .notes }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* Chinese Astrology Section */}}
+    {{ $chineseData := .Site.Data.astrology.chinese }}
+    {{ if $chineseData }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <header class="cv-section-header">
+          <h2>Chinese Astrology</h2>
+        </header>
+        {{ if $chineseData.zodiac }}
+        <div class="cv-cards">
+          <div class="cv-card">
+            <h3>{{ $chineseData.zodiac.animal }} - {{ $chineseData.zodiac.element }}</h3>
+            <h4>Year {{ $chineseData.zodiac.year }}</h4>
+            {{ if $chineseData.zodiac.description }}
+            <p>{{ $chineseData.zodiac.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        {{ if $chineseData.traits }}
+        <div class="cv-cards">
+          {{ range $chineseData.traits }}
+          <div class="cv-card">
+            <h3>{{ .trait }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* Links Section (if exists) */}}
     {{ partial "cards/generic.html" (dict "Page" . "key" "links") }}
   </article>
 </div>

@@ -1,6 +1,16 @@
 # Artist Media Links
 
 [[items]]
+label = "YouTube Channel: Mr. Menso ES"
+description = "Personal development and philosophy content."
+url = "https://www.youtube.com/@Mr.MensoES"
+
+[[items]]
+label = "Podcast: El Camino de Santi"
+description = "Audio reflections on personal transformation."
+url = "https://open.spotify.com/show/0ItZvv53G2Rf6k7UpTck4P"
+
+[[items]]
 label = "Singing in the Park"
 description = "Street performance clip."
 url = "https://www.youtube.com/watch?v=GLBDMtixtTI"
