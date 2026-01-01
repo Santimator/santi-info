@@ -1,0 +1,22 @@
+# Western Astrology
+# TODO: Add your real astrological chart data
+
+[chart]
+sun = "PLACEHOLDER"
+moon = "PLACEHOLDER"
+ascendant = "PLACEHOLDER"
+description = "Add your chart interpretation here."
+
+[[placements]]
+planet = "Sun"
+sign = "PLACEHOLDER"
+house = "PLACEHOLDER"
+notes = "Add notes about your sun placement."
+
+[[placements]]
+planet = "Moon"
+sign = "PLACEHOLDER"
+house = "PLACEHOLDER"
+notes = "Add notes about your moon placement."
+
+# Add more placements as needed

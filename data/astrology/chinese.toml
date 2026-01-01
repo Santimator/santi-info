@@ -1,0 +1,12 @@
+# Chinese Astrology
+# TODO: Add your Chinese zodiac information
+
+[zodiac]
+animal = "PLACEHOLDER"
+element = "PLACEHOLDER"
+year = "PLACEHOLDER"
+description = "Add your Chinese zodiac interpretation here."
+
+[[traits]]
+trait = "PLACEHOLDER"
+description = "Add trait description here."

@@ -1,0 +1,11 @@
+# Enneagram
+# TODO: Add your enneagram type, description, wings, growth/stress points, etc.
+
+[profile]
+type = "PLACEHOLDER"
+wing = "PLACEHOLDER"
+description = "Add your enneagram information here."
+
+[[traits]]
+trait = "PLACEHOLDER"
+description = "Add trait description here."

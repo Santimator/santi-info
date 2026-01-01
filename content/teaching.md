@@ -4,4 +4,4 @@ layout: "teaching"
 theme: "blackboard"
 ---
 
-Education and teaching experiences. Sharing knowledge, facilitating learning, and helping others grow.
+I have a tendency to teach anything to anyone—music, dance, languages, mathematics—with a secret pleasure in finding the right metaphors and the proper terms to make complex ideas accessible. Teaching isn't just about transferring knowledge; it's about connection, understanding, and helping others discover their own capacity to learn.
