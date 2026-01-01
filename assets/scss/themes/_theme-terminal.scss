@@ -1,53 +1,53 @@
 // _theme-terminal.scss
 // Theme: Terminal/TUI (Engineering)
-// Feel: Modern developer terminal inspired by OpenCode (VS Code dark theme)
+// Feel: GitHub/Git log style with pure black background
 
 .theme-terminal {
   // Light mode: Clean, professional light theme
   --bg: #ffffff;
-  --bg-alt: #f3f3f3;
+  --bg-alt: #f8f8f8;
   --card-bg: #ffffff;
   --border: #e1e4e8;
   --text-main: #24292e;
-  --text-muted: #586069;
-  --accent: #8b5cf6;
-  --accent-hover: #7c3aed;
-  --secondary: #eab308;
+  --text-muted: #6a737d;
+  --accent: #eab308;
+  --accent-hover: #ca9a06;
+  --secondary: #10b981;
   --tone-a: #fafbfc;
   --tone-b: #f6f8fa;
   --tone-c: #e1e4e8;
   --nav-bg: #ffffff;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
 
-  --terminal-green: #22c55e;
+  --terminal-green: #10b981;
   --terminal-red: #ef4444;
   --terminal-yellow: #eab308;
   --terminal-magenta: #a855f7;
   --terminal-cyan: #06b6d4;
 
-  // Dark mode (OpenCode/VS Code inspired)
+  // Dark mode (Pure black GitHub style)
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      --bg: #1e1e1e;
-      --bg-alt: #252525;
-      --card-bg: #2d2d2d;
-      --border: #3e3e42;
-      --text-main: #cccccc;
-      --text-muted: #858585;
-      --accent: #a78bfa;
-      --accent-hover: #c4b5fd;
-      --secondary: #fbbf24;
-      --tone-a: #252525;
-      --tone-b: #2d2d2d;
-      --tone-c: #333333;
-      --nav-bg: #1e1e1e;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
+      --bg: #000000;
+      --bg-alt: #0d0d0d;
+      --card-bg: #161616;
+      --border: #2d2d2d;
+      --text-main: #e5e5e5;
+      --text-muted: #a1a1a1;
+      --accent: #eab308;
+      --accent-hover: #fbbf24;
+      --secondary: #10b981;
+      --tone-a: #0d0d0d;
+      --tone-b: #161616;
+      --tone-c: #1f1f1f;
+      --nav-bg: #000000;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.9);
 
-      --terminal-green: #4ade80;
+      --terminal-green: #10b981;
       --terminal-red: #f87171;
-      --terminal-yellow: #fbbf24;
+      --terminal-yellow: #eab308;
       --terminal-magenta: #c084fc;
       --terminal-cyan: #22d3ee;
     }
@@ -55,25 +55,25 @@
 }
 
 html[data-theme-mode="dark"] body.theme-terminal {
-  --bg: #1e1e1e;
-  --bg-alt: #252525;
-  --card-bg: #2d2d2d;
-  --border: #3e3e42;
-  --text-main: #cccccc;
-  --text-muted: #858585;
-  --accent: #a78bfa;
-  --accent-hover: #c4b5fd;
-  --secondary: #fbbf24;
-  --tone-a: #252525;
-  --tone-b: #2d2d2d;
-  --tone-c: #333333;
-  --nav-bg: #1e1e1e;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
+  --bg: #000000;
+  --bg-alt: #0d0d0d;
+  --card-bg: #161616;
+  --border: #2d2d2d;
+  --text-main: #e5e5e5;
+  --text-muted: #a1a1a1;
+  --accent: #eab308;
+  --accent-hover: #fbbf24;
+  --secondary: #10b981;
+  --tone-a: #0d0d0d;
+  --tone-b: #161616;
+  --tone-c: #1f1f1f;
+  --nav-bg: #000000;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.9);
 
-  --terminal-green: #4ade80;
+  --terminal-green: #10b981;
   --terminal-red: #f87171;
-  --terminal-yellow: #fbbf24;
+  --terminal-yellow: #eab308;
   --terminal-magenta: #c084fc;
   --terminal-cyan: #22d3ee;
 }
@@ -105,27 +105,33 @@ html[data-theme-mode="dark"] body.theme-terminal {
 
   // Command prompt style for headings (content only, not nav)
   .page-main h1::before {
-    content: "▸ ";
-    color: var(--accent);
+    content: "$ ";
+    color: var(--secondary);
     font-size: 0.9em;
     margin-right: 0.5rem;
+    font-family: var(--font-mono);
   }
 
   .page-main h2::before {
-    content: "● ";
-    color: var(--secondary);
+    content: "# ";
+    color: var(--accent);
     margin-right: 0.4rem;
+    font-family: var(--font-mono);
   }
 
   .cv-section-header h2::before {
-    content: "";
-  }
-
-  // List items with modern bullet
-  .cv-list li::before {
-    content: "▸";
+    content: "## ";
     color: var(--accent);
     margin-right: 0.5rem;
+    font-family: var(--font-mono);
+  }
+
+  // List items with git-style bullet
+  .cv-list li::before {
+    content: ">";
+    color: var(--secondary);
+    margin-right: 0.5rem;
+    font-family: var(--font-mono);
   }
 
   // Links with modern styling (content only, not nav)

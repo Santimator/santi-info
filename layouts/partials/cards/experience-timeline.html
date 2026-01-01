@@ -1,0 +1,57 @@
+{{/* Git log-style timeline for experience */}}
+{{ $theme := .Page.Params.theme }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "engineering" }}
+
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ with $data.experience }}
+  {{ with .items }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>Experience</h2>
+        </div>
+        <div class="git-timeline">
+          {{ range $index, $item := . }}
+            <article class="git-commit">
+              {{/* Timeline connector */}}
+              <div class="git-graph">
+                <span class="git-node"></span>
+                {{ if ne $index (sub (len $) 1) }}
+                  <span class="git-line"></span>
+                {{ end }}
+              </div>
+              
+              {{/* Commit content */}}
+              <div class="git-content">
+                <div class="git-header">
+                  <span class="git-hash">{{ substr (md5 .role) 0 7 }}</span>
+                  <span class="git-meta">
+                    <span class="git-author">{{ .company }}</span>
+                    <span class="git-separator">·</span>
+                    <span class="git-date">{{ .years }}</span>
+                  </span>
+                </div>
+                
+                <h3 class="git-message">{{ .role }}</h3>
+                
+                <div class="git-details">
+                  <span class="git-location">{{ .location }}</span>
+                  {{ with .responsibilities }}
+                    <ul class="git-diff">
+                      {{ range . }}
+                        <li>{{ . }}</li>
+                      {{ end }}
+                    </ul>
+                  {{ end }}
+                </div>
+              </div>
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}
