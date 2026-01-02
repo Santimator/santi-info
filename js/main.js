@@ -64,11 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update all icons based on current mode
     function updateIcons(mode) {
+      // Show the NEXT mode icon (what you'll switch to)
+      const nextMode = mode === 'light' ? 'dark' : 'light';
       themeIcons.forEach(icon => {
-        icon.textContent = ICONS[mode] || ICONS.light;
+        icon.textContent = ICONS[nextMode] || ICONS.dark;
       });
       themeToggles.forEach(toggle => {
-        toggle.setAttribute('aria-label', `Current: ${mode} mode (click to toggle)`);
+        toggle.setAttribute('aria-label', `Switch to ${nextMode} mode`);
       });
     }
 
