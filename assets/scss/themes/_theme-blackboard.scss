@@ -29,19 +29,19 @@
   // Dark mode: Blackboard with chalk
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      --bg: #1a1a1a;
-      --bg-alt: #222222;
-      --card-bg: #2a2a2a;
-      --border: #3d3d3d;
+      --bg: #1a2e1a;
+      --bg-alt: #0f1f0f;
+      --card-bg: #1a2e1a;
+      --border: #2d4a2d;
       --text-main: #e8e8e8;
       --text-muted: #b0b0b0;
       --accent: #f0e68c;
       --accent-hover: #fff8dc;
       --secondary: #ffb6c1;
-      --tone-a: #252525;
-      --tone-b: #2d2d2d;
-      --tone-c: #353535;
-      --nav-bg: #1a1a1a;
+      --tone-a: #152515;
+      --tone-b: #1d331d;
+      --tone-c: #254025;
+      --nav-bg: #0d1a0d;
       --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
       --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
 
@@ -55,19 +55,19 @@
 }
 
 html[data-theme-mode="dark"] body.theme-blackboard {
-  --bg: #1a1a1a;
-  --bg-alt: #222222;
-  --card-bg: #2a2a2a;
-  --border: #3d3d3d;
+  --bg: #1a2e1a;
+  --bg-alt: #0f1f0f;
+  --card-bg: #1a2e1a;
+  --border: #2d4a2d;
   --text-main: #e8e8e8;
   --text-muted: #b0b0b0;
   --accent: #f0e68c;
   --accent-hover: #fff8dc;
   --secondary: #ffb6c1;
-  --tone-a: #252525;
-  --tone-b: #2d2d2d;
-  --tone-c: #353535;
-  --nav-bg: #1a1a1a;
+  --tone-a: #152515;
+  --tone-b: #1d331d;
+  --tone-c: #254025;
+  --nav-bg: #0d1a0d;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.7);
 
