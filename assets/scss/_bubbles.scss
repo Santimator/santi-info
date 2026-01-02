@@ -4,7 +4,7 @@
 // Container for bubbles
 .practice-bubbles-container {
   position: relative;
-  min-height: 1200px;
+  min-height: 1100px;
   width: 100%;
   margin: $space-4 0;
   padding: $space-3;
@@ -230,31 +230,32 @@
   }
 }
 
-// Organic Garden Layout - Fixed Positions
+// Organic Garden Layout - Fixed Positions (All top-referenced)
+// Container height: 1100px with ~56px bottom breathing room
 // Layout pattern (desktop only):
-//    [Family - md]        [Living - xl]
+//    [Family - sm: 360px]        [Living - xl: 640px]
 //
-//              [Taichi - sm]
-//                                   [Enneagram - lg]
+//                                      [Enneagram - lg: 520px]
+//              [Taichi - sm: 360px]
 
 .practice-bubble[data-practice="Family Constellations"] {
-  top: 3%;
+  top: 3.3%;
   left: 3%;
 }
 
 .practice-bubble[data-practice="Living Abroad & Cross-Cultural Learning"] {
-  top: 4%;
+  top: 4.4%;
   right: 3%;
 }
 
 .practice-bubble[data-practice="Taichi & Qigong"] {
-  top: 55%;
+  top: 60%;
   right: 5%;
 }
 
 .practice-bubble[data-practice="Enneagram"] {
-  bottom: 13%;
-  left: 9%;
+  top: 47.6%;
+  left: 10%;
 }
 
 // Touch device optimizations
