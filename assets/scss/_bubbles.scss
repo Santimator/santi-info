@@ -4,7 +4,7 @@
 // Container for bubbles
 .practice-bubbles-container {
   position: relative;
-  min-height: 600px;
+  min-height: 1200px;
   width: 100%;
   margin: $space-4 0;
   padding: $space-3;
@@ -125,58 +125,58 @@
 
 // Size variants
 .bubble-sm {
-  width: 180px;
-  height: 180px;
+  width: 360px;
+  height: 360px;
   
   .bubble-title {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   
   .bubble-description,
   .bubble-anecdote {
-    font-size: 0.85rem;
+    font-size: 1.7rem;
   }
 }
 
 .bubble-md {
-  width: 220px;
-  height: 220px;
+  width: 440px;
+  height: 440px;
   
   .bubble-title {
-    font-size: 1.1rem;
+    font-size: 2.2rem;
   }
   
   .bubble-description,
   .bubble-anecdote {
-    font-size: 0.9rem;
+    font-size: 1.8rem;
   }
 }
 
 .bubble-lg {
-  width: 260px;
-  height: 260px;
+  width: 520px;
+  height: 520px;
   
   .bubble-title {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
   }
   
   .bubble-description,
   .bubble-anecdote {
-    font-size: 0.95rem;
+    font-size: 1.9rem;
   }
 }
 
 .bubble-xl {
-  width: 320px;
-  height: 320px;
+  width: 640px;
+  height: 640px;
   
   .bubble-title {
-    font-size: 1.4rem;
+    font-size: 2.8rem;
   }
   
   .bubble-description,
   .bubble-anecdote {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
