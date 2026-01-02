@@ -46,12 +46,11 @@
     
     .bubble-description {
       opacity: 0;
-      max-height: 0;
     }
     
     .bubble-anecdote {
       opacity: 1;
-      max-height: 500px;
+      pointer-events: auto;
     }
   }
 }
@@ -91,30 +90,28 @@
   line-height: 1.5;
   margin: 0;
   color: var(--text-main);
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .bubble-description {
   opacity: 1;
-  max-height: 500px;
 }
 
 .bubble-anecdote {
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  pointer-events: none;
   
   @media (max-width: $bp-md) {
     position: relative;
     opacity: 1;
-    max-height: none;
     margin-top: $space-1;
     padding-top: $space-1;
     border-top: 1px solid var(--border);
+    pointer-events: auto;
   }
 }
 
