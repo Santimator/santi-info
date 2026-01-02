@@ -180,56 +180,56 @@
   }
 }
 
-// Color variants (using organic theme colors)
+// Color variants (using primary colors with transparency)
 .bubble-color-1 {
   background: linear-gradient(135deg, 
-    rgba(107, 142, 107, 0.3), 
-    rgba(107, 142, 107, 0.5));
-  border: 2px solid var(--accent);
+    rgba(59, 130, 246, 0.3), 
+    rgba(59, 130, 246, 0.5));
+  border: 2px solid rgb(59, 130, 246);
   
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
-      rgba(139, 168, 136, 0.2), 
-      rgba(139, 168, 136, 0.4));
+      rgba(96, 165, 250, 0.2), 
+      rgba(96, 165, 250, 0.4));
   }
 }
 
 .bubble-color-2 {
   background: linear-gradient(135deg, 
-    rgba(139, 115, 85, 0.3), 
-    rgba(139, 115, 85, 0.5));
-  border: 2px solid var(--secondary);
+    rgba(239, 68, 68, 0.3), 
+    rgba(239, 68, 68, 0.5));
+  border: 2px solid rgb(239, 68, 68);
   
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
-      rgba(168, 144, 112, 0.2), 
-      rgba(168, 144, 112, 0.4));
+      rgba(248, 113, 113, 0.2), 
+      rgba(248, 113, 113, 0.4));
   }
 }
 
 .bubble-color-3 {
   background: linear-gradient(135deg, 
-    rgba(135, 168, 120, 0.3), 
-    rgba(135, 168, 120, 0.5));
-  border: 2px solid var(--leaf-green);
+    rgba(34, 197, 94, 0.3), 
+    rgba(34, 197, 94, 0.5));
+  border: 2px solid rgb(34, 197, 94);
   
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
-      rgba(151, 184, 136, 0.2), 
-      rgba(151, 184, 136, 0.4));
+      rgba(74, 222, 128, 0.2), 
+      rgba(74, 222, 128, 0.4));
   }
 }
 
 .bubble-color-4 {
   background: linear-gradient(135deg, 
-    rgba(212, 196, 168, 0.3), 
-    rgba(212, 196, 168, 0.5));
-  border: 2px solid var(--sand);
+    rgba(168, 85, 247, 0.3), 
+    rgba(168, 85, 247, 0.5));
+  border: 2px solid rgb(168, 85, 247);
   
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
-      rgba(212, 196, 168, 0.2), 
-      rgba(212, 196, 168, 0.4));
+      rgba(192, 132, 252, 0.2), 
+      rgba(192, 132, 252, 0.4));
   }
 }
 
