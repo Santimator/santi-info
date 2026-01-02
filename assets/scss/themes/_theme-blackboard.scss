@@ -131,10 +131,12 @@ html[data-theme-mode="dark"] body.theme-blackboard {
       font-family: 'Marker Felt', 'Comic Sans MS', cursive;
       font-weight: 700;
     }
-    
-    @media (prefers-color-scheme: dark) {
-      html:not([data-theme-mode="light"]) & {
-        // Blackboard in dark mode - Black-green with chalk texture
+  }
+
+  // Blackboard in dark mode - Black-green with chalk texture
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme-mode="light"]) & {
+      .cv-card {
         background: 
           // Eraser marks (light streaks)
           radial-gradient(ellipse 200px 80px at 20% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
@@ -168,8 +170,11 @@ html[data-theme-mode="dark"] body.theme-blackboard {
       }
     }
   }
+}
 
-  html[data-theme-mode="dark"] .cv-card {
+// Forced dark mode for blackboard cards
+html[data-theme-mode="dark"] body.theme-blackboard {
+  .cv-card {
     // Blackboard in dark mode (forced)
     background: 
       // Eraser marks (light streaks)
