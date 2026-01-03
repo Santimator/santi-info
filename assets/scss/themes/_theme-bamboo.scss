@@ -352,8 +352,8 @@ html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
     font-size: 1.4rem;
   }
   
+  // Keep bamboo same size on mobile, just adjust opacity
   .theme-bamboo::after {
-    width: 300px;
     opacity: 0.2;
   }
   
@@ -374,8 +374,8 @@ html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
     font-size: 1.9rem;
   }
   
+  // Keep bamboo same size, just reduce opacity more
   .theme-bamboo::after {
-    width: 200px;
     opacity: 0.15;
   }
 }
