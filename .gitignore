@@ -3,6 +3,9 @@
 /resources/_gen/
 .hugo_build.lock
 
+# OpenCode data and logs
+.opencode-data/
+
 # OS
 .DS_Store
 Thumbs.db
