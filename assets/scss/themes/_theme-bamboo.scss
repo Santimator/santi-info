@@ -188,7 +188,7 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   right: 0;
   width: 500px;
   height: 100%;
-  background-image: url('/images/bamboo-light.png');
+  background-image: url('../images/bamboo-light.png');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -198,14 +198,14 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      background-image: url('/images/bamboo-dark.png');
+      background-image: url('../images/bamboo-dark.png');
       opacity: 0.25;
     }
   }
 }
 
 html[data-theme-mode="dark"] .theme-bamboo::after {
-  background-image: url('/images/bamboo-dark.png');
+  background-image: url('../images/bamboo-dark.png');
   opacity: 0.25;
 }
 
@@ -300,7 +300,7 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
     top: -60px;
     width: 80px;
     height: 80px;
-    background-image: url('/images/stamp-light.png');
+    background-image: url('../images/stamp-light.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -318,12 +318,12 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
 // Dark mode stamp
 @media (prefers-color-scheme: dark) {
   html:not([data-theme-mode="light"]) .theme-bamboo .site-credits::before {
-    background-image: url('/images/stamp-dark.png');
+    background-image: url('../images/stamp-dark.png');
   }
 }
 
 html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
-  background-image: url('/images/stamp-dark.png');
+  background-image: url('../images/stamp-dark.png');
 }
 
 // Smooth interactions
