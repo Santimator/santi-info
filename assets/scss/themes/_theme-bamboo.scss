@@ -184,13 +184,13 @@ html[data-theme-mode="dark"] body.theme-bamboo {
 .theme-bamboo::after {
   content: "";
   position: fixed;
-  top: 0;
+  bottom: 0;
   right: 0;
   width: 500px;
   height: 100%;
   background-image: url('../images/bamboo-nobg.png');
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: right bottom;
   background-size: contain;
   opacity: 0.3;
   pointer-events: none;
