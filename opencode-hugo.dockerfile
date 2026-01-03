@@ -34,6 +34,13 @@ RUN npm install -g local-memory-mcp
 # 4. Configure User and home directory
 RUN useradd -ms /bin/bash devuser
 
+# 4.5 Pre-create OpenCode directories with correct ownership
+RUN mkdir -p /home/devuser/.local/share \
+             /home/devuser/.local/state \
+             /home/devuser/.cache \
+             /home/devuser/.config && \
+    chown -R devuser:devuser /home/devuser
+
 # 5. Switch to devuser and set HOME
 USER devuser
 WORKDIR /home/devuser

@@ -1,0 +1,2 @@
+INFO  2026-01-03T14:17:25 +226ms service=default version=1.0.223 args=["auth","list"] opencode
+INFO  2026-01-03T14:17:25 +4ms service=models.dev file={} refreshing

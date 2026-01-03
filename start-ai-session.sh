@@ -66,9 +66,12 @@ if [ ! -f "$AUTH_PATH" ]; then
         /home/devuser/.opencode/bin/opencode
 else
     echo "--- OpenCode Zen authentication found. Full model access enabled. ---"
+    # Before docker run, ensure directories exist with correct ownership
+    mkdir -p "$(pwd)/.opencode-data"
     docker run -it --rm \
         -v "$(pwd)":$PROJECT_PATH \
 	-v "$AUTH_PATH":$AUTH_CONTAINER_PATH:ro \
+	-v "$(pwd)/.opencode-data":/home/devuser/.local/share/opencode \
         --name "$CONTAINER_NAME" \
         "$IMAGE_NAME" \
         /home/devuser/.opencode/bin/opencode
