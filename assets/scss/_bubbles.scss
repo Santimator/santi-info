@@ -112,6 +112,7 @@
     padding-top: $space-1;
     border-top: 1px solid var(--border);
     pointer-events: auto;
+    font-weight: 600;
   }
 }
 
@@ -189,6 +190,12 @@
     font-weight: 600;
   }
   
+  @media (max-width: $bp-md) {
+    .bubble-anecdote {
+      color: rgb(37, 99, 246);
+    }
+  }
+  
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
       rgba(96, 165, 250, 0.2), 
@@ -197,6 +204,12 @@
     &:hover .bubble-anecdote {
       color: rgb(191, 219, 254);
       font-weight: 600;
+    }
+    
+    @media (max-width: $bp-md) {
+      .bubble-anecdote {
+        color: rgb(191, 219, 254);
+      }
     }
   }
 }
@@ -212,6 +225,12 @@
     font-weight: 600;
   }
   
+  @media (max-width: $bp-md) {
+    .bubble-anecdote {
+      color: rgb(220, 38, 38);
+    }
+  }
+  
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
       rgba(248, 113, 113, 0.2), 
@@ -220,6 +239,12 @@
     &:hover .bubble-anecdote {
       color: rgb(252, 165, 165);
       font-weight: 600;
+    }
+    
+    @media (max-width: $bp-md) {
+      .bubble-anecdote {
+        color: rgb(252, 165, 165);
+      }
     }
   }
 }
@@ -235,6 +260,12 @@
     font-weight: 600;
   }
   
+  @media (max-width: $bp-md) {
+    .bubble-anecdote {
+      color: rgb(21, 128, 61);
+    }
+  }
+  
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
       rgba(74, 222, 128, 0.2), 
@@ -243,6 +274,12 @@
     &:hover .bubble-anecdote {
       color: rgb(187, 247, 208);
       font-weight: 600;
+    }
+    
+    @media (max-width: $bp-md) {
+      .bubble-anecdote {
+        color: rgb(187, 247, 208);
+      }
     }
   }
 }
@@ -258,6 +295,12 @@
     font-weight: 600;
   }
   
+  @media (max-width: $bp-md) {
+    .bubble-anecdote {
+      color: rgb(126, 34, 206);
+    }
+  }
+  
   @media (prefers-color-scheme: dark) {
     background: linear-gradient(135deg, 
       rgba(192, 132, 252, 0.2), 
@@ -266,6 +309,12 @@
     &:hover .bubble-anecdote {
       color: rgb(216, 180, 254);
       font-weight: 600;
+    }
+    
+    @media (max-width: $bp-md) {
+      .bubble-anecdote {
+        color: rgb(216, 180, 254);
+      }
     }
   }
 }
