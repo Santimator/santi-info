@@ -1,0 +1,31 @@
+{{/* Books card renderer with custom styling */}}
+{{ $theme := .Page.Params.theme }}
+
+{{/* Map theme to data path */}}
+{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
+{{ $sectionName := index $dataMap $theme | default "other_interests" }}
+
+{{ $data := index .Page.Site.Data $sectionName }}
+{{ with $data.books }}
+  {{ with .items }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <div class="cv-section-header">
+          <h2>Recommended Reads</h2>
+        </div>
+        <div class="cv-cards">
+          {{ range . }}
+            <article class="cv-card book-card{{ if .currently_reading }} currently-reading{{ end }}">
+              <h3 class="book-title">{{ .title }}</h3>
+              <h4 class="book-author">{{ .author }}</h4>
+              <p class="book-note">{{ .note }}</p>
+              {{ if .currently_reading }}
+                <span class="currently-reading-badge">Currently Reading</span>
+              {{ end }}
+            </article>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

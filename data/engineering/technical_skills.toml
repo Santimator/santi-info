@@ -6,7 +6,11 @@ skills = ["Java", "C", "C++", "Python", "R", "MATLAB", "MySQL", "Git"]
 
 [[categories]]
 name = "Specialized Software"
-skills = ["FIJI (Image Processing)", "KNIME (Data Mining)", "COPASI (Biological Network Modeling)", "ComfyUI", "OpenCode"]
+skills = ["FIJI (Image Processing)", "KNIME (Data Mining)", "COPASI (Biological Network Modeling)"]
+
+[[categories]]
+name = "AI Tools"
+skills = ["ComfyUI", "OpenCode", "Claude", "MCPs", "Codex"]
 
 [[categories]]
 name = "Mathematical Modeling"
