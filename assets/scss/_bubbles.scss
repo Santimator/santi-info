@@ -187,9 +187,11 @@
     rgba(59, 130, 246, 0.5));
   border: 2px solid rgb(59, 130, 246);
   
-  &:hover .bubble-anecdote {
-    color: rgb(37, 99, 246);
-    font-weight: 600;
+  @media (min-width: calc($bp-md + 1px)) {
+    &:hover .bubble-anecdote {
+      color: rgb(37, 99, 246);
+      font-weight: 600;
+    }
   }
   
   @media (max-width: $bp-md) {
@@ -203,9 +205,11 @@
       rgba(96, 165, 250, 0.2), 
       rgba(96, 165, 250, 0.4));
     
-    &:hover .bubble-anecdote {
-      color: rgb(191, 219, 254);
-      font-weight: 600;
+    @media (min-width: calc($bp-md + 1px)) {
+      &:hover .bubble-anecdote {
+        color: rgb(191, 219, 254);
+        font-weight: 600;
+      }
     }
     
     @media (max-width: $bp-md) {
@@ -222,9 +226,11 @@
     rgba(239, 68, 68, 0.5));
   border: 2px solid rgb(239, 68, 68);
   
-  &:hover .bubble-anecdote {
-    color: rgb(220, 38, 38);
-    font-weight: 600;
+  @media (min-width: calc($bp-md + 1px)) {
+    &:hover .bubble-anecdote {
+      color: rgb(220, 38, 38);
+      font-weight: 600;
+    }
   }
   
   @media (max-width: $bp-md) {
@@ -238,9 +244,11 @@
       rgba(248, 113, 113, 0.2), 
       rgba(248, 113, 113, 0.4));
     
-    &:hover .bubble-anecdote {
-      color: rgb(252, 165, 165);
-      font-weight: 600;
+    @media (min-width: calc($bp-md + 1px)) {
+      &:hover .bubble-anecdote {
+        color: rgb(252, 165, 165);
+        font-weight: 600;
+      }
     }
     
     @media (max-width: $bp-md) {
@@ -257,9 +265,11 @@
     rgba(34, 197, 94, 0.5));
   border: 2px solid rgb(34, 197, 94);
   
-  &:hover .bubble-anecdote {
-    color: rgb(21, 128, 61);
-    font-weight: 600;
+  @media (min-width: calc($bp-md + 1px)) {
+    &:hover .bubble-anecdote {
+      color: rgb(21, 128, 61);
+      font-weight: 600;
+    }
   }
   
   @media (max-width: $bp-md) {
@@ -273,9 +283,11 @@
       rgba(74, 222, 128, 0.2), 
       rgba(74, 222, 128, 0.4));
     
-    &:hover .bubble-anecdote {
-      color: rgb(187, 247, 208);
-      font-weight: 600;
+    @media (min-width: calc($bp-md + 1px)) {
+      &:hover .bubble-anecdote {
+        color: rgb(187, 247, 208);
+        font-weight: 600;
+      }
     }
     
     @media (max-width: $bp-md) {
@@ -292,9 +304,11 @@
     rgba(168, 85, 247, 0.5));
   border: 2px solid rgb(168, 85, 247);
   
-  &:hover .bubble-anecdote {
-    color: rgb(126, 34, 206);
-    font-weight: 600;
+  @media (min-width: calc($bp-md + 1px)) {
+    &:hover .bubble-anecdote {
+      color: rgb(126, 34, 206);
+      font-weight: 600;
+    }
   }
   
   @media (max-width: $bp-md) {
@@ -308,9 +322,11 @@
       rgba(192, 132, 252, 0.2), 
       rgba(192, 132, 252, 0.4));
     
-    &:hover .bubble-anecdote {
-      color: rgb(216, 180, 254);
-      font-weight: 600;
+    @media (min-width: calc($bp-md + 1px)) {
+      &:hover .bubble-anecdote {
+        color: rgb(216, 180, 254);
+        font-weight: 600;
+      }
     }
     
     @media (max-width: $bp-md) {
