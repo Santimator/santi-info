@@ -132,24 +132,14 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   margin: 1.5rem 0 1rem;
 }
 
-// Centered letter-style layout
+// Keep original layout width
 .theme-bamboo .content-shell {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
   position: relative;
   z-index: 1;
 }
 
-.theme-bamboo .page-article {
-  text-align: center;
-  
-  p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-    margin-bottom: 1.5rem;
-  }
+.theme-bamboo .page-article p {
+  margin-bottom: 1.5rem;
 }
 
 // Background: Paper texture with watercolor bamboo
@@ -188,78 +178,35 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   z-index: 0;
 }
 
-// Watercolor bamboo illustration - Prominent on right side
+// Bamboo illustration - Image placeholder (right side)
+// Place your bamboo PNG images in: static/images/bamboo-light.png and static/images/bamboo-dark.png
+// Recommended specs: 400-600px wide, full height, transparent PNG
 .theme-bamboo::after {
   content: "";
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 500px;
   height: 100%;
-  background: 
-    // Bamboo leaves (top right)
-    radial-gradient(ellipse 40px 80px at 85% 15%, var(--bamboo-green) 0%, transparent 60%),
-    radial-gradient(ellipse 35px 70px at 90% 18%, var(--bamboo-light) 0%, transparent 55%),
-    radial-gradient(ellipse 45px 75px at 80% 12%, var(--bamboo-dark) 0%, transparent 50%),
-    
-    // Bamboo leaves (middle)
-    radial-gradient(ellipse 38px 75px at 75% 45%, var(--bamboo-green) 0%, transparent 58%),
-    radial-gradient(ellipse 42px 80px at 82% 48%, var(--bamboo-light) 0%, transparent 53%),
-    radial-gradient(ellipse 36px 70px at 78% 42%, var(--bamboo-dark) 0%, transparent 52%),
-    
-    // Bamboo leaves (lower)
-    radial-gradient(ellipse 40px 78px at 88% 75%, var(--bamboo-green) 0%, transparent 56%),
-    radial-gradient(ellipse 35px 72px at 83% 78%, var(--bamboo-light) 0%, transparent 54%),
-    
-    // Main bamboo stalks (vertical)
-    linear-gradient(180deg, transparent 0%, var(--bamboo-green) 5%, var(--bamboo-green) 95%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, var(--bamboo-light) 8%, var(--bamboo-light) 92%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, var(--bamboo-dark) 10%, var(--bamboo-dark) 90%, transparent 100%),
-    
-    // Bamboo nodes (horizontal segments)
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 180px,
-      var(--ink-black) 180px,
-      var(--ink-black) 184px,
-      transparent 184px
-    ),
-    
-    // Mist/watercolor wash effect
-    radial-gradient(ellipse 300px 600px at 70% 30%, var(--mist-white) 0%, transparent 70%),
-    radial-gradient(ellipse 250px 500px at 80% 70%, var(--mist-white) 0%, transparent 65%);
-    
-  background-size: 
-    100% 100%, 100% 100%, 100% 100%,
-    100% 100%, 100% 100%, 100% 100%,
-    100% 100%, 100% 100%,
-    8px 100%, 6px 100%, 7px 100%,
-    100% 100%,
-    100% 100%, 100% 100%;
-    
-  background-position: 
-    0 0, 0 0, 0 0,
-    0 0, 0 0, 0 0,
-    0 0, 0 0,
-    85% 0, 78% 0, 90% 0,
-    0 0,
-    0 0, 0 0;
-    
+  background-image: url('/images/bamboo-light.png');
   background-repeat: no-repeat;
-  opacity: 0.25;
+  background-position: right center;
+  background-size: contain;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
   
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      opacity: 0.15;
+      background-image: url('/images/bamboo-dark.png');
+      opacity: 0.25;
     }
   }
 }
 
 html[data-theme-mode="dark"] .theme-bamboo::after {
-  opacity: 0.15;
+  background-image: url('/images/bamboo-dark.png');
+  opacity: 0.25;
 }
 
 // Card styling - Subtle letter paper feel
@@ -336,7 +283,9 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
   backdrop-filter: blur(10px);
 }
 
-// 三体 Seal stamp element
+// Seal stamp element - Image placeholder
+// Place your stamp PNG images in: static/images/stamp-light.png and static/images/stamp-dark.png
+// Recommended specs: 80-100px square, transparent PNG with red seal design
 .theme-bamboo .site-credits {
   position: relative;
   margin-top: 4rem;
@@ -344,29 +293,17 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
   text-align: center;
   
   &::before {
-    content: "三体";
+    content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     top: -60px;
-    font-size: 2.5rem;
-    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
-    font-weight: 700;
-    color: var(--seal-red);
     width: 80px;
     height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--seal-red);
-    border-radius: 4px;
-    background: var(--paper-cream);
-    box-shadow: 
-      0 2px 8px rgba(200, 48, 48, 0.3),
-      inset 0 0 20px rgba(200, 48, 48, 0.1);
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    letter-spacing: 0.1em;
+    background-image: url('/images/stamp-light.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     opacity: 0.9;
   }
   
@@ -376,6 +313,17 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
     font-style: italic;
     margin: 0;
   }
+}
+
+// Dark mode stamp
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme-mode="light"]) .theme-bamboo .site-credits::before {
+    background-image: url('/images/stamp-dark.png');
+  }
+}
+
+html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
+  background-image: url('/images/stamp-dark.png');
 }
 
 // Smooth interactions
@@ -392,10 +340,6 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
 
 // Mobile adjustments
 @media (max-width: 768px) {
-  .theme-bamboo .content-shell {
-    padding: 2rem 1.5rem;
-  }
-  
   .theme-bamboo h1 {
     font-size: 2.2rem;
   }
@@ -409,19 +353,14 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
   }
   
   .theme-bamboo::after {
-    width: 200px;
-    opacity: 0.15;
+    width: 300px;
+    opacity: 0.2;
   }
   
   .theme-bamboo .site-credits::before {
-    font-size: 2rem;
     width: 65px;
     height: 65px;
     top: -50px;
-  }
-  
-  .theme-bamboo .page-article p {
-    text-align: left;
   }
 }
 
@@ -436,11 +375,7 @@ html[data-theme-mode="dark"] .theme-bamboo::after {
   }
   
   .theme-bamboo::after {
-    width: 120px;
-    opacity: 0.1;
-  }
-  
-  .theme-bamboo .content-shell {
-    padding: 1.5rem 1rem;
+    width: 200px;
+    opacity: 0.15;
   }
 }
