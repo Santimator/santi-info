@@ -188,7 +188,7 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   right: 0;
   width: 500px;
   height: 100%;
-  background-image: url('../images/bamboo-light.png');
+  background-image: url('../images/bamboo-nobg.png');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -198,14 +198,14 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      background-image: url('../images/bamboo-dark.png');
+      background-image: url('../images/bamboo-nobg.png');
       opacity: 0.25;
     }
   }
 }
 
 html[data-theme-mode="dark"] .theme-bamboo::after {
-  background-image: url('../images/bamboo-dark.png');
+  background-image: url('../images/bamboo-nobg.png');
   opacity: 0.25;
 }
 
