@@ -39,18 +39,20 @@
     left: auto !important;
   }
   
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    
-    .bubble-description {
-      opacity: 0;
-    }
-    
-    .bubble-anecdote {
-      opacity: 1;
-      pointer-events: auto;
+  @media (min-width: calc($bp-md + 1px)) {
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      z-index: 100;
+      
+      .bubble-description {
+        opacity: 0;
+      }
+      
+      .bubble-anecdote {
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
 }
@@ -208,7 +210,7 @@
     
     @media (max-width: $bp-md) {
       .bubble-anecdote {
-        color: rgb(191, 219, 254);
+        color: rgb(224, 242, 254);
       }
     }
   }
@@ -278,7 +280,7 @@
     
     @media (max-width: $bp-md) {
       .bubble-anecdote {
-        color: rgb(187, 247, 208);
+        color: rgb(220, 252, 231);
       }
     }
   }
