@@ -112,23 +112,27 @@ html[data-theme-mode="dark"] body.theme-blackboard {
     padding: 4rem 5%;
     width: 100%;
     max-width: 100%;
-    
+
     // Whiteboard in light mode - Pure white satin with blue markers
     background: #ffffff;
     color: #2563eb; // Blue marker color
-    box-shadow: 
+    box-shadow:
       0 4px 6px rgba(0, 0, 0, 0.1),
       0 1px 3px rgba(0, 0, 0, 0.08),
       inset 0 0 200px rgba(37, 99, 235, 0.01); // Subtle blue tint
-    
+
     // Wooden frame effect
     border: 12px solid #a67c52;
     outline: 3px solid #8b6339;
     box-sizing: border-box;
-    
+
+    // Light mode fonts (matching dark mode)
+    font-family: system-ui, -apple-system, sans-serif;
+
     h3 {
       color: #2563eb;
       font-weight: 700;
+      font-family: 'Marker Felt', 'Comic Sans MS', cursive;
     }
   }
 
