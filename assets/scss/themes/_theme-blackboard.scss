@@ -80,7 +80,7 @@ html[data-theme-mode="dark"] body.theme-blackboard {
 
 .theme-blackboard {
   // Typography: Handwritten (keep in both modes)
-  --font-heading: 'Caveat', 'Architects Daughter', cursive, sans-serif;
+  --font-heading: 'Marker Felt', 'Comic Sans MS', cursive;
   --font-body: system-ui, -apple-system, sans-serif;
 
   h1, h2, h3 {
@@ -128,7 +128,6 @@ html[data-theme-mode="dark"] body.theme-blackboard {
     
     h3 {
       color: #2563eb;
-      font-family: 'Marker Felt', 'Comic Sans MS', cursive;
       font-weight: 700;
     }
   }

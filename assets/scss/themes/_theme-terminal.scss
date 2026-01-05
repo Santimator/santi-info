@@ -80,9 +80,9 @@ html[data-theme-mode="dark"] body.theme-terminal {
 
 .theme-terminal {
 
-  // Typography: Clean sans-serif with monospace for code elements
-  --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+  // Typography: Monospace for entire page (matching footer)
+  --font-heading: 'JetBrains Mono', monospace;
+  --font-body: 'JetBrains Mono', monospace;
 
   // Use readable sans-serif fonts
   font-family: var(--font-body);
