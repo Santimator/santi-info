@@ -46,26 +46,61 @@
         <header class="cv-section-header">
           <h2>Western Astrology</h2>
         </header>
+
+        {{/* Chart Overview and Summary */}}
         {{ if $westernData.chart }}
-        <div class="cv-cards">
-          <div class="cv-card">
-            <h3>Chart Overview</h3>
+        <div class="astro-summary">
+          <div class="astro-summary-header">
             <p><strong>Sun:</strong> {{ $westernData.chart.sun }} | <strong>Moon:</strong> {{ $westernData.chart.moon }} | <strong>Ascendant:</strong> {{ $westernData.chart.ascendant }}</p>
+            {{ if $westernData.chart.midheaven }}
+            <p><strong>Midheaven (MC):</strong> {{ $westernData.chart.midheaven }}</p>
+            {{ end }}
             {{ if $westernData.chart.description }}
-            <p>{{ $westernData.chart.description }}</p>
+            <p class="astro-intro">{{ $westernData.chart.description }}</p>
             {{ end }}
           </div>
+
+          {{/* Strengths section */}}
+          {{ if $westernData.strengths }}
+          <div class="astro-strengths">
+            <h3>{{ $westernData.strengths.title }}</h3>
+            {{ range $westernData.strengths.items }}
+            <div class="strength-item">
+              <h4>{{ .name }}</h4>
+              <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          {{/* Trajectory */}}
+          {{ if $westernData.trajectory }}
+          <div class="astro-trajectory">
+            <p><strong>Overall trajectory:</strong> {{ $westernData.trajectory.summary }}</p>
+            <p class="trajectory-conclusion">{{ $westernData.trajectory.conclusion }}</p>
+          </div>
+          {{ end }}
         </div>
         {{ end }}
+
+        {{/* Flip cards for planetary placements */}}
         {{ if $westernData.placements }}
-        <div class="cv-cards">
+        <div class="cv-cards astro-flip-cards">
           {{ range $westernData.placements }}
-          <div class="cv-card">
-            <h3>{{ .planet }} in {{ .sign }}</h3>
-            <h4>House {{ .house }}</h4>
-            {{ if .notes }}
-            <p>{{ .notes }}</p>
-            {{ end }}
+          <div class="flip-card" data-category="{{ .category }}">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h3>{{ .planet }}{{ if .retrograde }} ℞{{ end }}</h3>
+                <p class="planet-sign">{{ .sign }}</p>
+                <p class="planet-house">House {{ .house }}</p>
+                <span class="flip-hint">Click to reveal</span>
+              </div>
+              <div class="flip-card-back">
+                <h3>{{ .planet }} in {{ .sign }}</h3>
+                <p class="planet-notes">{{ .notes }}</p>
+                <span class="flip-hint">Click to return</span>
+              </div>
+            </div>
           </div>
           {{ end }}
         </div>
