@@ -76,14 +76,14 @@ html[data-theme-mode="dark"] body.theme-celestial {
 }
 
 .theme-celestial {
-  // Typography: Clean with slight sci-fi feel
-  --font-heading: 'Orbitron', system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, sans-serif;
+  // Typography: Dreamy and ethereal
+  --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Georgia', serif;
+  --font-body: 'Georgia', 'Crimson Text', serif;
 
   h1, h2, h3 {
     font-family: var(--font-heading);
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 
   // Light mode: Dawn gradient with stronger intensity
@@ -218,11 +218,11 @@ html[data-theme-mode="dark"] body.theme-celestial {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
-    text-align: center;
+    text-align: left;
 
     .poem-text {
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       line-height: 1.8;
       color: var(--text-main);
       margin: 0 0 1rem 0;
@@ -230,7 +230,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
     }
 
     .poem-author {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin: 0;
       text-align: right;
