@@ -150,15 +150,13 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
 .theme-celestial {
 
-  // Glowing cards with glass effect
+  // Glowing cards (no glass effect)
   .intro-card,
   .cv-card {
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: var(--shadow);
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
 
   // Cosmic list markers
@@ -229,8 +227,6 @@ html[data-theme-mode="dark"] body.theme-celestial {
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
     text-align: left;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     .poem-text {
       font-style: italic;
@@ -257,8 +253,6 @@ html[data-theme-mode="dark"] body.theme-celestial {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     h3 {
       font-size: 1.5rem;
@@ -281,8 +275,6 @@ html[data-theme-mode="dark"] body.theme-celestial {
     padding: 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     .astro-strengths {
       margin: 0;
@@ -374,8 +366,6 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
   .flip-card-front {
     background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     h3 {
       font-size: 1.8rem;
@@ -471,9 +461,9 @@ html[data-theme-mode="dark"] body.theme-celestial {
   }
 }
 
-// Light mode overrides for flip cards (lighter lilac)
+// Light mode overrides for flip cards (softer lighter lilac)
 .theme-celestial .flip-card-back {
-  background: #a89bc7;
+  background: #c4b5d8;
   color: #1a1a2a;
 
   h3 {
