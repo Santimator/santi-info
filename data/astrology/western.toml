@@ -95,21 +95,14 @@ house = "2nd"
 category = "Transpersonal"
 notes = "Deep transformations around values, self-worth, and material security. Intense relationship with power, scarcity, and autonomy."
 
-# Lunar Nodes
+# Lunar Nodes (combined)
 [[placements]]
-planet = "North Node"
-sign = "Aquarius"
-house = "5th"
+planet = "Lunar Nodes"
+sign = "Aquarius ☊ / Leo ☋"
+house = "5th / 11th"
 category = "Node"
 retrograde = true
-notes = "Evolutionary direction toward authentic, original, self-generated creativity."
-
-[[placements]]
-planet = "South Node"
-sign = "Leo"
-house = "11th"
-category = "Node"
-notes = "Away from validation through groups, status, or collective approval."
+notes = "North Node (☊) in Aquarius, 5th house: Evolutionary direction toward authentic, original, self-generated creativity. South Node (☋) in Leo, 11th house: Away from validation through groups, status, or collective approval."
 
 # Personal strengths and talents
 [strengths]

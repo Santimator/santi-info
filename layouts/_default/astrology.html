@@ -47,19 +47,8 @@
           <h2>Western Astrology</h2>
         </header>
 
-        {{/* Chart Overview and Summary */}}
-        {{ if $westernData.chart }}
+        {{/* Summary - starts directly with strengths */}}
         <div class="astro-summary">
-          <div class="astro-summary-header">
-            <p><strong>Sun:</strong> {{ $westernData.chart.sun }} | <strong>Moon:</strong> {{ $westernData.chart.moon }} | <strong>Ascendant:</strong> {{ $westernData.chart.ascendant }}</p>
-            {{ if $westernData.chart.midheaven }}
-            <p><strong>Midheaven (MC):</strong> {{ $westernData.chart.midheaven }}</p>
-            {{ end }}
-            {{ if $westernData.chart.description }}
-            <p class="astro-intro">{{ $westernData.chart.description }}</p>
-            {{ end }}
-          </div>
-
           {{/* Strengths section */}}
           {{ if $westernData.strengths }}
           <div class="astro-strengths">
@@ -81,7 +70,6 @@
           </div>
           {{ end }}
         </div>
-        {{ end }}
 
         {{/* Flip cards for planetary placements */}}
         {{ if $westernData.placements }}
