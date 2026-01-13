@@ -6,7 +6,7 @@
   // Light mode: Day sky with stronger cosmic colors
   --bg: #d0e4f0;
   --bg-alt: #c0d4e8;
-  --card-bg: #e0ecf8;
+  --card-bg: rgba(224, 236, 248, 0.6); // 60% opacity
   --border: #98b8d0;
   --text-main: #1a1a2a;
   --text-muted: #505068;
@@ -30,7 +30,7 @@
     html:not([data-theme-mode="light"]) & {
       --bg: #0a0a1a;
       --bg-alt: #0f0f24;
-      --card-bg: #14142b;
+      --card-bg: rgba(20, 20, 43, 0.6); // 60% opacity
       --border: #2a2a4a;
       --text-main: #e8e8f0;
       --text-muted: #9090a8;
@@ -55,7 +55,7 @@
 html[data-theme-mode="dark"] body.theme-celestial {
   --bg: #0a0a1a;
   --bg-alt: #0f0f24;
-  --card-bg: #14142b;
+  --card-bg: rgba(20, 20, 43, 0.6); // 60% opacity
   --border: #2a2a4a;
   --text-main: #e8e8f0;
   --text-muted: #9090a8;
@@ -84,6 +84,11 @@ html[data-theme-mode="dark"] body.theme-celestial {
     font-family: var(--font-heading);
     font-weight: 400;
     letter-spacing: 0.02em;
+  }
+
+  // Make content shell transparent
+  .content-shell {
+    background: transparent;
   }
 
   // Light mode: Dawn gradient with stronger intensity
@@ -141,7 +146,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
 .theme-celestial {
 
-  // Glowing cards
+  // Glowing cards with glass effect
   .intro-card,
   .cv-card {
     border: 1px solid var(--border);
@@ -149,6 +154,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
     box-shadow: var(--shadow);
     background: var(--card-bg);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   // Cosmic list markers
@@ -219,6 +225,8 @@ html[data-theme-mode="dark"] body.theme-celestial {
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
     text-align: left;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     .poem-text {
       font-style: italic;
@@ -245,6 +253,8 @@ html[data-theme-mode="dark"] body.theme-celestial {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     h3 {
       font-size: 1.5rem;
@@ -267,6 +277,8 @@ html[data-theme-mode="dark"] body.theme-celestial {
     padding: 2rem;
     margin-bottom: 3rem;
     box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     .astro-strengths {
       margin: 0;
@@ -358,6 +370,8 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
   .flip-card-front {
     background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     h3 {
       font-size: 1.8rem;
