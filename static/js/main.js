@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
   })();
 
-  // Flip cards for astrology
+  // Flip cards for astrology (with iOS touch support)
   (() => {
     const flipCards = document.querySelectorAll('.flip-card');
 
@@ -112,9 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     flipCards.forEach(card => {
-      card.addEventListener('click', () => {
+      // Handle both click and touch events for iOS compatibility
+      const toggleFlip = (e) => {
+        e.preventDefault();
         card.classList.toggle('flipped');
-      });
+      };
+
+      card.addEventListener('click', toggleFlip);
+      card.addEventListener('touchend', toggleFlip);
     });
   })();
 
