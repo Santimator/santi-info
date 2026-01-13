@@ -86,8 +86,12 @@ html[data-theme-mode="dark"] body.theme-celestial {
     letter-spacing: 0.02em;
   }
 
-  // Make content shell transparent
+  // Make content shell and sections transparent
   .content-shell {
+    background: transparent;
+  }
+
+  .cv-section {
     background: transparent;
   }
 
@@ -442,6 +446,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
     }
   }
 
+
   // Mobile adjustments
   @media (max-width: 768px) {
     .astro-flip-cards {
@@ -463,5 +468,35 @@ html[data-theme-mode="dark"] body.theme-celestial {
         font-size: 1rem;
       }
     }
+  }
+}
+
+// Light mode overrides for flip cards (lighter lilac)
+.theme-celestial .flip-card-back {
+  background: #a89bc7;
+  color: #1a1a2a;
+
+  h3 {
+    color: #1a1a2a;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme-mode="light"]) & {
+      background: var(--secondary);
+      color: var(--bg);
+
+      h3 {
+        color: var(--bg);
+      }
+    }
+  }
+}
+
+html[data-theme-mode="dark"] body.theme-celestial .flip-card-back {
+  background: var(--secondary);
+  color: var(--bg);
+
+  h3 {
+    color: var(--bg);
   }
 }
