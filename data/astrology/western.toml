@@ -1,22 +1,140 @@
-# Western Astrology
-# TODO: Add your real astrological chart data
+# Western Astrology - Full Chart Analysis
 
 [chart]
-sun = "PLACEHOLDER"
-moon = "PLACEHOLDER"
-ascendant = "PLACEHOLDER"
-description = "Add your chart interpretation here."
+sun = "Capricorn"
+moon = "Libra"
+ascendant = "Libra ≈ 8°"
+midheaven = "Cancer ≈ 9°"
+description = "Relational orientation (Libra rising) combined with a public/vocational axis tied to care, protection, and emotional intelligence (Cancer MC)."
 
+# Main interpretation sections
+[interpretation]
+title = "Planets: sign and house"
+
+# Angles
+[[interpretation.angles]]
+name = "Ascendant"
+value = "Libra ≈ 8°"
+
+[[interpretation.angles]]
+name = "Midheaven (MC)"
+value = "Cancer ≈ 9°"
+
+# Luminaries
 [[placements]]
 planet = "Sun"
-sign = "PLACEHOLDER"
-house = "PLACEHOLDER"
-notes = "Add notes about your sun placement."
+sign = "Capricorn"
+house = "4th"
+category = "Luminary"
+notes = "Core identity structured around responsibility, endurance, and long-term construction, rooted in private life, family, ancestry, or inner foundations. The self is built \"from the inside out.\""
 
 [[placements]]
 planet = "Moon"
-sign = "PLACEHOLDER"
-house = "PLACEHOLDER"
-notes = "Add notes about your moon placement."
+sign = "Libra"
+house = "1st"
+category = "Luminary"
+notes = "Emotional life is visible, relational, and strongly tied to self-image. You experience yourself through interaction, balance, and feedback from others."
 
-# Add more placements as needed
+# Personal planets
+[[placements]]
+planet = "Mercury"
+sign = "Capricorn"
+house = "4th"
+category = "Personal"
+retrograde = true
+notes = "Thought is serious, inward, reflective, and often recursive. Strong capacity for internal analysis, memory, and structuring complex ideas, but not naturally expressive in a spontaneous or light way."
+
+[[placements]]
+planet = "Venus"
+sign = "Aquarius"
+house = "5th"
+category = "Personal"
+notes = "Affection and creativity are unconventional, idealistic, and freedom-oriented. Attraction to originality, intellect, and non-standard emotional dynamics. Creative expression is experimental rather than sentimental."
+
+[[placements]]
+planet = "Mars"
+sign = "Sagittarius"
+house = "3rd"
+category = "Personal"
+notes = "Mental energy is assertive, exploratory, and outspoken. Drive manifests through learning, debate, travel, writing, or teaching. You fight with ideas rather than bodies."
+
+# Social and transpersonal planets
+[[placements]]
+planet = "Jupiter"
+sign = "Cancer"
+house = "9th"
+category = "Social"
+retrograde = true
+notes = "Expansion through meaning, philosophy, ethics, and worldview, but deeply internalized. Beliefs evolve through emotional experience rather than doctrine. Strong intuitive sense of purpose."
+
+[[placements]]
+planet = "Saturn"
+sign = "Capricorn"
+house = "4th"
+category = "Social"
+notes = "Heavy karmic emphasis on roots, family systems, psychological foundations, and inner authority. Early responsibility; later mastery. This is a dominant placement."
+
+[[placements]]
+planet = "Uranus"
+sign = "Capricorn"
+house = "4th"
+category = "Transpersonal"
+notes = "Structural disruption and reform at the level of home, identity foundations, and inherited patterns. Your private life is not conventional, even if it looks controlled."
+
+[[placements]]
+planet = "Neptune"
+sign = "Capricorn"
+house = "4th"
+category = "Transpersonal"
+notes = "Idealization, confusion, or transcendence around origins, belonging, and inner security. A porous boundary between imagination and memory."
+
+[[placements]]
+planet = "Pluto"
+sign = "Scorpio"
+house = "2nd"
+category = "Transpersonal"
+notes = "Deep transformations around values, self-worth, and material security. Intense relationship with power, scarcity, and autonomy."
+
+# Lunar Nodes
+[[placements]]
+planet = "North Node"
+sign = "Aquarius"
+house = "5th"
+category = "Node"
+retrograde = true
+notes = "Evolutionary direction toward authentic, original, self-generated creativity."
+
+[[placements]]
+planet = "South Node"
+sign = "Leo"
+house = "11th"
+category = "Node"
+notes = "Away from validation through groups, status, or collective approval."
+
+# Personal strengths and talents
+[strengths]
+title = "Personal strengths and talents"
+
+[[strengths.items]]
+name = "Structural intelligence and psychological depth"
+description = "The Capricorn stellium in the 4th house (Sun, Mercury, Saturn, Uranus, Neptune) is the dominant configuration of the chart. This produces: Exceptional capacity to build systems, conceptual or practical, over long timescales. High tolerance for complexity, ambiguity, and delayed gratification. Natural affinity for research, analysis, strategy, and work that requires solitude or internal coherence. This is not light or decorative intelligence; it is architectural intelligence."
+
+[[strengths.items]]
+name = "Relational acuity and social perception"
+description = "With Libra rising and Moon in Libra in the 1st, you have: Acute sensitivity to interpersonal dynamics. Strong aesthetic and ethical calibration. Ability to mediate, translate, or harmonize opposing positions. You read people quickly, often before they finish speaking."
+
+[[strengths.items]]
+name = "Creative originality without narcissism"
+description = "Venus + North Node in Aquarius in the 5th indicates: Creativity that is exploratory, innovative, and concept-driven. Capacity to produce original work without needing applause as fuel. Talent for combining art, ideas, and systems (e.g., creative technology, conceptual projects, experimental pedagogy)."
+
+[[strengths.items]]
+name = "Intellectual courage"
+description = "Mars in Sagittarius in the 3rd gives: Willingness to challenge assumptions. Energy for learning, explaining, and arguing ideas publicly. Resistance to dogma; preference for open-ended inquiry."
+
+[[strengths.items]]
+name = "Transformational resilience"
+description = "Pluto in the 2nd (Scorpio) provides: Ability to survive and regenerate after material or existential crises. Deep insight into value systems—yours and others'. Potential for mastery over fear related to security and control."
+
+[trajectory]
+summary = "The chart does not describe a life of volatility or sudden fortune; it describes progressive crystallization. Your strength lies in slow mastery, internal coherence, and the ability to produce work that holds together under scrutiny."
+conclusion = "This is a chart of someone who becomes clearer, not louder, with time."
