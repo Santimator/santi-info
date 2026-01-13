@@ -1,11 +1,35 @@
-# Enneagram
-# TODO: Add your enneagram type, description, wings, growth/stress points, etc.
+# Enneagram Type One - Social Subtype
+
+[poem]
+text = """Come as you are
+for you are a pure expression of love
+and the world shines with and within you
+as the perfect note in the symphony of Existence.
+You are the Skill itself, the Tool itself,
+the Compass to guide your own steps
+that happily lead to peaceful nowhere,
+where you are safe, protected, relaxed,
+being the whole of Life in it's full, present magnificence."""
+author = "SMJ, January 2026"
+
+[introduction]
+title = "Briefly about the enneagram"
+text = """The Enneagram is a model of personality that describes nine fundamental patterns of motivation, attention, and emotional regulation. Rather than focusing on surface behaviors, it explores why we act, react, and relate in certain ways, especially under stress or security.
+
+In a work context, the Enneagram supports self-awareness around limits, strengths, decision-making styles, and relational dynamics. This clarity has practical consequences: it improves communication, autonomy, and responsibility, and reduces unconscious friction with others. In this sense, it is comparable to frameworks like MBTI, but with a stronger emphasis on inner drivers and adaptive patterns.
+
+On a personal level, the Enneagram functions as a tool for self-observation and self-care. It helps contain one's own reactive tendencies, avoid projecting unresolved patterns onto others, and remain less affected by the emotional dynamics of the environment. This integration between inner awareness and external functioning is what makes the Enneagram relevant both for professional contexts and for therapeutic or autonomous work."""
 
 [profile]
-type = "PLACEHOLDER"
-wing = "PLACEHOLDER"
-description = "Add your enneagram information here."
+type = "1"
+subtype = "Social"
+title = "I am the number one"
+description = """Enneagram Type One describes a personality organized around principles, coherence, and an inner sense of what is right. The core movement of this type is toward identifying underlying rules, ideals, and abstractions that give structure and meaning to reality. Rather than focusing on isolated details, attention naturally goes toward the general, the systemic, and the essential—what could be described as the search for "correct form," similar to philosophical ideals.
 
-[[traits]]
-trait = "PLACEHOLDER"
-description = "Add trait description here."
+As a social subtype, this orientation extends beyond the personal sphere. The concern is rarely limited to individual improvement; it is directed toward the collective: society, systems, shared environments, or humanity as a whole. There is a strong sensitivity to the global impact of actions, norms, and values, and a tendency to evaluate whether structures and practices align with deeper ethical or functional principles.
+
+Type One operates along a clear internal spectrum. On one end, there can be rigidity: a strict moral framework, high self-restraint, and an intense focus on correcting what is perceived as wrong. This side is often associated with guilt, inner pressure, and the belief that goodness must be defended through discipline and control.
+
+On the other end lies the healthy expression of this type: a state of deep acceptance. Here, judgment relaxes, and reality is no longer filtered through constant evaluation of good versus bad. Experience is allowed to be what it is, without moral tension or corrective urgency. Presence replaces control, and acceptance becomes the central quality—not as passivity, but as clarity without resistance.
+
+My own trajectory within this pattern has been a gradual movement away from moral rigidity toward this more open and accepting stance. While certain domains once activated stronger self-critical or corrective tendencies, that intensity has largely softened. What remains is the capacity to work with principles and ideals without being constrained by them, and to relate to both self and environment with significantly less inner friction."""

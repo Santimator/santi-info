@@ -18,22 +18,30 @@
         <header class="cv-section-header">
           <h2>Enneagram</h2>
         </header>
-        <div class="cv-cards">
-          {{ if $enneagramData.profile }}
-          <div class="cv-card">
-            <h3>Type {{ $enneagramData.profile.type }}{{ if $enneagramData.profile.wing }} - Wing {{ $enneagramData.profile.wing }}{{ end }}</h3>
-            {{ if $enneagramData.profile.description }}
-            <p>{{ $enneagramData.profile.description }}</p>
-            {{ end }}
-          </div>
-          {{ end }}
-          {{ range $enneagramData.traits }}
-          <div class="cv-card">
-            <h3>{{ .trait }}</h3>
-            <p>{{ .description }}</p>
-          </div>
-          {{ end }}
+
+        {{/* Poem */}}
+        {{ if $enneagramData.poem }}
+        <div class="enneagram-poem">
+          <p class="poem-text">{{ $enneagramData.poem.text }}</p>
+          <p class="poem-author">— {{ $enneagramData.poem.author }}</p>
         </div>
+        {{ end }}
+
+        {{/* Introduction */}}
+        {{ if $enneagramData.introduction }}
+        <div class="enneagram-intro">
+          <h3>{{ $enneagramData.introduction.title }}</h3>
+          <p>{{ $enneagramData.introduction.text }}</p>
+        </div>
+        {{ end }}
+
+        {{/* Profile */}}
+        {{ if $enneagramData.profile }}
+        <div class="enneagram-profile">
+          <h3>{{ $enneagramData.profile.title }}</h3>
+          <p>{{ $enneagramData.profile.description }}</p>
+        </div>
+        {{ end }}
       </div>
     </section>
     {{ end }}
