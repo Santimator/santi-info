@@ -102,5 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     init();
   })();
-  
+
+  // Flip cards for astrology
+  (() => {
+    const flipCards = document.querySelectorAll('.flip-card');
+
+    if (flipCards.length === 0) {
+      return;
+    }
+
+    flipCards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+    });
+  })();
+
 });

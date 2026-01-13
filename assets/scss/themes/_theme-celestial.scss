@@ -209,4 +209,210 @@ html[data-theme-mode="dark"] body.theme-celestial {
       z-index: -1;
     }
   }
+
+  // Astrology summary section
+  .astro-summary {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+
+    .astro-summary-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      .astro-intro {
+        margin-top: 1rem;
+        font-style: italic;
+        color: var(--text-muted);
+      }
+    }
+
+    .astro-strengths {
+      margin: 2rem 0;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--accent);
+      }
+
+      .strength-item {
+        margin-bottom: 1.5rem;
+
+        h4 {
+          color: var(--secondary);
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+        }
+
+        p {
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+    }
+
+    .astro-trajectory {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+
+      p {
+        margin: 0.5rem 0;
+        line-height: 1.6;
+      }
+
+      .trajectory-conclusion {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Flip cards for planetary placements
+  .astro-flip-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .flip-card {
+    background-color: transparent;
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+
+    &.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+
+  .flip-card-front {
+    background: var(--card-bg);
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .planet-sign {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin: 0.5rem 0;
+    }
+
+    .planet-house {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0.5rem 0;
+    }
+
+    .flip-hint {
+      margin-top: auto;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+  }
+
+  .flip-card-back {
+    background: var(--secondary);
+    color: var(--bg);
+    transform: rotateY(180deg);
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--bg);
+    }
+
+    .planet-notes {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      text-align: left;
+      overflow-y: auto;
+      flex: 1;
+      margin: 0;
+      padding-right: 0.5rem;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+      }
+    }
+
+    .flip-hint {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  }
+
+  // Mobile adjustments
+  @media (max-width: 768px) {
+    .astro-flip-cards {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+
+    .flip-card {
+      height: 240px;
+    }
+
+    .astro-summary {
+      padding: 1.5rem;
+
+      .astro-strengths h3 {
+        font-size: 1.3rem;
+      }
+
+      .strength-item h4 {
+        font-size: 1rem;
+      }
+    }
+  }
 }
