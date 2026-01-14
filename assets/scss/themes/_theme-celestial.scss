@@ -76,9 +76,9 @@ html[data-theme-mode="dark"] body.theme-celestial {
 }
 
 .theme-celestial {
-  // Typography: Dreamy and ethereal
-  --font-heading: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Georgia', serif;
-  --font-body: 'Georgia', 'Crimson Text', serif;
+  // Typography: Dreamy but readable
+  --font-heading: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   h1, h2, h3 {
     font-family: var(--font-heading);
@@ -234,7 +234,26 @@ html[data-theme-mode="dark"] body.theme-celestial {
       line-height: 1.8;
       color: var(--text-main);
       margin: 0 0 1rem 0;
-      white-space: pre-line;
+    }
+
+    // Stairs effect: each line progressively indented
+    .poem-stairs {
+      .poem-line {
+        margin: 0;
+        padding-left: 0;
+        transition: padding-left 0.3s ease;
+
+        // Progressive indentation for 9 lines
+        &[data-line="0"] { padding-left: 0%; }
+        &[data-line="1"] { padding-left: 5%; }
+        &[data-line="2"] { padding-left: 10%; }
+        &[data-line="3"] { padding-left: 18%; }
+        &[data-line="4"] { padding-left: 26%; }
+        &[data-line="5"] { padding-left: 34%; }
+        &[data-line="6"] { padding-left: 42%; }
+        &[data-line="7"] { padding-left: 50%; }
+        &[data-line="8"] { padding-left: 58%; }
+      }
     }
 
     .poem-author {
