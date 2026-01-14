@@ -78,6 +78,11 @@ button:focus-visible {
 
 main.page-main {
   padding: $space-4 0 $space-4;
+  min-height: 60vh;
+
+  @media (min-width: 760px) {
+    min-height: calc(100vh - 100px);
+  }
 }
 
 .content-shell {
