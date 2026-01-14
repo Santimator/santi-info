@@ -117,25 +117,94 @@
         <header class="cv-section-header">
           <h2>Chinese Astrology</h2>
         </header>
-        {{ if $chineseData.zodiac }}
-        <div class="cv-cards">
-          <div class="cv-card">
-            <h3>{{ $chineseData.zodiac.animal }} - {{ $chineseData.zodiac.element }}</h3>
-            <h4>Year {{ $chineseData.zodiac.year }}</h4>
-            {{ if $chineseData.zodiac.description }}
-            <p>{{ $chineseData.zodiac.description }}</p>
+
+        {{/* Overview */}}
+        {{ if $chineseData.overview }}
+        <div class="chinese-astro-overview">
+          <h3>{{ $chineseData.overview.title }}</h3>
+          <p><strong>Birth Hour:</strong> {{ $chineseData.overview.birth_hour }}</p>
+          <p>{{ $chineseData.overview.summary }}</p>
+        </div>
+        {{ end }}
+
+        {{/* Four Pillars */}}
+        {{ if $chineseData.pillars }}
+        <div class="chinese-pillars">
+          {{ range $chineseData.pillars }}
+          <div class="chinese-pillar-card">
+            <h3>{{ .name }}</h3>
+            <h4>{{ .title }}</h4>
+            <p>{{ .description | markdownify }}</p>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Elements */}}
+        {{ if $chineseData.elements }}
+        <div class="chinese-elements">
+          <h3>{{ $chineseData.elements.title }}</h3>
+          <p><strong>Dominant:</strong> {{ $chineseData.elements.dominant }}</p>
+          <p><strong>Secondary:</strong> {{ $chineseData.elements.secondary }}</p>
+          <p><strong>Moderate:</strong> {{ $chineseData.elements.moderate }}</p>
+          <p><strong>Present:</strong> {{ $chineseData.elements.present }}</p>
+          <p><strong>Weak:</strong> {{ $chineseData.elements.weak }}</p>
+          {{ if $chineseData.elements.consequences }}
+          <h4>Psychological consequences:</h4>
+          <ul>
+            {{ range $chineseData.elements.consequences }}
+            <li>{{ .trait }}</li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Character */}}
+        {{ if $chineseData.character }}
+        <div class="chinese-character">
+          <h3>{{ $chineseData.character.title }}</h3>
+          <div class="character-sections">
+            {{ if $chineseData.character.temperament }}
+            <div class="character-section">
+              <h4>Temperament</h4>
+              <p>{{ $chineseData.character.temperament.description }}</p>
+            </div>
+            {{ end }}
+            {{ if $chineseData.character.cognition }}
+            <div class="character-section">
+              <h4>Cognition</h4>
+              <p>{{ $chineseData.character.cognition.description }}</p>
+            </div>
+            {{ end }}
+            {{ if $chineseData.character.motivation }}
+            <div class="character-section">
+              <h4>Motivation</h4>
+              <p>{{ $chineseData.character.motivation.description }}</p>
+            </div>
+            {{ end }}
+            {{ if $chineseData.character.social_style }}
+            <div class="character-section">
+              <h4>Social style</h4>
+              <p>{{ $chineseData.character.social_style.description }}</p>
+            </div>
+            {{ end }}
+            {{ if $chineseData.character.shadow_patterns }}
+            <div class="character-section">
+              <h4>Shadow patterns</h4>
+              <p>{{ $chineseData.character.shadow_patterns.description }}</p>
+            </div>
             {{ end }}
           </div>
         </div>
         {{ end }}
-        {{ if $chineseData.traits }}
-        <div class="cv-cards">
-          {{ range $chineseData.traits }}
-          <div class="cv-card">
-            <h3>{{ .trait }}</h3>
-            <p>{{ .description }}</p>
-          </div>
-          {{ end }}
+
+        {{/* Archetype */}}
+        {{ if $chineseData.archetype }}
+        <div class="chinese-archetype">
+          <h3>{{ $chineseData.archetype.title }}</h3>
+          <h4>{{ $chineseData.archetype.type }}</h4>
+          <p>{{ $chineseData.archetype.description | markdownify }}</p>
         </div>
         {{ end }}
       </div>

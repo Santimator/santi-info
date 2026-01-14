@@ -455,6 +455,101 @@ html[data-theme-mode="dark"] body.theme-celestial {
     }
   }
 
+  // Chinese Astrology styling
+  .chinese-astro-overview,
+  .chinese-elements,
+  .chinese-character,
+  .chinese-archetype {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+
+    h4 {
+      color: var(--secondary);
+      margin: 1rem 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    p {
+      line-height: 1.7;
+      margin: 0.5rem 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+
+      li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.5rem;
+
+        &::before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: var(--accent);
+        }
+      }
+    }
+  }
+
+  .chinese-pillars {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 2rem;
+  }
+
+  .chinese-pillar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--accent);
+      margin: 0 0 0.5rem 0;
+    }
+
+    h4 {
+      font-size: 1rem;
+      color: var(--secondary);
+      margin: 0 0 1rem 0;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+
+  .character-sections {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .character-section {
+    padding: 1rem;
+    border-left: 3px solid var(--secondary);
+
+    h4 {
+      margin-top: 0;
+    }
+  }
 
   // Mobile adjustments
   @media (max-width: 768px) {
@@ -476,6 +571,10 @@ html[data-theme-mode="dark"] body.theme-celestial {
       .strength-item h4 {
         font-size: 1rem;
       }
+    }
+
+    .chinese-pillars {
+      grid-template-columns: 1fr;
     }
   }
 }
