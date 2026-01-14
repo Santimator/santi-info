@@ -576,6 +576,20 @@ html[data-theme-mode="dark"] body.theme-celestial {
     .chinese-pillars {
       grid-template-columns: 1fr;
     }
+
+    .chinese-pillar-card {
+      h3 {
+        font-size: 1rem;
+      }
+
+      h4 {
+        font-size: 0.9rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
   }
 }
 
