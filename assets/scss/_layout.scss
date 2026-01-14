@@ -13,7 +13,8 @@ body {
   line-height: 1.65;
   font-size: 1.05rem;
   min-height: 100vh;
-  padding-bottom: calc($space-4 + 5rem);
+  display: flex;
+  flex-direction: column;
   transition: background-color 0.3s ease, color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -78,11 +79,7 @@ button:focus-visible {
 
 main.page-main {
   padding: $space-4 0 $space-4;
-  min-height: 60vh;
-
-  @media (min-width: 760px) {
-    min-height: calc(100vh - 100px);
-  }
+  flex: 1;
 }
 
 .content-shell {

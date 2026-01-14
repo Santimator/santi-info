@@ -22,7 +22,11 @@
         {{/* Poem */}}
         {{ if $enneagramData.poem }}
         <div class="enneagram-poem">
-          <p class="poem-text">{{ $enneagramData.poem.text }}</p>
+          <div class="poem-text poem-stairs">
+            {{ range $index, $line := split $enneagramData.poem.text "\n" }}
+            <p class="poem-line" data-line="{{ $index }}">{{ $line }}</p>
+            {{ end }}
+          </div>
           <p class="poem-author">— {{ $enneagramData.poem.author }}</p>
         </div>
         {{ end }}
