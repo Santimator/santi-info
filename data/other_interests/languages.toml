@@ -15,3 +15,7 @@ level = "Fluent"
 [[items]]
 language = "Chinese"
 level = "Basic"
+
+[[items]]
+language = "German"
+level = "Basic"

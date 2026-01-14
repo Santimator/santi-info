@@ -1,12 +1,117 @@
-# Chinese Astrology
-# TODO: Add your Chinese zodiac information
+# Chinese Astrology - Bāzì (Four Pillars)
 
-[zodiac]
-animal = "PLACEHOLDER"
-element = "PLACEHOLDER"
-year = "PLACEHOLDER"
-description = "Add your Chinese zodiac interpretation here."
+[overview]
+title = "己巳 Yin Earth Snake"
+birth_hour = "子 (Zi, Rat) – Midnight (23:00–01:00)"
+summary = "A mind that works below the surface. Reserved, observant, internally busy. Strong structural intelligence with a preference for depth over novelty."
 
-[[traits]]
-trait = "PLACEHOLDER"
-description = "Add trait description here."
+# The Four Pillars
+[[pillars]]
+name = "Year Pillar — 己巳 (Yǐ Sì)"
+title = "Yin Earth Snake"
+description = """This pillar describes social imprint, instinctive behavior, and early conditioning.
+
+**Earth (己, Yin Earth):** Internalized stability, containment, discretion, strategic patience. Yin Earth is not expansive; it absorbs, holds, and refines.
+
+**Snake (巳 – Fire with Metal undertone):** Analytical, observant, controlled, mentally alert. Snake energy is quiet, calculating, and rarely impulsive.
+
+**Core tone:** A mind that works below the surface. You observe far more than you show. There is a natural tendency toward strategic thinking, self-containment, and delayed action rather than reaction."""
+
+[[pillars]]
+name = "Month Pillar — Chǒu month (丑)"
+title = "Yin Earth Ox month"
+description = """The Month Pillar is the dominant influence in Bāzì for personality and operating style.
+
+**Ox (丑):** Persistence, endurance, resistance to chaos, intolerance for inefficiency. The Ox works slowly but relentlessly. Strong Earth dominance, with embedded Water and Metal.
+
+**Implications:**
+- You are structurally resilient, not emotionally volatile.
+- You prefer systems that work, not ideals that sound good.
+- Once committed, you do not abandon a line of thought easily.
+- This placement strongly favors long-form thinking, research, craftsmanship, and mastery over time."""
+
+[[pillars]]
+name = "Day Pillar — Day Master: Yin Earth (己)"
+title = "The Day Stem defines 'you'"
+description = """Regardless of the exact Day Branch, your Day Master is Yin Earth, which is already reinforced by year and month.
+
+**Yin Earth personality profile:**
+- Absorptive rather than expressive
+- Internally structured
+- Values coherence, reliability, and internal consistency
+- Needs time to process before acting or speaking
+
+You are not designed for constant output or performative visibility. Your intelligence is digestive: you take in complexity and convert it into usable structure."""
+
+[[pillars]]
+name = "Hour Pillar — 子 hour (Zi, Rat)"
+title = "Midnight birth (23:00–01:00)"
+description = """The Hour Pillar reflects inner drives, private mind, and long-term orientation.
+
+**Rat (子 – Pure Yang Water):** Abstract thinking, curiosity, pattern recognition, mental mobility.
+
+This creates a **Water–Earth tension:**
+- Earth wants stability and closure.
+- Water wants exploration and understanding.
+
+**Result:** A mind that never fully rests. You may appear grounded externally, but internally you are constantly mapping, questioning, and recombining ideas."""
+
+# Elemental Balance
+[elements]
+title = "Elemental balance (qualitative)"
+dominant = "Earth (very strong)"
+secondary = "Water"
+moderate = "Fire"
+present = "Metal present but not dominant"
+weak = "Wood comparatively weak"
+
+[[elements.consequences]]
+trait = "Strong structural intelligence"
+
+[[elements.consequences]]
+trait = "Low impulsivity"
+
+[[elements.consequences]]
+trait = "Preference for depth over novelty"
+
+[[elements.consequences]]
+trait = "Skepticism toward ungrounded enthusiasm"
+
+[[elements.consequences]]
+trait = "Growth comes from consciously engaging Wood qualities: initiative, flexibility, outward growth"
+
+# Character Synthesis
+[character]
+title = "Character synthesis (who you are, in Chinese terms)"
+
+[character.temperament]
+description = """Reserved, observant, internally busy. Calm exterior masking intense mental activity. Not easily swayed by emotion or fashion. Strong intolerance for incoherence, contradiction, or superficiality."""
+
+[character.cognition]
+description = """Systems-oriented thinker. Strong memory for structure, not trivia. Naturally good at diagnosing flaws in arguments, models, or organizations. Prefers frameworks that can survive stress-testing."""
+
+[character.motivation]
+description = """Security through understanding, not control. Mastery rather than dominance. Autonomy through competence."""
+
+[character.social_style]
+description = """Selective, not avoidant. Prefers meaningful exchanges over frequent ones. Low need for approval, high need for respect (earned, not granted)."""
+
+[character.shadow_patterns]
+description = """Over-containment of emotion. Delayed action due to over-analysis. Risk of stagnation if environment becomes too rigid. Difficulty starting without sufficient internal certainty."""
+
+# Archetype
+[archetype]
+title = "Chinese-astrology archetypal summary"
+type = "Hidden Strategist"
+description = """In classical terms, your chart resembles that of a "hidden strategist" type:
+
+- Not a front-line commander
+- Not a charismatic leader
+- But a structural thinker, planner, analyst, or builder of durable systems
+
+You are better suited to:
+- Designing, refining, diagnosing
+- Working behind or beneath visible structures
+- Producing things that last, not things that impress quickly
+
+This is a chart associated with long arcs, not dramatic spikes."""
