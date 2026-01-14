@@ -457,8 +457,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
   // Chinese Astrology styling
   .chinese-astro-overview,
-  .chinese-elements,
-  .chinese-character,
+  .chinese-profile,
   .chinese-archetype {
     background: var(--card-bg);
     border: 1px solid var(--border);
@@ -483,32 +482,24 @@ html[data-theme-mode="dark"] body.theme-celestial {
       line-height: 1.7;
       margin: 0.5rem 0;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-
-      li {
-        padding-left: 1.5rem;
-        position: relative;
-        margin-bottom: 0.5rem;
-
-        &::before {
-          content: "•";
-          position: absolute;
-          left: 0;
-          color: var(--accent);
-        }
-      }
-    }
   }
 
+  // Four Pillars: responsive grid
   .chinese-pillars {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     margin-bottom: 2rem;
+
+    // 2x2 on tablets
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // Single column on mobile
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .chinese-pillar-card {
@@ -536,18 +527,24 @@ html[data-theme-mode="dark"] body.theme-celestial {
     }
   }
 
-  .character-sections {
+  // Profile traits styling
+  .profile-traits {
     display: grid;
     gap: 1.5rem;
     margin-top: 1.5rem;
   }
 
-  .character-section {
+  .profile-trait {
     padding: 1rem;
     border-left: 3px solid var(--secondary);
 
     h4 {
       margin-top: 0;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.95rem;
     }
   }
 
@@ -571,10 +568,6 @@ html[data-theme-mode="dark"] body.theme-celestial {
       .strength-item h4 {
         font-size: 1rem;
       }
-    }
-
-    .chinese-pillars {
-      grid-template-columns: 1fr;
     }
 
     .chinese-pillar-card {
