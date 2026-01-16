@@ -5,8 +5,11 @@
             <h1>{{ .Site.Title }}</h1>
         </header>
 
-        <section>
-            {{ .Content }}
+        <section class="smj-content-with-image">
+            <img src="/images/profile.jpg" alt="Santiago Moreno" class="smj-profile-image">
+            <div class="smj-text-content">
+                {{ .Content }}
+            </div>
         </section>
     </article>
     {{/* Build stamp for SMJ page */}}

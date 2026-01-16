@@ -39,3 +39,8 @@ title = "Santiago Moreno Jaureguízar"
     name   = "Complementary"
     url    = "/other-interests/"
     weight = 60
+
+  [[menu.main]]
+    name   = "Projects"
+    url    = "/projects/"
+    weight = 70
