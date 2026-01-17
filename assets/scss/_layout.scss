@@ -176,33 +176,18 @@ main.page-main {
 }
 
 // SMJ page with profile image
-.smj-content-with-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $space-3;
-
-  @media (min-width: 760px) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+.smj-content {
+  text-align: left;
 }
 
 .smj-profile-image {
+  display: block;
   width: 100%;
   max-width: 650px; // Half of 1300px max-width
   height: auto;
+  margin: 0 auto $space-4 auto; // Centered with bottom margin
   border-radius: 12px;
   box-shadow: var(--shadow-lg);
-
-  @media (min-width: 760px) {
-    flex-shrink: 0;
-  }
-}
-
-.smj-text-content {
-  flex: 1;
-  min-width: 0;
 }
 
 // Responsive improvements
