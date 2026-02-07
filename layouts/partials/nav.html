@@ -5,7 +5,7 @@
             <span class="nav-toggle-label">SMJ+</span>
         </button>
         {{ with .Site.Menus.main }}
-        <div class="nav-panel" id="nav-menu" aria-hidden="true">
+        <div class="nav-panel" id="nav-menu" aria-hidden="true" hidden>
             <ul class="nav-menu">
                 {{ $current := $ }}
                 {{ range . }}
