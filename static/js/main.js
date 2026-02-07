@@ -11,11 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const setOpen = (open) => {
       toggle.setAttribute('aria-expanded', open);
       panel.setAttribute('aria-hidden', !open);
+      panel.toggleAttribute('hidden', !open);
       nav.classList.toggle('is-open', open);
     };
 
     setOpen(false);
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    document.addEventListener('click', (event) => {
+      if (toggle.getAttribute('aria-expanded') === 'true' && !nav.contains(event.target)) {
+        setOpen(false);
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+      }
+    });
   })();
 
   // Dark mode toggle with localStorage persistence (2 states: light/dark)
@@ -103,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
   })();
 
-  // Flip cards for astrology (with iOS touch support)
+  // Flip cards for astrology (keyboard-friendly)
   (() => {
     const flipCards = document.querySelectorAll('.flip-card');
 
@@ -112,14 +123,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     flipCards.forEach(card => {
-      // Handle both click and touch events for iOS compatibility
-      const toggleFlip = (e) => {
-        e.preventDefault();
+      const toggleFlip = () => {
         card.classList.toggle('flipped');
+        card.setAttribute('aria-pressed', card.classList.contains('flipped'));
       };
 
       card.addEventListener('click', toggleFlip);
-      card.addEventListener('touchend', toggleFlip);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleFlip();
+        }
+      });
     });
   })();
 

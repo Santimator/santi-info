@@ -87,18 +87,18 @@
         {{ if $westernData.placements }}
         <div class="cv-cards astro-flip-cards">
           {{ range $westernData.placements }}
-          <div class="flip-card" data-category="{{ .category }}">
+          <div class="flip-card" data-category="{{ .category }}" role="button" tabindex="0" aria-pressed="false" aria-label="Flip card for {{ .planet }} in {{ .sign }}">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <h3>{{ .planet }}{{ if .retrograde }} ℞{{ end }}</h3>
                 <p class="planet-sign">{{ .sign }}</p>
                 <p class="planet-house">House {{ .house }}</p>
-                <span class="flip-hint">Click to reveal</span>
+                <span class="flip-hint">Click or press Enter/Space to reveal</span>
               </div>
               <div class="flip-card-back">
                 <h3>{{ .planet }} in {{ .sign }}</h3>
                 <p class="planet-notes">{{ .notes }}</p>
-                <span class="flip-hint">Click to return</span>
+                <span class="flip-hint">Click or press Enter/Space to return</span>
               </div>
             </div>
           </div>
