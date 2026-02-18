@@ -37,40 +37,7 @@
   --stone-grey: #8a8875;
 }
 
-// Dark mode: Lamplight reading at tea house
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme-mode="light"]) .theme-bamboo {
-    --bg: #1a1d18;
-    --bg-alt: #22251f;
-    --card-bg: #252820;
-    --border: #3a3d35;
-    --text-main: #e8e5dc;
-    --text-muted: #a8a59c;
-    --accent: #7a9b6a;
-    --accent-hover: #8aab7a;
-    --secondary: #9aab8a;
-    --tone-a: #1f221d;
-    --tone-b: #272a24;
-    --tone-c: #2f322b;
-    --nav-bg: #1a1d18;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.7);
-    
-    --bamboo-green: #7a9b6a;
-    --bamboo-light: #8aab7a;
-    --bamboo-dark: #6a8b5a;
-    --ink-black: #e8e5dc;
-    --ink-wash: rgba(232, 229, 220, 0.05);
-    --paper-cream: #252820;
-    --tea-green: #8a9a7a;
-    --mist-white: rgba(0, 0, 0, 0.3);
-    --seal-red: #d85050;
-    --stone-grey: #6a6858;
-  }
-}
-
-// Dark mode: Forced via toggle
-html[data-theme-mode="dark"] body.theme-bamboo {
+@include dark-mode-vars('body.theme-bamboo') {
   --bg: #1a1d18;
   --bg-alt: #22251f;
   --card-bg: #252820;
@@ -86,7 +53,7 @@ html[data-theme-mode="dark"] body.theme-bamboo {
   --nav-bg: #1a1d18;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.7);
-  
+
   --bamboo-green: #7a9b6a;
   --bamboo-light: #8aab7a;
   --bamboo-dark: #6a8b5a;
@@ -339,7 +306,7 @@ html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
 }
 
 // Mobile adjustments
-@media (max-width: 768px) {
+@include bp-max(md) {
   .theme-bamboo h1 {
     font-size: 2.2rem;
   }
@@ -365,7 +332,7 @@ html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
 }
 
 // Very small screens - simplify
-@media (max-width: 480px) {
+@include bp-max(sm) {
   .theme-bamboo {
     line-height: 1.8;
   }

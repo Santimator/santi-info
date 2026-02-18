@@ -44,3 +44,47 @@ $bp-sm: 480px;
 $bp-md: 760px;
 $bp-lg: 1024px;
 $bp-xl: 1280px;
+
+// Breakpoint mixins.
+// bp()     → min-width (mobile-first, "at this size and up")
+// bp-max() → max-width ("up to but not including this size")
+// Usage: @include bp(md) { ... }  /  @include bp-max(md) { ... }
+@mixin bp($size) {
+  @if $size == sm  { @media (min-width: $bp-sm)  { @content; } }
+  @else if $size == md  { @media (min-width: $bp-md)  { @content; } }
+  @else if $size == lg  { @media (min-width: $bp-lg)  { @content; } }
+  @else if $size == xl  { @media (min-width: $bp-xl)  { @content; } }
+}
+
+@mixin bp-max($size) {
+  @if $size == sm  { @media (max-width: $bp-sm)  { @content; } }
+  @else if $size == md  { @media (max-width: $bp-md)  { @content; } }
+  @else if $size == lg  { @media (max-width: $bp-lg)  { @content; } }
+  @else if $size == xl  { @media (max-width: $bp-xl)  { @content; } }
+}
+
+// Z-index scale — use these tokens instead of bare numbers
+$z-bg:      -1;   // canvas / decorative backgrounds
+$z-content:  1;   // normal in-flow content
+$z-nav:     200;  // sticky nav
+$z-footer:  200;  // fixed footer
+$z-skip:    300;  // skip link (must beat nav)
+
+// Dark mode mixin — deduplicates the two identical dark-variable blocks per theme.
+// Handles both system preference and manual toggle in one @include.
+//
+// Usage:
+//   @include dark-mode-vars('body.theme-foo') {
+//     --bg: #000;
+//     --text-main: #fff;
+//   }
+@mixin dark-mode-vars($selector) {
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme-mode="light"]) #{$selector} {
+      @content;
+    }
+  }
+  html[data-theme-mode="dark"] #{$selector} {
+    @content;
+  }
+}

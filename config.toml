@@ -2,6 +2,23 @@ baseURL = "https://santimj.com/"
 languageCode = "en"
 title = "Santiago Moreno Jaureguízar"
 # theme = ""  # Empty - using custom layouts
+enableRobotsTXT = true
+
+[params]
+  description = "Santiago Moreno Jaureguízar — engineer, teacher, and artist."
+  email       = "santiagomj@gmail.com"
+  github      = "https://github.com/santimator"
+  linkedin    = "https://www.linkedin.com/in/santiagomorenojaureguizar/"
+
+[params.themeMap]
+  terminal   = "engineering"
+  blackboard = "teaching"
+  classic    = "engineering"
+  organic    = "personal_development"
+  celestial  = "astrology"
+  artist     = "the_artist"
+  hyperion   = "other_interests"
+  bamboo     = "smj"
 
 [menu]
 

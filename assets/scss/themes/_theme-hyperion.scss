@@ -26,35 +26,9 @@
   --cosmic-dark: #f0e8d8;
   --shrike-silver: #888890;
 
-  // Dark mode: Cosmic dark, aged gold
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme-mode="light"]) & {
-      --bg: #0d1117;
-      --bg-alt: #131920;
-      --card-bg: #1a222c;
-      --border: #2d3640;
-      --text-main: #d4c5a9;
-      --text-muted: #8b8070;
-      --accent: #c9a227;
-      --accent-hover: #e0b830;
-      --secondary: #722f37;
-      --tone-a: #161d25;
-      --tone-b: #1d252f;
-      --tone-c: #242d38;
-      --nav-bg: #0d1117;
-      --shadow: 0 2px 12px rgba(201, 162, 39, 0.1);
-      --shadow-lg: 0 10px 30px rgba(201, 162, 39, 0.15);
-
-      --gold: #c9a227;
-      --bronze: #cd7f32;
-      --crimson: #722f37;
-      --cosmic-dark: #0d1117;
-      --shrike-silver: #708090;
-    }
-  }
 }
 
-html[data-theme-mode="dark"] body.theme-hyperion {
+@include dark-mode-vars('body.theme-hyperion') {
   --bg: #0d1117;
   --bg-alt: #131920;
   --card-bg: #1a222c;

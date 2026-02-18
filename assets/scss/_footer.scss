@@ -35,27 +35,11 @@
   }
 }
 
+// Footer-specific overrides (base styles in _navbar.scss .theme-toggle)
 .theme-toggle-footer {
-  background: none;
-  border: none;
-  color: inherit;
   font-size: 1.2rem;
-  cursor: pointer;
   padding: 0;
-  margin: 0;
-  line-height: 1;
-  transition: transform 0.2s ease, opacity 0.2s ease;
   display: none;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    opacity: 0.8;
-  }
-
-  .theme-toggle-icon {
-    display: block;
-  }
 }
 
 // Hide separator before toggle on mobile
@@ -63,13 +47,17 @@
   display: none;
 }
 
-// Footer icons styling
+// Footer icons styling: icon visible on mobile, text visible on desktop
 .footer-meta a {
   font-size: 1.3rem;
   font-weight: 700;
-  
-  span {
+
+  .footer-icon {
     display: inline-block;
+  }
+
+  .footer-link-text {
+    display: none;
   }
 }
 
@@ -118,18 +106,18 @@
   border-top: 1px solid var(--bamboo-green);
   background: var(--nav-bg);
   backdrop-filter: blur(10px);
-  z-index: 10;
+  z-index: $z-content;
 }
 
 // Desktop: Fixed footer with theme toggle, text links
-@media (min-width: 760px) {
+@include bp(md) {
   .site-footer {
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
-    z-index: 1000;
+    z-index: $z-footer;
     border-top: 1px solid var(--border);
   }
 
@@ -146,25 +134,13 @@
   .footer-meta a {
     font-size: 0.95rem;
     font-weight: 600;
-    
-    span[aria-hidden="true"] {
+
+    .footer-icon {
       display: none;
     }
 
-    &::after {
-      content: attr(aria-label);
+    .footer-link-text {
+      display: inline;
     }
-  }
-
-  .footer-meta a[href^="mailto"]::after {
-    content: "santiagomj@gmail.com";
-  }
-
-  .footer-meta a[href*="github"]::after {
-    content: "GitHub";
-  }
-
-  .footer-meta a[href*="linkedin"]::after {
-    content: "LinkedIn";
   }
 }

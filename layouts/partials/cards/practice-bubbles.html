@@ -1,9 +1,8 @@
 {{/* Practice Bubbles - Organic Garden Layout */}}
 {{ $theme := .Page.Params.theme }}
 
-{{/* Map theme to data path */}}
-{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
-{{ $sectionName := index $dataMap $theme | default "personal_development" }}
+{{/* Resolve data section from site config */}}
+{{ $sectionName := index .Page.Site.Params.themeMap $theme | default "personal_development" }}
 
 {{ $data := index .Page.Site.Data $sectionName }}
 {{ with $data.practices }}
@@ -17,7 +16,7 @@
         <div class="practice-bubbles-container">
           {{ range $index, $item := . }}
             {{/* Calculate duration for size */}}
-            {{ $currentYear := 2026 }}
+            {{ $currentYear := now.Year }}
             {{ $years := .years }}
             {{ $startYear := 0 }}
             

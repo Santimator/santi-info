@@ -25,34 +25,9 @@
   --sand: #d4c4a8;
   --cream: #faf8f4;
 
-  // Dark mode: Dark earth, forest green
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme-mode="light"]) & {
-      --bg: #1a1916;
-      --bg-alt: #242220;
-      --card-bg: #2d2b28;
-      --border: #3d3a35;
-      --text-main: #e0dcd0;
-      --text-muted: #a09c90;
-      --accent: #8ba888;
-      --accent-hover: #9bb898;
-      --secondary: #a89070;
-      --tone-a: #222120;
-      --tone-b: #292826;
-      --tone-c: #312f2c;
-      --nav-bg: #1a1916;
-      --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
-
-      --leaf-green: #97b888;
-      --earth-brown: #8b7355;
-      --sand: #d4c4a8;
-      --cream: #2d2b28;
-    }
-  }
 }
 
-html[data-theme-mode="dark"] body.theme-organic {
+@include dark-mode-vars('body.theme-organic') {
   --bg: #1a1916;
   --bg-alt: #242220;
   --card-bg: #2d2b28;
@@ -92,8 +67,10 @@ html[data-theme-mode="dark"] body.theme-organic {
   .intro-card,
   .cv-card {
     border-radius: 20px;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
     border-left: 5px solid var(--accent);
-    border: none;
     box-shadow: var(--shadow);
   }
 

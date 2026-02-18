@@ -1,15 +1,18 @@
 <footer class="site-footer" role="contentinfo">
     <div class="footer-meta">
-        <a href="mailto:santiagomj@gmail.com" aria-label="Email">
-            <span aria-hidden="true">✉</span>
+        <a href="mailto:{{ .Site.Params.email }}" aria-label="Email">
+            <span class="footer-icon" aria-hidden="true">✉</span>
+            <span class="footer-link-text">{{ .Site.Params.email }}</span>
         </a>
         <span class="footer-separator" aria-hidden="true">•</span>
-        <a href="https://github.com/santimator" aria-label="GitHub">
-            <span aria-hidden="true">Git</span>
+        <a href="{{ .Site.Params.github }}" aria-label="GitHub">
+            <span class="footer-icon" aria-hidden="true">Git</span>
+            <span class="footer-link-text">GitHub</span>
         </a>
         <span class="footer-separator" aria-hidden="true">•</span>
-        <a href="https://www.linkedin.com/in/santiagomorenojaureguizar/" aria-label="LinkedIn">
-            <span aria-hidden="true">in</span>
+        <a href="{{ .Site.Params.linkedin }}" aria-label="LinkedIn">
+            <span class="footer-icon" aria-hidden="true">in</span>
+            <span class="footer-link-text">LinkedIn</span>
         </a>
         <span class="footer-separator footer-separator-toggle" aria-hidden="true">•</span>
         <button class="theme-toggle theme-toggle-footer" type="button" aria-label="Toggle theme">

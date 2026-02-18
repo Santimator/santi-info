@@ -7,6 +7,9 @@
     <!-- Basic responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO: description, Open Graph, canonical, JSON-LD -->
+    {{ partial "seo.html" . }}
+
     <!-- Prevent FOUC: Apply saved theme preference immediately (Safari-safe) -->
     <script>
       (function() {
@@ -36,11 +39,14 @@
 {{ $theme := .Params.theme | default "classic" }}
 <body class="theme-{{ $theme }}" data-theme="{{ $theme }}">
 
+    <!-- Skip link: first focusable element, becomes visible on keyboard focus -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
     <!-- Top navigation bar -->
     {{ partial "nav.html" . }}
 
     <!-- Main content area -->
-    <main class="page-main">
+    <main class="page-main" id="main-content">
         {{ block "main" . }}{{ end }}
     </main>
 
@@ -51,7 +57,7 @@
     {{ partial "theme-background.html" . }}
 
     <!-- Global JS (menu toggle and core interactions) -->
-    <script src="{{ "js/main.js" | relURL }}"></script>
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
 
 </body>
 </html>

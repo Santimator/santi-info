@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-layout: "projects"
+layout: "page-blocks"
 theme: "classic"
 ---
 

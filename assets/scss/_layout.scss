@@ -69,7 +69,7 @@ button:focus-visible {
   background: var(--accent);
   color: var(--bg);
   padding: 0.5rem 1rem;
-  z-index: 1001;
+  z-index: $z-skip;
   transition: top 0.3s ease;
 
   &:focus {
@@ -80,6 +80,12 @@ button:focus-visible {
 main.page-main {
   padding: $space-4 0 $space-4;
   flex: 1;
+
+  // On desktop the footer is position:fixed — add enough padding so the
+  // last card is never hidden behind it.
+  @include bp(md) {
+    padding-bottom: 5rem;
+  }
 }
 
 .content-shell {
@@ -191,7 +197,7 @@ main.page-main {
 }
 
 // Responsive improvements
-@media (max-width: 760px) {
+@include bp-max(md) {
   h1 {
     font-size: 1.75rem;
   }

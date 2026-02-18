@@ -9,7 +9,7 @@
   margin: $space-4 0;
   padding: $space-3;
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     min-height: auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -30,7 +30,7 @@
   cursor: default;
   
   // Mobile: stack vertically
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     position: relative;
     border-radius: 20px;
     width: 100% !important;
@@ -39,7 +39,7 @@
     left: auto !important;
   }
   
-  @media (min-width: 761px) {
+  @include bp(md) {
     &:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -76,7 +76,7 @@
   color: var(--text-main);
   line-height: 1.3;
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     font-size: 1.4rem;
   }
 }
@@ -107,7 +107,7 @@
   width: 100%;
   pointer-events: none;
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     position: relative;
     opacity: 1;
     margin-top: $space-1;
@@ -187,14 +187,14 @@
     rgba(59, 130, 246, 0.5));
   border: 2px solid rgb(59, 130, 246);
   
-  @media (min-width: 761px) {
+  @include bp(md) {
     &:hover .bubble-anecdote {
       color: rgb(37, 99, 246);
       font-weight: 600;
     }
   }
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     .bubble-anecdote {
       color: rgb(37, 99, 246);
     }
@@ -205,14 +205,14 @@
       rgba(96, 165, 250, 0.2), 
       rgba(96, 165, 250, 0.4));
     
-    @media (min-width: 761px) {
+    @include bp(md) {
       &:hover .bubble-anecdote {
         color: rgb(191, 219, 254);
         font-weight: 600;
       }
     }
     
-    @media (max-width: $bp-md) {
+    @include bp-max(md) {
       .bubble-anecdote {
         color: rgb(224, 242, 254);
       }
@@ -226,14 +226,14 @@
     rgba(239, 68, 68, 0.5));
   border: 2px solid rgb(239, 68, 68);
   
-  @media (min-width: 761px) {
+  @include bp(md) {
     &:hover .bubble-anecdote {
       color: rgb(220, 38, 38);
       font-weight: 600;
     }
   }
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     .bubble-anecdote {
       color: rgb(220, 38, 38);
     }
@@ -244,14 +244,14 @@
       rgba(248, 113, 113, 0.2), 
       rgba(248, 113, 113, 0.4));
     
-    @media (min-width: 761px) {
+    @include bp(md) {
       &:hover .bubble-anecdote {
         color: rgb(252, 165, 165);
         font-weight: 600;
       }
     }
     
-    @media (max-width: $bp-md) {
+    @include bp-max(md) {
       .bubble-anecdote {
         color: rgb(252, 165, 165);
       }
@@ -265,14 +265,14 @@
     rgba(34, 197, 94, 0.5));
   border: 2px solid rgb(34, 197, 94);
   
-  @media (min-width: 761px) {
+  @include bp(md) {
     &:hover .bubble-anecdote {
       color: rgb(21, 128, 61);
       font-weight: 600;
     }
   }
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     .bubble-anecdote {
       color: rgb(21, 128, 61);
     }
@@ -283,14 +283,14 @@
       rgba(74, 222, 128, 0.2), 
       rgba(74, 222, 128, 0.4));
     
-    @media (min-width: 761px) {
+    @include bp(md) {
       &:hover .bubble-anecdote {
         color: rgb(187, 247, 208);
         font-weight: 600;
       }
     }
     
-    @media (max-width: $bp-md) {
+    @include bp-max(md) {
       .bubble-anecdote {
         color: rgb(220, 252, 231);
       }
@@ -304,14 +304,14 @@
     rgba(168, 85, 247, 0.5));
   border: 2px solid rgb(168, 85, 247);
   
-  @media (min-width: 761px) {
+  @include bp(md) {
     &:hover .bubble-anecdote {
       color: rgb(126, 34, 206);
       font-weight: 600;
     }
   }
   
-  @media (max-width: $bp-md) {
+  @include bp-max(md) {
     .bubble-anecdote {
       color: rgb(126, 34, 206);
     }
@@ -322,14 +322,14 @@
       rgba(192, 132, 252, 0.2), 
       rgba(192, 132, 252, 0.4));
     
-    @media (min-width: 761px) {
+    @include bp(md) {
       &:hover .bubble-anecdote {
         color: rgb(216, 180, 254);
         font-weight: 600;
       }
     }
     
-    @media (max-width: $bp-md) {
+    @include bp-max(md) {
       .bubble-anecdote {
         color: rgb(216, 180, 254);
       }

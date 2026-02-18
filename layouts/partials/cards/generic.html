@@ -2,9 +2,8 @@
 {{ $theme := .Page.Params.theme }}
 {{ $key := .key }}
 
-{{/* Map theme to data path */}}
-{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
-{{ $sectionName := index $dataMap $theme | default "engineering" }}
+{{/* Resolve data section from site config */}}
+{{ $sectionName := index .Page.Site.Params.themeMap $theme | default "engineering" }}
 
 {{ $data := index .Page.Site.Data $sectionName }}
 {{ $dataset := index $data $key }}
@@ -22,8 +21,6 @@
             <article class="cv-card">
               {{/* Handle different data structures based on available fields */}}
               {{ with $item.label }}<h3>{{ . }}</h3>{{ end }}
-              {{ with $item.title }}<h3>{{ . }}</h3>{{ end }}
-              {{ with $item.name }}<h3>{{ . }}</h3>{{ end }}
               {{ if $item.language }}<h3>{{ $item.language }} — {{ $item.level }}</h3>{{ end }}
               {{ if $item.planet }}<h3>{{ $item.planet }} in {{ $item.sign }}</h3>{{ end }}
               {{ with $item.description }}<p>{{ . }}</p>{{ end }}

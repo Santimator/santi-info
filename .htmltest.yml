@@ -1,0 +1,20 @@
+# htmltest configuration
+# https://github.com/wjdp/htmltest
+
+DirectoryPath: "public"
+
+# Check external links (can be slow — set false to speed up CI)
+CheckExternal: false
+
+# Ignore known anchor-less or JavaScript links
+IgnoreURLs:
+  - "^#$"          # bare hash href="#"
+  - "^javascript:"  # JS pseudo-links
+  - "mailto:"       # email links are not navigable
+
+# Ignore these files entirely (redirects, AMP, etc.)
+IgnoreDirs:
+  - "^public/assets"
+
+# Fail only on errors, not on warnings
+TestFilesConcurrently: true

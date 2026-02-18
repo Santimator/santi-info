@@ -1,0 +1,36 @@
+{{/*
+  Shared page layout driven by front-matter `blocks` list.
+  Each block is a map with:
+    partial: "cards/experience"   (required, without .html extension)
+    key:     "links"              (optional, forwarded to generic card partials)
+
+  Example front matter:
+    blocks:
+      - partial: "cards/experience"
+      - partial: "cards/generic"
+        key: "links"
+
+  Astrology and SMJ pages keep their own bespoke layouts.
+*/}}
+{{ define "main" }}
+{{ $page := . }}
+<div class="content-shell">
+  <article class="page-article">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+
+    <section class="intro-card">
+      {{ .Content }}
+    </section>
+
+    {{ range .Params.blocks }}
+      {{ $ctx := dict "Page" $page }}
+      {{ with .key }}
+        {{ $ctx = merge $ctx (dict "key" .) }}
+      {{ end }}
+      {{ partial (printf "%s.html" .partial) $ctx }}
+    {{ end }}
+  </article>
+</div>
+{{ end }}

@@ -1,9 +1,8 @@
 {{/* Books card renderer with custom styling */}}
 {{ $theme := .Page.Params.theme }}
 
-{{/* Map theme to data path */}}
-{{ $dataMap := dict "terminal" "engineering" "blackboard" "teaching" "classic" "engineering" "organic" "personal_development" "celestial" "astrology" "artist" "the_artist" "hyperion" "other_interests" }}
-{{ $sectionName := index $dataMap $theme | default "other_interests" }}
+{{/* Resolve data section from site config */}}
+{{ $sectionName := index .Page.Site.Params.themeMap $theme | default "other_interests" }}
 
 {{ $data := index .Page.Site.Data $sectionName }}
 {{ with $data.books }}

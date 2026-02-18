@@ -25,37 +25,12 @@
   --cosmic-blue: #5a7f95;
   --moon-silver: #9090a0;
 
-  // Dark mode: Deep space
-  @media (prefers-color-scheme: dark) {
-    html:not([data-theme-mode="light"]) & {
-      --bg: #0a0a1a;
-      --bg-alt: #0f0f24;
-      --card-bg: rgba(20, 20, 43, 0.6); // 60% opacity
-      --border: #2a2a4a;
-      --text-main: #e8e8f0;
-      --text-muted: #9090a8;
-      --accent: #ffd700;
-      --accent-hover: #ffe44d;
-      --secondary: #6b4c9a;
-      --tone-a: #12122a;
-      --tone-b: #181838;
-      --tone-c: #1e1e48;
-      --nav-bg: #0a0a1a;
-      --shadow: 0 2px 12px rgba(107, 76, 154, 0.2);
-      --shadow-lg: 0 10px 30px rgba(107, 76, 154, 0.3);
-
-      --star-white: #ffffff;
-      --nebula-purple: #6b4c9a;
-      --cosmic-blue: #4a6fa5;
-      --moon-silver: #c0c0d0;
-    }
-  }
 }
 
-html[data-theme-mode="dark"] body.theme-celestial {
+@include dark-mode-vars('body.theme-celestial') {
   --bg: #0a0a1a;
   --bg-alt: #0f0f24;
-  --card-bg: rgba(20, 20, 43, 0.6); // 60% opacity
+  --card-bg: rgba(20, 20, 43, 0.6);
   --border: #2a2a4a;
   --text-main: #e8e8f0;
   --text-muted: #9090a8;
@@ -105,45 +80,20 @@ html[data-theme-mode="dark"] body.theme-celestial {
     #d8c0d0 100%
   );
 
-  // Dark mode: Starfield effect
+  // Dark mode: Starfield — single tiled SVG replaces 13 radial-gradient layers
+  // Canvas animation in theme-background.html adds twinkling on top
   @media (prefers-color-scheme: dark) {
     html:not([data-theme-mode="light"]) & {
-      background-image:
-        radial-gradient(1px 1px at 20px 30px, white, transparent),
-        radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
-        radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 90px 40px, white, transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(1px 1px at 160px 120px, white, transparent),
-        radial-gradient(2px 2px at 200px 50px, rgba(255,215,0,0.8), transparent),
-        radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.6), transparent),
-        radial-gradient(1px 1px at 250px 150px, white, transparent),
-        radial-gradient(1.5px 1.5px at 280px 40px, rgba(255,255,255,0.5), transparent),
-        radial-gradient(1px 1px at 310px 100px, rgba(107,76,154,0.6), transparent),
-        radial-gradient(1px 1px at 350px 60px, rgba(255,255,255,0.7), transparent),
-        radial-gradient(2px 2px at 380px 140px, rgba(255,215,0,0.6), transparent);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Ccircle cx='20' cy='30' r='0.7' fill='white'/%3E%3Ccircle cx='40' cy='70' r='0.7' fill='rgba(255,255,255,0.8)'/%3E%3Ccircle cx='50' cy='160' r='0.7' fill='rgba(255,255,255,0.6)'/%3E%3Ccircle cx='90' cy='40' r='0.7' fill='white'/%3E%3Ccircle cx='130' cy='80' r='0.7' fill='rgba(255,255,255,0.7)'/%3E%3Ccircle cx='160' cy='120' r='0.7' fill='white'/%3E%3Ccircle cx='200' cy='50' r='1' fill='rgba(255,215,0,0.8)'/%3E%3Ccircle cx='220' cy='90' r='0.7' fill='rgba(255,255,255,0.6)'/%3E%3Ccircle cx='250' cy='150' r='0.7' fill='white'/%3E%3Ccircle cx='280' cy='40' r='0.75' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='310' cy='100' r='0.7' fill='rgba(107,76,154,0.6)'/%3E%3Ccircle cx='350' cy='60' r='0.7' fill='rgba(255,255,255,0.7)'/%3E%3Ccircle cx='380' cy='140' r='1' fill='rgba(255,215,0,0.6)'/%3E%3C/svg%3E");
       background-size: 400px 200px;
       background-color: var(--bg);
     }
   }
 }
 
-// Force dark mode starfield
+// Force dark mode starfield (manual toggle)
 html[data-theme-mode="dark"] body.theme-celestial {
-  background-image:
-    radial-gradient(1px 1px at 20px 30px, white, transparent),
-    radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), transparent),
-    radial-gradient(1px 1px at 50px 160px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 90px 40px, white, transparent),
-    radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(1px 1px at 160px 120px, white, transparent),
-    radial-gradient(2px 2px at 200px 50px, rgba(255,215,0,0.8), transparent),
-    radial-gradient(1px 1px at 220px 90px, rgba(255,255,255,0.6), transparent),
-    radial-gradient(1px 1px at 250px 150px, white, transparent),
-    radial-gradient(1.5px 1.5px at 280px 40px, rgba(255,255,255,0.5), transparent),
-    radial-gradient(1px 1px at 310px 100px, rgba(107,76,154,0.6), transparent),
-    radial-gradient(1px 1px at 350px 60px, rgba(255,255,255,0.7), transparent),
-    radial-gradient(2px 2px at 380px 140px, rgba(255,215,0,0.6), transparent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Ccircle cx='20' cy='30' r='0.7' fill='white'/%3E%3Ccircle cx='40' cy='70' r='0.7' fill='rgba(255,255,255,0.8)'/%3E%3Ccircle cx='50' cy='160' r='0.7' fill='rgba(255,255,255,0.6)'/%3E%3Ccircle cx='90' cy='40' r='0.7' fill='white'/%3E%3Ccircle cx='130' cy='80' r='0.7' fill='rgba(255,255,255,0.7)'/%3E%3Ccircle cx='160' cy='120' r='0.7' fill='white'/%3E%3Ccircle cx='200' cy='50' r='1' fill='rgba(255,215,0,0.8)'/%3E%3Ccircle cx='220' cy='90' r='0.7' fill='rgba(255,255,255,0.6)'/%3E%3Ccircle cx='250' cy='150' r='0.7' fill='white'/%3E%3Ccircle cx='280' cy='40' r='0.75' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='310' cy='100' r='0.7' fill='rgba(107,76,154,0.6)'/%3E%3Ccircle cx='350' cy='60' r='0.7' fill='rgba(255,255,255,0.7)'/%3E%3Ccircle cx='380' cy='140' r='1' fill='rgba(255,215,0,0.6)'/%3E%3C/svg%3E");
   background-size: 400px 200px;
   background-color: var(--bg);
 }
@@ -214,7 +164,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
       height: 100%;
       background: radial-gradient(ellipse at center, rgba(139, 122, 168, 0.05) 0%, transparent 70%);
       pointer-events: none;
-      z-index: -1;
+      z-index: $z-bg;
     }
   }
 
@@ -549,7 +499,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
   }
 
   // Mobile adjustments
-  @media (max-width: 768px) {
+  @include bp-max(md) {
     .astro-flip-cards {
       grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     }

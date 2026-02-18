@@ -1,5 +1,7 @@
 {{/* Redirect homepage to SMJ intro tab */}}
 {{ define "main" }}
+<link rel="canonical" href="{{ "smj/" | absURL }}">
+<meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={{ "smj/" | relURL }}">
 <p>Redirecting to <a href="{{ "smj/" | relURL }}">SMJ</a>...</p>
 {{ end }}
