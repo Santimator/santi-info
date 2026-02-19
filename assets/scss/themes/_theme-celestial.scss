@@ -10,8 +10,8 @@
   --border: #98b8d0;
   --text-main: #1a1a2a;
   --text-muted: #505068;
-  --accent: #7a5800;
-  --accent-hover: #8a6800;
+  --accent: #3d2c00;
+  --accent-hover: #5a4000;
   --secondary: #7b6a98;
   --tone-a: #c8dce8;
   --tone-b: #b8d0e0;
@@ -117,7 +117,7 @@ html[data-theme-mode="dark"] body.theme-celestial {
 
   // Glow effect on headings
   h1 {
-    text-shadow: 0 0 10px rgba(122, 88, 0, 0.2);
+    text-shadow: 0 0 10px rgba(61, 44, 0, 0.2);
   }
 
   // Constellation-style links (content only, not nav)

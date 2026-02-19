@@ -8,7 +8,7 @@ Welcome to my site!
 
 Feel invited to explore it at your own rhythm. You’ll find different facets of my work and interests—each one something I can bring to various kinds of projects, depending on what you need.
 
-I am officially an intellectually gifted person—which in practice means my brain works as a kind of holisticizer: always making connections, thinking in abstractions, finding patterns across domains. This is particularly well suited for a series of activities and explains a lot about my career, my life… and this website :D
+I am officially an intellectually gifted person—which in practice means my brain works as a kind of *holisticizer*: always making connections, thinking in abstractions, finding patterns across domains. This is particularly well suited for a series of activities and explains a lot about my career, my life… and this website :D
 
 The process of becoming me started when I left my hometown Madrid for Lyon, France, to study bioinformatics and modelling at INSA. In there I dealt simultaneously with a) becoming an engineer in a foreign language while learning it, b) being enriched (I definitely call it that way nowadays) by my first cultural shock, and c) navigating the emotional challenges of youth and of staying far from my previous relational safety net.
 
