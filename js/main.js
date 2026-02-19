@@ -8,23 +8,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const panel = document.querySelector('.nav-panel');
     if (!nav || !toggle || !panel) return;
 
-    const setOpen = (open) => {
+    const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+    const setOpen = (open, returnFocus) => {
       toggle.setAttribute('aria-expanded', open);
       panel.setAttribute('aria-hidden', !open);
       panel.toggleAttribute('hidden', !open);
       nav.classList.toggle('is-open', open);
+      if (!open && returnFocus) {
+        toggle.focus();
+      }
     };
 
-    setOpen(false);
-    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    setOpen(false, false);
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true', false));
     document.addEventListener('click', (event) => {
       if (toggle.getAttribute('aria-expanded') === 'true' && !nav.contains(event.target)) {
-        setOpen(false);
+        setOpen(false, false);
       }
     });
     document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setOpen(false);
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (!isOpen) return;
+
+      if (event.key === 'Escape') {
+        setOpen(false, true);
+        return;
+      }
+
+      // Focus trap: keep Tab cycling within the open nav panel
+      if (event.key === 'Tab') {
+        const focusable = Array.from(panel.querySelectorAll(FOCUSABLE));
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey) {
+          if (document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
       }
     });
   })();
