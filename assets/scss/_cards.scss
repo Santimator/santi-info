@@ -139,6 +139,24 @@
   }
 }
 
+// Work-in-progress notice (used on incomplete pages like Projects)
+.wip-notice {
+  display: inline-block;
+  margin: 0 0 $space-3;
+  padding: 0.6rem 1rem;
+  border: 2px dashed var(--secondary);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.95rem;
+
+  a {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
 // Call-to-action section (bottom of page-blocks pages)
 .cta-section {
   margin-top: $space-4;

@@ -6,8 +6,6 @@ blocks:
   - partial: "cards/technical-skills"
   - partial: "cards/experience-timeline"
   - partial: "cards/education"
-  - partial: "cards/generic"
-    key: "links"
 cta: "If you have something to automate or make more efficient, [contact me](mailto:santiagomj@gmail.com)."
 ---
 
