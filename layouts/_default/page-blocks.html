@@ -31,6 +31,12 @@
       {{ end }}
       {{ partial (printf "%s.html" .partial) $ctx }}
     {{ end }}
+
+    {{ with .Params.cta }}
+    <aside class="cta-section">
+      {{ . | markdownify }}
+    </aside>
+    {{ end }}
   </article>
 </div>
 {{ end }}

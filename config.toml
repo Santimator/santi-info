@@ -4,6 +4,9 @@ title = "Santiago Moreno Jaureguízar"
 # theme = ""  # Empty - using custom layouts
 enableRobotsTXT = true
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [params]
   description = "Santiago Moreno Jaureguízar — engineer, teacher, and artist."
   email       = "santiagomj@gmail.com"

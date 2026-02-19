@@ -305,6 +305,67 @@ html[data-theme-mode="dark"] .theme-bamboo .site-credits::before {
   }
 }
 
+// Section navigation links in the SMJ introduction text.
+// Each class uses the accent color of the destination section.
+.theme-bamboo a.smj-link {
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 0 2px;
+  transition: background 0.25s ease;
+
+  &.smj-link--engineering {
+    color: #8a6500;
+    border-bottom: 2px solid #eab308;
+    &:hover { background: rgba(234, 179, 8, 0.14); }
+  }
+
+  &.smj-link--teaching {
+    color: #1d4ed8;
+    border-bottom: 2px solid #2563eb;
+    &:hover { background: rgba(37, 99, 235, 0.08); }
+  }
+
+  &.smj-link--personal-dev {
+    color: #3a5b2a;
+    border-bottom: 2px solid #6b8e6b;
+    &:hover { background: rgba(107, 142, 107, 0.12); }
+  }
+
+  &.smj-link--artist {
+    color: #b84a2f;
+    border-bottom: 2px solid #e07a5f;
+    &:hover { background: rgba(224, 122, 95, 0.1); }
+  }
+}
+
+@include dark-mode-vars('body.theme-bamboo') {
+  a.smj-link {
+    &.smj-link--engineering {
+      color: #fbbf24;
+      border-bottom-color: #fbbf24;
+      &:hover { background: rgba(251, 191, 36, 0.15); }
+    }
+
+    &.smj-link--teaching {
+      color: #93c5fd;
+      border-bottom-color: #93c5fd;
+      &:hover { background: rgba(147, 197, 253, 0.12); }
+    }
+
+    &.smj-link--personal-dev {
+      color: #8ba888;
+      border-bottom-color: #8ba888;
+      &:hover { background: rgba(139, 168, 136, 0.15); }
+    }
+
+    &.smj-link--artist {
+      color: #f09a8f;
+      border-bottom-color: #f09a8f;
+      &:hover { background: rgba(240, 154, 143, 0.12); }
+    }
+  }
+}
+
 // Mobile adjustments
 @include bp-max(md) {
   .theme-bamboo h1 {
