@@ -373,3 +373,76 @@
     }
   }
 }
+
+// Manual dark mode toggle support for bubble colors.
+// The per-color blocks above handle @media (prefers-color-scheme: dark) already,
+// but they miss the html[data-theme-mode="dark"] case (manual toggle).
+html[data-theme-mode="dark"] {
+  .bubble-color-1 {
+    background: linear-gradient(135deg,
+      rgba(96, 165, 250, 0.2),
+      rgba(96, 165, 250, 0.4));
+
+    @include bp(md) {
+      &:hover .bubble-anecdote {
+        color: rgb(191, 219, 254);
+        font-weight: 600;
+      }
+    }
+
+    @include bp-max(md) {
+      .bubble-anecdote { color: rgb(224, 242, 254); }
+    }
+  }
+
+  .bubble-color-2 {
+    background: linear-gradient(135deg,
+      rgba(248, 113, 113, 0.2),
+      rgba(248, 113, 113, 0.4));
+
+    @include bp(md) {
+      &:hover .bubble-anecdote {
+        color: rgb(252, 165, 165);
+        font-weight: 600;
+      }
+    }
+
+    @include bp-max(md) {
+      .bubble-anecdote { color: rgb(252, 165, 165); }
+    }
+  }
+
+  .bubble-color-3 {
+    background: linear-gradient(135deg,
+      rgba(74, 222, 128, 0.2),
+      rgba(74, 222, 128, 0.4));
+
+    @include bp(md) {
+      &:hover .bubble-anecdote {
+        color: rgb(187, 247, 208);
+        font-weight: 600;
+      }
+    }
+
+    @include bp-max(md) {
+      .bubble-anecdote { color: rgb(220, 252, 231); }
+    }
+  }
+
+  .bubble-color-4 {
+    background: linear-gradient(135deg,
+      rgba(192, 132, 252, 0.2),
+      rgba(192, 132, 252, 0.4));
+
+    @include bp(md) {
+      &:hover .bubble-anecdote {
+        color: rgb(216, 180, 254);
+        font-weight: 600;
+      }
+    }
+
+    @include bp-max(md) {
+      .bubble-anecdote { color: rgb(216, 180, 254); }
+    }
+  }
+}

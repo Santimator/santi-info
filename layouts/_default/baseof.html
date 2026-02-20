@@ -25,10 +25,27 @@
       })();
     </script>
 
-    <!-- Google Fonts for themes -->
+    <!-- Google Fonts: load only what the current page's theme needs -->
+    {{- $theme := .Params.theme | default "classic" -}}
+    {{- $fontHref := "" -}}
+    {{- if eq $theme "bamboo" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" -}}
+    {{- else if eq $theme "terminal" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" -}}
+    {{- else if eq $theme "organic" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" -}}
+    {{- else if or (eq $theme "celestial") (eq $theme "artist") -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" -}}
+    {{- else if eq $theme "hyperion" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" -}}
+    {{- else if eq $theme "classic" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" -}}
+    {{- end -}}
+    {{- if $fontHref }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Cinzel:wght@400;600&family=Crimson+Text&family=Fira+Code&family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700&family=Orbitron:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ $fontHref }}" rel="stylesheet">
+    {{- end }}
 
     <!-- Compile SCSS entry via Hugo Pipes for cache-busted CSS -->
     {{ $scss := resources.Get "scss/main.scss" | toCSS (dict "targetPath" "css/main.css" "outputStyle" "compressed") | resources.Fingerprint }}
