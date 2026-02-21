@@ -20,7 +20,7 @@ enableRobotsTXT = true
   organic    = "personal_development"
   celestial  = "astrology"
   artist     = "the_artist"
-  hyperion   = "other_interests"
+  atlas      = "other_interests"
   bamboo     = "smj"
 
 [menu]

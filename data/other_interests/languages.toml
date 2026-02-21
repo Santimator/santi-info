@@ -3,19 +3,24 @@
 [[items]]
 language = "Spanish"
 level = "Native"
+flag = "🇪🇸"
 
 [[items]]
 language = "French"
 level = "Fluent"
+flag = "🇫🇷"
 
 [[items]]
 language = "English"
 level = "Fluent"
+flag = "🇬🇧"
 
 [[items]]
 language = "Chinese"
 level = "Basic"
+flag = "🇨🇳"
 
 [[items]]
 language = "German"
 level = "Basic"
+flag = "🇩🇪"

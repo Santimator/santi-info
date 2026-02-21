@@ -1,7 +1,7 @@
 ---
 title: "Complementary Skills & Interests"
 layout: "page-blocks"
-theme: "hyperion"
+theme: "atlas"
 blocks:
   - partial: "cards/generic"
     key: "languages"

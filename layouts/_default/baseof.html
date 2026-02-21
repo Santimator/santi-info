@@ -34,10 +34,12 @@
       {{- $fontHref = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" -}}
     {{- else if eq $theme "organic" -}}
       {{- $fontHref = "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" -}}
-    {{- else if or (eq $theme "celestial") (eq $theme "artist") -}}
+    {{- else if eq $theme "celestial" -}}
       {{- $fontHref = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600&display=swap" -}}
-    {{- else if eq $theme "hyperion" -}}
+    {{- else if eq $theme "artist" -}}
       {{- $fontHref = "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" -}}
+    {{- else if eq $theme "atlas" -}}
+      {{- $fontHref = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" -}}
     {{- else if eq $theme "classic" -}}
       {{- $fontHref = "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" -}}
     {{- end -}}

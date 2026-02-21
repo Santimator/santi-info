@@ -1,0 +1,165 @@
+// _theme-atlas.scss
+// Theme: Atlas (Complementary Skills & Interests)
+// Feel: World traveler's study — aged maps, curiosity, breadth of knowledge
+// Distinct from all other themes: warm parchment, cartographic grid, umber + teal
+
+.theme-atlas {
+  // Light mode: Aged parchment with earth and ocean tones
+  --bg: #f6f2e8;
+  --bg-alt: #ede9db;
+  --card-bg: #fdfaf3;
+  --border: #c6bda0;
+  --text-main: #2a2010;
+  --text-muted: #7a6a50;
+  --accent: #5b3a29;        // dark umber — ink on parchment
+  --accent-hover: #7a5040;
+  --secondary: #2a6868;     // cartographic teal
+  --tone-a: #f0ece0;
+  --tone-b: #e8e4d5;
+  --tone-c: #ddd8c6;
+  --nav-bg: #fdfaf3;
+  --shadow: 0 2px 10px rgba(91, 58, 41, 0.10);
+  --shadow-lg: 0 10px 28px rgba(91, 58, 41, 0.18);
+
+  --map-umber: #5b3a29;
+  --map-teal: #2a6868;
+  --map-amber: #c4883a;
+  --map-cream: #fdfaf3;
+}
+
+@include dark-mode-vars('body.theme-atlas') {
+  --bg: #131210;
+  --bg-alt: #1c1a16;
+  --card-bg: #221f1b;
+  --border: #3a3530;
+  --text-main: #e8e0d0;
+  --text-muted: #9a8a70;
+  --accent: #c4883a;        // amber-gold in dark
+  --accent-hover: #d89a4a;
+  --secondary: #4a9898;     // lighter teal
+  --tone-a: #181510;
+  --tone-b: #201d18;
+  --tone-c: #28241e;
+  --nav-bg: #131210;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.7);
+
+  --map-umber: #c4883a;
+  --map-teal: #4a9898;
+  --map-amber: #c4883a;
+  --map-cream: #221f1b;
+}
+
+.theme-atlas {
+  --font-heading: 'Lato', system-ui, sans-serif;
+  --font-body: system-ui, -apple-system, sans-serif;
+
+  font-family: var(--font-body);
+
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  // Cartographic graticule — subtle grid like a map's longitude/latitude lines
+  background-image:
+    linear-gradient(rgba(91, 58, 41, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(91, 58, 41, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-color: var(--bg);
+
+  // Cards: earthy left border, clean radius
+  .intro-card,
+  .cv-card {
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: 6px;
+  }
+
+  // Section compass marker
+  .cv-section-header::after {
+    content: "◉";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--map-teal);
+    opacity: 0.35;
+    font-size: 1.1rem;
+  }
+
+  // List markers — em dash, understated
+  .cv-list li::before {
+    content: "–";
+    color: var(--map-amber);
+    font-weight: bold;
+    margin-right: 0.4rem;
+  }
+
+  // Links — underline reveal on hover
+  .page-main a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+    &:hover {
+      color: var(--accent-hover);
+      text-decoration-color: var(--accent-hover);
+    }
+  }
+}
+
+// ─── Language card: flag-forward layout ───────────────────────────────────────
+.theme-atlas .lang-entry {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.theme-atlas .lang-flag {
+  font-size: 2.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.theme-atlas .lang-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+}
+
+.theme-atlas .lang-level {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  background: var(--secondary);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+// ─── Certification card: issuer + year meta line ───────────────────────────────
+.theme-atlas .cert-meta {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0 0 $space-1;
+}
+
+// Mobile adjustments
+@include bp-max(md) {
+  .theme-atlas .lang-flag {
+    font-size: 2.2rem;
+  }
+}

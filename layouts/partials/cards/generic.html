@@ -21,8 +21,19 @@
             <article class="cv-card">
               {{/* Handle different data structures based on available fields */}}
               {{ with $item.label }}<h3>{{ . }}</h3>{{ end }}
-              {{ if $item.language }}<h3>{{ $item.language }} — {{ $item.level }}</h3>{{ end }}
+              {{ if $item.language }}
+                <div class="lang-entry">
+                  {{ with $item.flag }}<span class="lang-flag" aria-hidden="true">{{ . }}</span>{{ end }}
+                  <div class="lang-info">
+                    <h3>{{ $item.language }}</h3>
+                    <span class="lang-level">{{ $item.level }}</span>
+                  </div>
+                </div>
+              {{ end }}
               {{ if $item.planet }}<h3>{{ $item.planet }} in {{ $item.sign }}</h3>{{ end }}
+              {{ if or $item.issuer $item.year }}
+                <p class="cert-meta">{{ $item.issuer }}{{ if and $item.issuer $item.year }} · {{ end }}{{ $item.year }}</p>
+              {{ end }}
               {{ with $item.description }}<p>{{ . }}</p>{{ end }}
               {{ with $item.notes }}<p>{{ . }}</p>{{ end }}
               {{ with $item.details }}
