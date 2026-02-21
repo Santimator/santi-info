@@ -1,39 +1,71 @@
-# Artist Projects
+# Artist Projects — media links embedded within each entry
 
 [[items]]
-label ="YouTube Channel: Mr. Menso ES"
+label = "YouTube Channel: Mr. Menso ES"
 type = "media"
+years = "2018–present"
 description = "Personal development, philosophy, and life reflections. Sharing insights from the journey of self-discovery and growth."
-years = "2018–present"
-url = "https://www.youtube.com/@Mr.MensoES"
+[[items.links]]
+  label = "Visit Channel"
+  url = "https://www.youtube.com/@Mr.MensoES"
 
 [[items]]
-label ="Podcast: El Camino de Santi"
+label = "Podcast: El Camino de Santi"
 type = "media"
+years = "2018–present"
 description = "Audio storytelling exploring personal transformation, cultural experiences, and philosophical reflections on modern life."
-years = "2018–present"
-url = "https://open.spotify.com/show/0ItZvv53G2Rf6k7UpTck4P"
+[[items.links]]
+  label = "Listen on Spotify"
+  url = "https://open.spotify.com/show/0ItZvv53G2Rf6k7UpTck4P"
 
 [[items]]
-label ="Dance & Choreography"
+label = "Dance & Choreography"
 type = "performance"
-description = "Rock (French couple dancing), partner dances, and choreographed performances. Vice president of student-run dancing club at university, teaching and organizing events."
 years = "2010–2016"
+description = "Rock (French couple dancing), partner dances, and choreographed performances. Vice president of student-run dancing club at university, teaching and organizing events."
+[[items.links]]
+  label = "Club Rock — Advertising Campaign"
+  url = "https://www.youtube.com/watch?v=gDD2v8WgWcM"
+[[items.links]]
+  label = "Dance Highlights"
+  url = "https://www.youtube.com/watch?v=wdIjeL96w8o"
+[[items.links]]
+  label = "Choreography Showcase"
+  url = "https://www.youtube.com/watch?v=OxwGEqrniXU"
+[[items.links]]
+  label = "Both (Dance Duo)"
+  url = "https://www.youtube.com/watch?v=26eJiA2sUao"
 
 [[items]]
-label ="Acting & Film"
+label = "Acting & Film"
 type = "performance"
-description = "Film acting training at La Central de Cine de Madrid. Explored physical theatre, camera technique, and performance fundamentals."
 years = "2017"
+description = "Film acting training at La Central de Cine de Madrid. Explored physical theatre, camera technique, and performance fundamentals."
 
 [[items]]
-label ="Music Performance"
+label = "Music Performance"
 type = "music"
-description = "Clarinet performances since childhood. Street music, teaching, collaborative projects, and continuous musical exploration across genres and contexts."
 years = "1995–present"
+description = "Clarinet performances since childhood. Street music, teaching, collaborative projects, and continuous musical exploration across genres and contexts."
+[[items.links]]
+  label = "Singing in the Park"
+  url = "https://www.youtube.com/watch?v=GLBDMtixtTI"
+[[items.links]]
+  label = "Clarinet in Prague"
+  url = "https://www.youtube.com/watch?v=FG8awR-oVFo"
 
 [[items]]
-label ="Video Projects"
+label = "Video Projects"
 type = "media"
-description = "Short films, mini-series, and creative video experiments. Early explorations in visual storytelling and content creation."
 years = "2014–2018"
+description = "Short films, mini-series, and creative video experiments. Early explorations in visual storytelling and content creation."
+[[items.links]]
+  label = "Mini-series: El Despertador"
+  url = "https://www.youtube.com/watch?v=QUq0_yov0dA"
+
+[[items]]
+label = "Blog: Las Aventuras del P'tit Gui-Santi"
+type = "media"
+years = "2014–2018"
+description = "Personal blog chronicling projects, travels, and creative explorations."
+url = "https://lasaventurasdelptitguisanti.wordpress.com"

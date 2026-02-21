@@ -35,7 +35,14 @@
                   {{ range . }}<li>{{ . }}</li>{{ end }}
                 </ul>
               {{ end }}
-              {{ with $item.url }}<a href="{{ . }}" target="_blank" rel="noopener">Visit</a>{{ end }}
+              {{ with $item.url }}<p><a href="{{ . }}" target="_blank" rel="noopener noreferrer">Visit →</a></p>{{ end }}
+              {{ with $item.links }}
+                <ul class="cv-list item-links">
+                  {{ range . }}
+                    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }}</a></li>
+                  {{ end }}
+                </ul>
+              {{ end }}
             </article>
           {{ end }}
         </div>
