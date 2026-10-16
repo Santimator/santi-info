@@ -109,6 +109,36 @@
     </section>
     {{ end }}
 
+    {{/* Galactic Astrology Section (Balaz framework) */}}
+    {{ $galacticData := .Site.Data.astrology.galactic }}
+    {{ if $galacticData }}
+    <section class="cv-section">
+      <div class="cv-inner">
+        <header class="cv-section-header">
+          <h2>{{ $galacticData.themes.title }}</h2>
+        </header>
+
+        <div class="astro-summary">
+          <div class="astro-strengths">
+            <p>{{ $galacticData.themes.intro }}</p>
+            {{ range $galacticData.themes.items }}
+            <div class="strength-item">
+              <h4>{{ .name }}</h4>
+              <p>{{ .description }}</p>
+            </div>
+            {{ end }}
+          </div>
+
+          {{ if $galacticData.conclusion }}
+          <div class="astro-trajectory">
+            <p class="trajectory-conclusion">{{ $galacticData.conclusion.text }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
+
     {{/* Chinese Astrology Section */}}
     {{ $chineseData := .Site.Data.astrology.chinese }}
     {{ if $chineseData }}

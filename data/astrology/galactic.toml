@@ -1,0 +1,20 @@
+# Galactic Astrology - Balaz framework (fixed stars / star systems)
+
+[themes]
+title = "Galactic Astrology"
+intro = "Bringing all the elements together, three symbolic themes stand out."
+
+[[themes.items]]
+name = "The search for roots and deep knowledge"
+description = "The concentration of planets in Capricorn, the 4th house and Lyra all point toward this motif."
+
+[[themes.items]]
+name = "Integrating the inner world with outer contribution"
+description = "The connections between Lyra and Sirius, together with the IV–X axis, suggest a link between what is understood personally and what one wishes to share."
+
+[[themes.items]]
+name = "Intellectual and spiritual exploration"
+description = "The positions of Mars, Neptune and Mercury bring in themes related to research, communication and the search for meaning."
+
+[conclusion]
+text = "Within Balaz's framework, this could be described as a chart with several galactic connections, especially concentrated in Lyra, and a combination of symbolic experiences associated with Sirius, Orion and other systems."
