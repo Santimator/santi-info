@@ -1,20 +1,28 @@
-# Galactic Astrology - Balaz framework (fixed stars / star systems)
+# Galactic Astrology - Balaz framework (natal chart read against fixed stars and star systems)
 
 [themes]
 title = "Galactic Astrology"
-intro = "Bringing all the elements together, three symbolic themes stand out."
+intro = "Galactic astrology emerged from years of observing hypnotic regressions carried out in therapy and comparing them with the clients' natal charts. The recurring patterns found there were condensed into a theory that reads the chart against fixed stars and star systems, adding a layer the other systems don't have: a symbolic story of where the soul comes from and what it carries."
 
 [[themes.items]]
-name = "The search for roots and deep knowledge"
-description = "The concentration of planets in Capricorn, the 4th house and Lyra all point toward this motif."
+name = "Lyra — roots and the keeper of knowledge"
+via = "Pluto, Saturn, Neptune, Mercury and the IC"
+description = "Lyra is the dominant thread of the chart, repeated across outer planets, personal planets and the point of home. In Balaz's cosmology it is an ancient home that was lost and had to be rebuilt elsewhere: belonging, loss, preservation and reconstruction. Its most precise expression sits right on the roots of the chart, where Mercury and the IC meet almost exactly on a star of Lyra: a deep identity organised around understanding, preserving and passing on knowledge."
 
 [[themes.items]]
-name = "Integrating the inner world with outer contribution"
-description = "The connections between Lyra and Sirius, together with the IV–X axis, suggest a link between what is understood personally and what one wishes to share."
+name = "Sirius — the healing axis"
+via = "Neptune–Chiron opposition across houses IV and X"
+description = "An almost exact Neptune–Chiron opposition links the inner world with vocation, and Sirius sits on that axis. Balaz associates Sirius with ancient spiritual knowledge on Earth. The reading: turning what was understood privately, often through difficulty, into useful knowledge for others, through teaching, research or tools that make life easier."
 
 [[themes.items]]
-name = "Intellectual and spiritual exploration"
-description = "The positions of Mars, Neptune and Mercury bring in themes related to research, communication and the search for meaning."
+name = "Orion and Ophiuchus — learning through polarity"
+via = "Mars in Sagittarius, 3rd house"
+description = "Mars is tightly bound to Orion's belt and to Ophiuchus, the serpent bearer associated with Asclepius. Orion stands for polarity, conflict and the search for balance between opposing forces; Ophiuchus adds healing knowledge. Together: confronting opposing perspectives, investigating their foundations and turning conflict into learning."
+
+[[themes.items]]
+name = "The Pleiades and Alpha Centauri — harmony as counterpoint"
+via = "Venus in Capricorn, 4th house"
+description = "Some of the most precise connections in the chart join Venus with the Pleiades and Alpha Centauri. Balaz links the Pleiades with cooperation, rest and a hopeful vision of the future. Placed in the house of home, they balance Lyra's story of loss with its answer: rebuilding warmth, beauty and a place where people live well together."
 
 [conclusion]
-text = "Within Balaz's framework, this could be described as a chart with several galactic connections, especially concentrated in Lyra, and a combination of symbolic experiences associated with Sirius, Orion and other systems."
+text = "Read together, the galactic layer condenses into one archetype: the builder and transmitter of knowledge. A symbolic story that combines transformation with learning to preserve what is valuable, and a present purpose expressed by creating structures that help others understand, organise and share."

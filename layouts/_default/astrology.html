@@ -124,6 +124,7 @@
             {{ range $galacticData.themes.items }}
             <div class="strength-item">
               <h4>{{ .name }}</h4>
+              {{ with .via }}<p class="planet-house"><em>{{ . }}</em></p>{{ end }}
               <p>{{ .description }}</p>
             </div>
             {{ end }}
