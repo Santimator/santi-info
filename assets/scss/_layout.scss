@@ -81,11 +81,6 @@ main.page-main {
   padding: $space-4 0 $space-4;
   flex: 1;
 
-  // On desktop the footer is position:fixed — add enough padding so the
-  // last card is never hidden behind it.
-  @include bp(md) {
-    padding-bottom: 5rem;
-  }
 }
 
 .content-shell {

@@ -1,12 +1,7 @@
 ---
 title: "Teaching"
-layout: "page-blocks"
+layout: "teaching"
 theme: "blackboard"
-blocks:
-  - partial: "cards/experience"
-  - partial: "cards/education"
-  - partial: "cards/generic"
-    key: "links"
 cta: "I'm not looking for full teaching positions right now—but if you think I might be interested in your project, [propose away!](mailto:santiagomj@gmail.com)"
 ---
 

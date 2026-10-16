@@ -109,27 +109,9 @@
   z-index: $z-content;
 }
 
-// Desktop: Fixed footer with theme toggle, text links
+// Desktop: footer stays in the page flow (no longer fixed over content);
+// the theme toggle lives in the nav on all screen sizes.
 @include bp(md) {
-  .site-footer {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
-    z-index: $z-footer;
-    border-top: 1px solid var(--border);
-  }
-
-  .theme-toggle-footer {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .footer-separator-toggle {
-    display: inline;
-  }
 
   .footer-meta a {
     font-size: 0.95rem;

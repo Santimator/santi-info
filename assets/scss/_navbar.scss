@@ -153,8 +153,8 @@
 }
 
 @include bp(md) {
-  .nav-toggle,
-  .theme-toggle-nav {
+  // The theme toggle stays in the nav on every screen size (same place on every page).
+  .nav-toggle {
     display: none;
   }
 
