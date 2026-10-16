@@ -46,10 +46,11 @@ notes = "Thought is serious, inward, reflective, and often recursive. Strong cap
 
 [[placements]]
 planet = "Venus"
-sign = "Aquarius"
-house = "5th"
+sign = "Capricorn"
+house = "4th"
+retrograde = true
 category = "Personal"
-notes = "Affection and creativity are unconventional, idealistic, and freedom-oriented. Attraction to originality, intellect, and non-standard emotional dynamics. Creative expression is experimental rather than sentimental."
+notes = "Affection is shown through commitment, loyalty and building something that lasts rather than through display. Love and beauty are tied to home and inner foundations. Retrograde: values and attachments are reviewed inwardly before they are shown. At the last degree of the sign, on the threshold of Aquarius, it keeps an unconventional, experimental streak."
 
 [[placements]]
 planet = "Mars"
@@ -110,7 +111,7 @@ title = "Personal strengths and talents"
 
 [[strengths.items]]
 name = "Structural intelligence and psychological depth"
-description = "The Capricorn stellium in the 4th house (Sun, Mercury, Saturn, Uranus, Neptune) is the dominant configuration of the chart. This produces: Exceptional capacity to build systems, conceptual or practical, over long timescales. High tolerance for complexity, ambiguity, and delayed gratification. Natural affinity for research, analysis, strategy, and work that requires solitude or internal coherence. This is not light or decorative intelligence; it is architectural intelligence."
+description = "The Capricorn stellium in the 4th house (Sun, Mercury, Venus, Saturn, Uranus, Neptune) is the dominant configuration of the chart. This produces: Exceptional capacity to build systems, conceptual or practical, over long timescales. High tolerance for complexity, ambiguity, and delayed gratification. Natural affinity for research, analysis, strategy, and work that requires solitude or internal coherence. This is not light or decorative intelligence; it is architectural intelligence."
 
 [[strengths.items]]
 name = "Relational acuity and social perception"
@@ -118,7 +119,7 @@ description = "With Libra rising and Moon in Libra in the 1st, you have: Acute s
 
 [[strengths.items]]
 name = "Creative originality without narcissism"
-description = "Venus + North Node in Aquarius in the 5th indicates: Creativity that is exploratory, innovative, and concept-driven. Capacity to produce original work without needing applause as fuel. Talent for combining art, ideas, and systems (e.g., creative technology, conceptual projects, experimental pedagogy)."
+description = "North Node in Aquarius in the 5th, with Venus on the threshold of Aquarius, indicates: Creativity that is exploratory, innovative, and concept-driven. Capacity to produce original work without needing applause as fuel. Talent for combining art, ideas, and systems (e.g., creative technology, conceptual projects, experimental pedagogy)."
 
 [[strengths.items]]
 name = "Intellectual courage"
