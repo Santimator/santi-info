@@ -1,0 +1,111 @@
+{{/*
+  Personal Development — "the path" (el camino).
+  A layered cut-paper landscape with a path winding to the horizon; below it the path
+  keeps going down the page and each practice is a stop along the way.
+  Light mode = bright daylight. Dark mode = moonlit night.
+  Data: data/personal_development/practices.toml, links.toml, front matter `cta`.
+*/}}
+{{ define "main" }}
+{{ $data := .Site.Data.personal_development }}
+
+<div class="pd">
+
+  <header class="pd-hero">
+    <svg class="pd-land" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="pd-paper" x="-5%" y="-20%" width="110%" height="140%">
+          <feDropShadow dx="0" dy="-2" stdDeviation="3.5" flood-color="#0b1a12" flood-opacity="0.16"/>
+        </filter>
+        <radialGradient id="pd-glow">
+          <stop offset="0%" style="stop-color:var(--pd-orb-glow);stop-opacity:0.55"/>
+          <stop offset="100%" style="stop-color:var(--pd-orb-glow);stop-opacity:0"/>
+        </radialGradient>
+      </defs>
+
+      {{/* Sun by day, moon by night */}}
+      <circle class="pd-orb-glow" cx="1130" cy="140" r="170" fill="url(#pd-glow)"/>
+      <circle class="pd-orb" cx="1130" cy="140" r="38"/>
+
+      {{/* Night: a few stars. Day: two paper clouds */}}
+      <g class="pd-stars">
+        <circle cx="140" cy="70" r="1.4"/><circle cx="310" cy="150" r="1"/><circle cx="455" cy="60" r="1.2"/>
+        <circle cx="620" cy="120" r="0.9"/><circle cx="760" cy="40" r="1.3"/><circle cx="905" cy="95" r="1"/>
+        <circle cx="1340" cy="60" r="1.2"/><circle cx="1395" cy="190" r="0.9"/><circle cx="60" cy="210" r="1"/>
+        <circle cx="560" cy="230" r="0.8"/><circle cx="1010" cy="230" r="0.9"/><circle cx="250" cy="260" r="0.8"/>
+      </g>
+      <g class="pd-clouds" filter="url(#pd-paper)">
+        <path d="M985 262 c 10 -22 46 -26 62 -10 c 14 -18 52 -14 58 10 c 22 0 34 8 34 18 l -190 0 c 0 -10 14 -18 36 -18 z"/>
+        <path d="M1290 250 c 8 -16 36 -19 48 -7 c 11 -13 40 -10 45 7 c 17 0 26 6 26 13 l -146 0 c 0 -7 10 -13 27 -13 z"/>
+      </g>
+
+      {{/* Hills, back to front. Each layer = a rim (lit edge) + the body shifted down 3px */}}
+      <g class="pd-l1" filter="url(#pd-paper)">
+        <path class="rim"  d="M0,360 C120,320 220,300 340,330 C440,355 520,280 640,290 C760,300 820,350 940,335 C1060,320 1140,270 1260,300 C1340,320 1400,330 1440,325 L1440,640 L0,640 Z"/>
+        <path class="body" transform="translate(0 3)" d="M0,360 C120,320 220,300 340,330 C440,355 520,280 640,290 C760,300 820,350 940,335 C1060,320 1140,270 1260,300 C1340,320 1400,330 1440,325 L1440,640 L0,640 Z"/>
+      </g>
+      <g class="pd-l2" filter="url(#pd-paper)">
+        <path class="rim"  d="M0,420 C140,380 260,400 380,415 C520,432 600,370 760,380 C900,390 980,440 1120,420 C1240,402 1340,380 1440,395 L1440,640 L0,640 Z"/>
+        <path class="body" transform="translate(0 3)" d="M0,420 C140,380 260,400 380,415 C520,432 600,370 760,380 C900,390 980,440 1120,420 C1240,402 1340,380 1440,395 L1440,640 L0,640 Z"/>
+      </g>
+      <g class="pd-l3" filter="url(#pd-paper)">
+        <path class="rim"  d="M0,480 C160,455 300,470 440,490 C580,510 680,450 820,455 C960,460 1060,500 1200,485 C1320,472 1390,465 1440,470 L1440,640 L0,640 Z"/>
+        <path class="body" transform="translate(0 3)" d="M0,480 C160,455 300,470 440,490 C580,510 680,450 820,455 C960,460 1060,500 1200,485 C1320,472 1390,465 1440,470 L1440,640 L0,640 Z"/>
+      </g>
+      <g class="pd-l4" filter="url(#pd-paper)">
+        <path class="rim"  d="M0,560 C200,530 380,545 560,560 C740,575 900,535 1100,540 C1260,545 1360,560 1440,555 L1440,640 L0,640 Z"/>
+        <path class="body" transform="translate(0 3)" d="M0,560 C200,530 380,545 560,560 C740,575 900,535 1100,540 C1260,545 1360,560 1440,555 L1440,640 L0,640 Z"/>
+      </g>
+
+      {{/* The path, from the viewer to the horizon */}}
+      <path class="pd-trail" d="M640,640 C628,612 596,590 628,568 C668,542 752,534 766,508 C776,488 762,470 783,457 L789,457 C800,470 806,490 796,512 C780,546 700,560 684,578 C664,600 700,622 804,640 Z"/>
+    </svg>
+
+    <div class="pd-hero-text">
+      <h1 class="pd-title">{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <div class="pd-ground">
+
+    {{/* One continuous path: picks up where the hero's road meets the bottom edge and
+         winds left and right behind everything below. Text floats over it on mist. */}}
+    <svg class="pd-road" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M500,0 C500,70 190,95 190,190 S810,330 810,430 S190,580 190,680 S810,820 810,900 S560,975 520,1000"/>
+    </svg>
+
+    <div class="pd-trailhead">{{ .Content }}</div>
+
+    {{ with $data.practices.items }}
+    <ol class="pd-stops" aria-label="Practices, in the order I came to them">
+      {{ range sort . "years" "asc" }}
+      {{ $since := replaceRE `^(\d{4})\s*[–-]\s*present$` "Since $1" .years }}
+      <li class="pd-stop">
+        <div class="pd-stop-text">
+          <p class="pd-since">{{ $since }}</p>
+          <h2 class="pd-stop-name">{{ .name }}</h2>
+          <p class="pd-stop-desc">{{ .description }}</p>
+          {{ with .anecdotes }}<p class="pd-thought">{{ . }}</p>{{ end }}
+        </div>
+      </li>
+      {{ end }}
+    </ol>
+    {{ end }}
+
+    <section class="pd-onward" aria-labelledby="pd-onward-title">
+      <h2 id="pd-onward-title" class="pd-onward-title">The path continues</h2>
+      {{ with $data.links.items }}
+      <ul class="pd-links">
+        {{ range . }}
+        <li>
+          <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+          {{ with .description }}<p>{{ . }}</p>{{ end }}
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ with .Params.cta }}<p class="pd-cta">{{ . | markdownify }}</p>{{ end }}
+    </section>
+
+  </div>
+</div>
+{{ end }}

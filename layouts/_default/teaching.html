@@ -1,0 +1,89 @@
+{{/*
+  Teaching — "a teacher designed this site".
+  The page is a classroom wall: framed boards with a ledge, notes pinned beside them.
+  Light mode = whiteboard + markers (aluminium). Dark mode = slate chalkboard + chalk (wood).
+  Data: data/teaching/experience.toml, data/teaching/links.toml, front matter `cta`.
+*/}}
+{{ define "main" }}
+{{ $data := .Site.Data.teaching }}
+
+{{/* Chalk grain filter (used in dark mode only, via CSS) */}}
+<svg class="tb-defs" aria-hidden="true" focusable="false" width="0" height="0">
+  <filter id="chalk-grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="noise"/>
+    <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.6 0 0 0 -0.55" result="grain"/>
+    <feComposite in="SourceGraphic" in2="grain" operator="in" result="grainy"/>
+    <feDisplacementMap in="grainy" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div class="tb-wall">
+
+  {{/* Board 1 — the lesson's title and what this page is about */}}
+  <section class="tb-board" aria-labelledby="tb-title">
+    <div class="tb-surface">
+      <div class="tb-writing">
+        <p class="tb-date" data-board-date aria-hidden="true"></p>
+        <h1 id="tb-title" class="tb-title">{{ .Title }}</h1>
+        <div class="tb-intro">{{ .Content }}</div>
+      </div>
+    </div>
+    <div class="tb-ledge" aria-hidden="true"></div>
+  </section>
+
+  {{/* Board 2 — experience, split into columns with hand-drawn lines */}}
+  {{ with $data.experience.items }}
+  <section class="tb-board" aria-labelledby="tb-exp">
+    <div class="tb-surface">
+      <div class="tb-writing">
+        <h2 id="tb-exp" class="tb-heading">Experience</h2>
+        <ol class="tb-columns">
+          {{ range . }}
+          <li class="tb-entry">
+            <p class="tb-years">{{ .years }}</p>
+            <h3 class="tb-role">{{ .role }}</h3>
+            <p class="tb-where">{{ .company }}, {{ .location }}</p>
+            {{ with .responsibilities }}
+            <ul class="tb-points">
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+    </div>
+    <div class="tb-ledge" aria-hidden="true"></div>
+  </section>
+  {{ end }}
+
+  {{/* Notes pinned to the wall */}}
+  {{ $links := $data.links.items }}
+  {{ if or $links .Params.cta }}
+  <div class="tb-notes">
+    {{ range $links }}
+    <aside class="tb-note tb-note--paper">
+      <p class="tb-note-kicker">Worth reading</p>
+      <a class="tb-note-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+      {{ with .description }}<p>{{ . }}</p>{{ end }}
+    </aside>
+    {{ end }}
+    {{ with .Params.cta }}
+    <aside class="tb-note tb-note--sticky">
+      {{ . | markdownify }}
+    </aside>
+    {{ end }}
+  </div>
+  {{ end }}
+
+</div>
+
+<script>
+  // Teachers write the date in the corner of the board.
+  (function () {
+    var el = document.querySelector('[data-board-date]');
+    if (!el) return;
+    el.textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+  })();
+</script>
+{{ end }}

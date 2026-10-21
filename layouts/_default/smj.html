@@ -13,7 +13,7 @@
     {{/* Build stamp for SMJ page */}}
     {{ $buildDate := default now .Site.Params.buildDate }}
     <div class="site-credits" aria-label="Site credits">
-        <p>Built with Hugo and Claude. Last build {{ $buildDate | time.Format "2006-01-02" }}.</p>
+        <p>Built with Hugo and <abbr title="Claude Opus 4.5, Opus 4.6, Opus 5.5 and Sonnet 4.6">Claude O4.5, 4.6, 5.5 and S4.6</abbr>. Last build {{ $buildDate | time.Format "2006-01-02" }}.</p>
     </div>
 </div>
 {{ end }}
