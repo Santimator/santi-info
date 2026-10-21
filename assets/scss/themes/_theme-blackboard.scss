@@ -40,6 +40,10 @@
   --tb-ink-date: #b23a2e;     // red marker
   --tb-ink-line: rgba(35, 39, 44, 0.55);
   --tb-grain: none;
+  // Gloss: the room's light reflected on the plastic surface
+  --tb-sheen:
+    linear-gradient(112deg, transparent 18%, rgba(255, 255, 255, 0.32) 30%, transparent 42%, transparent 58%, rgba(255, 255, 255, 0.18) 66%, transparent 74%),
+    radial-gradient(70% 45% at 50% 0%, rgba(255, 255, 255, 0.35), transparent 70%);
 
   --tb-hand: 'Caveat', 'Patrick Hand', cursive;
   --tb-print: 'Patrick Hand', 'Caveat', cursive;
@@ -74,6 +78,11 @@
   --tb-ink-date: #f0d56b;     // yellow chalk
   --tb-ink-line: rgba(236, 235, 228, 0.5);
   --tb-grain: url(#chalk-grain);
+  // Chalk mist: erased clouds and dust settling towards the ledge
+  --tb-sheen:
+    radial-gradient(45% 35% at 22% 68%, rgba(255, 255, 255, 0.055), transparent 70%),
+    radial-gradient(35% 30% at 78% 28%, rgba(255, 255, 255, 0.045), transparent 70%),
+    linear-gradient(to top, rgba(236, 235, 228, 0.09), transparent 14%);
 }
 
 // Hand-drawn strokes, used as masks so they take the current ink colour
@@ -120,6 +129,7 @@ body.theme-blackboard {
 }
 
 .tb-surface {
+  position: relative;
   background: var(--tb-surface);
   border-radius: 2px;
   box-shadow:
@@ -135,6 +145,15 @@ body.theme-blackboard {
   font-size: clamp(1.15rem, calc(1.05rem + 0.4vw), 1.35rem);
   line-height: 1.5;
   filter: var(--tb-grain);
+}
+
+.tb-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--tb-sheen);
+  pointer-events: none;
 }
 
 // The ledge (marker tray / chalk ledge) hangs under the bottom frame

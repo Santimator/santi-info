@@ -1,108 +1,368 @@
 // _theme-organic.scss
-// Theme: Organic/Zen (Personal Development)
-// Feel: Calm, mindful, growth-oriented, earthy tones
+// Personal Development — "the path" (el camino).
+// Layered cut-paper landscape + film grain. Calm: muted colour, lots of air, one serif family.
+// Light: bright daylight. Dark: moonlit night (the moon lights the land so it stays readable).
 
+// ---------------------------------------------------------------------------
+// Tokens
+// ---------------------------------------------------------------------------
 .theme-organic {
-  // Light mode: Sand, sage green, warm brown
-  --bg: #f5f1ea;
-  --bg-alt: #ebe5db;
-  --card-bg: #faf8f4;
-  --border: #d4cbb8;
-  --text-main: #4a4a42;
-  --text-muted: #7a7a70;
-  --accent: #6b8e6b;
-  --accent-hover: #5a7d5a;
-  --secondary: #8b7355;
-  --tone-a: #f0ebe3;
-  --tone-b: #e5ddd3;
-  --tone-c: #d9cfc3;
-  --nav-bg: #faf8f4;
-  --shadow: 0 2px 12px rgba(74, 74, 66, 0.08);
-  --shadow-lg: 0 10px 30px rgba(74, 74, 66, 0.12);
+  // Shared shell (nav, footer)
+  --bg: #e4ecd0;
+  --bg-alt: #edf2df;
+  --card-bg: #f2f6e8;
+  --border: #c9d5b3;
+  --text-main: #1f3326;
+  --text-muted: #4d5e50;
+  --accent: #2f6b45;
+  --accent-hover: #24553a;
+  --tone-a: #e8efd8;
+  --tone-b: #dbe5c6;
+  --tone-c: #cfdcb6;
+  --nav-bg: #eef5fa;
+  --shadow: 0 1px 0 rgba(31, 51, 38, 0.06);
+  --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --leaf-green: #87a878;
-  --earth-brown: #6b5344;
-  --sand: #d4c4a8;
-  --cream: #faf8f4;
+  // Landscape
+  --pd-sky: linear-gradient(180deg, #5eaee6 0%, #8cc6ee 45%, #d4ecf7 100%);
+  --pd-orb: #fff8dc;
+  --pd-orb-glow: #fff3c4;
+  --pd-cloud: #fbfdff;
+  --pd-star: transparent;
+  --pd-l1: #a6c7c2;  --pd-l1-rim: #c2dbd6;
+  --pd-l2: #7fb08d;  --pd-l2-rim: #9cc6a6;
+  --pd-l3: #5c9a68;  --pd-l3-rim: #79b483;
+  --pd-l4: #e4ecd0;  --pd-l4-rim: #f1f6e4;
+  --pd-trail: #ebd7a0;
+  --pd-trail-line: #b99d5e;
 
+  // Ground (content)
+  --pd-ink: #1f3326;
+  --pd-ink-soft: #46584a;
+  --pd-ink-faint: #6d7c6e;
+  --pd-accent: #2f6b45;
+  --pd-marker: #f3e6bf;
+  --pd-marker-ring: #b99d5e;
+  --pd-grain-opacity: 0.09;
+  --pd-grain-blend: multiply;
+
+  --pd-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
 }
 
 @include dark-mode-vars('body.theme-organic') {
-  --bg: #1a1916;
-  --bg-alt: #242220;
-  --card-bg: #2d2b28;
-  --border: #3d3a35;
-  --text-main: #e0dcd0;
-  --text-muted: #a09c90;
-  --accent: #8ba888;
-  --accent-hover: #9bb898;
-  --secondary: #a89070;
-  --tone-a: #222120;
-  --tone-b: #292826;
-  --tone-c: #312f2c;
-  --nav-bg: #1a1916;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --bg: #1a2436;
+  --bg-alt: #1f2a3e;
+  --card-bg: #223049;
+  --border: #33415a;
+  --text-main: #dfe5ee;
+  --text-muted: #a6b1c2;
+  --accent: #c9d8ee;
+  --accent-hover: #ffffff;
+  --tone-a: #1f2a3e;
+  --tone-b: #263349;
+  --tone-c: #2e3c54;
+  --nav-bg: #0e1626;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 
-  --leaf-green: #97b888;
-  --earth-brown: #8b7355;
-  --sand: #d4c4a8;
-  --cream: #2d2b28;
+  --pd-sky: linear-gradient(180deg, #0a1222 0%, #13213a 50%, #263a5c 100%);
+  --pd-orb: #eef1ea;
+  --pd-orb-glow: #9fb4d6;
+  --pd-cloud: transparent;
+  --pd-star: #e6ecf7;
+  --pd-l1: #34476a;  --pd-l1-rim: #6880a8;
+  --pd-l2: #2a3b5a;  --pd-l2-rim: #566d94;
+  --pd-l3: #223150;  --pd-l3-rim: #4a5f84;
+  --pd-l4: #1a2436;  --pd-l4-rim: #3a4a66;
+  --pd-trail: #8d9fbd;
+  --pd-trail-line: #8d9fbd;
+
+  --pd-ink: #e3e8f0;
+  --pd-ink-soft: #b9c3d2;
+  --pd-ink-faint: #8a97ab;
+  --pd-accent: #d6e2f3;
+  --pd-marker: #c9d6ea;
+  --pd-marker-ring: #6880a8;
+  --pd-grain-opacity: 0.13;
+  --pd-grain-blend: screen;
 }
 
-.theme-organic {
-  // Typography: Soft, rounded
-  --font-heading: 'Nunito', system-ui, sans-serif;
-  --font-body: 'Nunito', system-ui, sans-serif;
+$pd-grain: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
 
-  line-height: 1.8;
-  letter-spacing: 0.01em;
+// A curved stretch of trail between two stops (alternating side via scaleX)
+$pd-bend: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 200' preserveAspectRatio='none'%3E%3Cpath d='M60 0 C 60 60, 108 70, 100 110 C 92 150, 60 150, 60 200' fill='none' stroke='black' stroke-width='16' stroke-linecap='round'/%3E%3C/svg%3E";
 
-  h1, h2, h3 {
-    font-family: var(--font-heading);
-    font-weight: 600;
+// ---------------------------------------------------------------------------
+// Page + grain
+// ---------------------------------------------------------------------------
+body.theme-organic {
+  background: var(--pd-l4);
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    background: url($pd-grain);
+    opacity: var(--pd-grain-opacity);
+    mix-blend-mode: var(--pd-grain-blend);
   }
 
-  // Organic flowing cards
-  .intro-card,
-  .cv-card {
-    border-radius: 20px;
-    border-top: none;
-    border-right: none;
-    border-bottom: none;
-    border-left: 5px solid var(--accent);
-    box-shadow: var(--shadow);
+  // Let the landscape run edge to edge under the nav
+  main.page-main { padding-top: 0; }
+}
+
+.pd {
+  color: var(--pd-ink);
+  font-family: var(--pd-serif);
+}
+
+// ---------------------------------------------------------------------------
+// Hero landscape
+// ---------------------------------------------------------------------------
+.pd-hero {
+  position: relative;
+  height: clamp(460px, 78vh, 760px);
+  background: var(--pd-sky);
+  overflow: hidden;
+}
+
+.pd-land {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.pd-orb { fill: var(--pd-orb); }
+.pd-orb-glow { opacity: 0.9; }
+.pd-stars circle { fill: var(--pd-star); }
+.pd-clouds path { fill: var(--pd-cloud); }
+
+.pd-l1 .rim { fill: var(--pd-l1-rim); }  .pd-l1 .body { fill: var(--pd-l1); }
+.pd-l2 .rim { fill: var(--pd-l2-rim); }  .pd-l2 .body { fill: var(--pd-l2); }
+.pd-l3 .rim { fill: var(--pd-l3-rim); }  .pd-l3 .body { fill: var(--pd-l3); }
+.pd-l4 .rim { fill: var(--pd-l4-rim); }  .pd-l4 .body { fill: var(--pd-l4); }
+.pd-trail { fill: var(--pd-trail); }
+
+.pd-hero-text {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(3rem, 9vh, 6.5rem) clamp(1.25rem, 5vw, 3rem) 0;
+}
+
+.pd-title {
+  margin: 0;
+  max-width: 9ch;
+  font-family: var(--pd-serif);
+  font-weight: 300;
+  font-size: clamp(3.2rem, calc(1.6rem + 6vw), 6.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-shadow: 0 1px 24px rgba(20, 50, 80, 0.18);
+}
+
+@include dark-mode-vars('body.theme-organic') {
+  .pd-title { color: #eef2f8; text-shadow: none; }
+}
+
+// One quiet moment on arrival: the paper layers settle into place
+@media (prefers-reduced-motion: no-preference) {
+  .pd-l1, .pd-l2, .pd-l3, .pd-l4, .pd-trail {
+    animation: pd-settle 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   }
+  .pd-l1 { animation-delay: 0.05s; }
+  .pd-l2 { animation-delay: 0.15s; }
+  .pd-l3 { animation-delay: 0.25s; }
+  .pd-l4, .pd-trail { animation-delay: 0.35s; }
+}
 
-  // Nature-inspired list markers
-  .cv-list li::before {
-    content: "🌱";
-    font-size: 0.85em;
-    margin-right: 0.4em;
+@keyframes pd-settle {
+  from { transform: translateY(26px); }
+  to   { transform: translateY(0); }
+}
+
+// ---------------------------------------------------------------------------
+// Ground: trailhead, stops, onward
+// ---------------------------------------------------------------------------
+.pd-ground {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3rem) 5rem;
+}
+
+.pd-trailhead {
+  max-width: 34rem;
+  margin: 0 auto clamp(3rem, 7vw, 5rem);
+  text-align: center;
+  font-size: clamp(1.25rem, calc(1.1rem + 0.5vw), 1.5rem);
+  line-height: 1.55;
+  font-weight: 300;
+  color: var(--pd-ink-soft);
+
+  p { margin: 0; color: inherit; }
+}
+
+// The stops sit along a dotted trail. Mobile: trail on the left. Desktop: trail in the middle,
+// stops alternating sides, each bend of the trail curving the other way.
+.pd-stops {
+  --pd-trail-x: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.pd-stop {
+  position: relative;
+  --pd-bend-w: 56px;
+  padding: 0 0 clamp(3.5rem, 8vw, 5.5rem) calc(var(--pd-trail-x) + 2.6rem);
+
+  // trail segment from this stop down to the next
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1.4rem;
+    bottom: -0.2rem;
+    left: calc(var(--pd-trail-x) - var(--pd-bend-w) / 2);
+    width: var(--pd-bend-w);
+    background: var(--pd-trail);
+    mask: url($pd-bend) center / 100% 100% no-repeat;
+    -webkit-mask: url($pd-bend) center / 100% 100% no-repeat;
   }
+  &:nth-child(even)::before { transform: scaleX(-1); }
+  &:last-child::before { display: none; }
+}
 
-  // Gentle flowing background
-  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-alt) 50%, var(--bg) 100%);
-  background-size: 400% 400%;
-  animation: organicFlow 20s ease infinite;
+.pd-marker {
+  position: absolute;
+  top: 0.55rem;
+  left: calc(var(--pd-trail-x) - 9px);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--pd-marker);
+  box-shadow: 0 0 0 3px var(--pd-l4), 0 0 0 4.5px var(--pd-marker-ring);
+}
 
-  @keyframes organicFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+.pd-stop-text { max-width: 30rem; }
 
-  // Soft link styling (content only, not nav)
-  .page-main a {
-    color: var(--accent);
-    transition: all 0.3s ease;
-    border-radius: 12px;
-    padding: 2px 6px;
-    margin: -2px -6px;
+.pd-since {
+  margin: 0 0 0.25rem;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--pd-ink-faint);
+}
 
-    &:hover {
-      background: var(--accent);
-      color: var(--cream);
+.pd-stop-name {
+  margin: 0 0 0.6rem;
+  font-family: var(--pd-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, calc(1.4rem + 1.5vw), 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--pd-ink);
+}
+
+.pd-stop-desc {
+  margin: 0 0 0.9rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--pd-ink-soft);
+}
+
+.pd-thought {
+  margin: 0;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--pd-ink-faint);
+}
+
+@media (min-width: 820px) {
+  .pd-stops { --pd-trail-x: 50%; }
+
+  .pd-stop {
+    --pd-bend-w: 90px;
+    width: 50%;
+    padding-left: 0;
+    padding-bottom: 4.5rem;
+
+    .pd-stop-text { padding-top: 0.1rem; }
+
+    &:nth-child(odd) {
+      padding-right: 3.5rem;
+      text-align: right;
+      .pd-stop-text { margin-left: auto; }
+      .pd-marker { left: auto; right: -9px; }
+      &::before { left: auto; right: calc(var(--pd-bend-w) / -2); }
+    }
+
+    &:nth-child(even) {
+      margin-left: 50%;
+      padding-left: 3.5rem;
+      .pd-marker { left: -9px; }
+      &::before { left: calc(var(--pd-bend-w) / -2); }
     }
   }
+}
+
+// The way onward: podcast, writing, sessions
+.pd-onward {
+  max-width: 36rem;
+  margin: 1rem auto 0;
+  padding-top: 3rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.pd-onward-title {
+  margin: 0 0 2rem;
+  font-family: var(--pd-serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, calc(1.5rem + 1.5vw), 2.8rem);
+  color: var(--pd-ink);
+}
+
+.pd-links {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  display: grid;
+  gap: 1.75rem;
+
+  a {
+    font-size: 1.5rem;
+    color: var(--pd-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  a:hover { text-decoration-thickness: 2px; }
+
+  p {
+    margin: 0.35rem 0 0;
+    font-size: 1.1rem;
+    line-height: 1.55;
+    color: var(--pd-ink-soft);
+  }
+}
+
+.pd-cta {
+  margin: 0;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--pd-ink-soft);
+
+  a { color: var(--pd-accent); text-underline-offset: 0.2em; }
+}
+
+.pd a:focus-visible {
+  outline: 2px solid var(--pd-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
