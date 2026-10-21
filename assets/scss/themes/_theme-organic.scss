@@ -45,6 +45,7 @@
   --pd-marker-ring: #b99d5e;
   --pd-grain-opacity: 0.09;
   --pd-grain-blend: multiply;
+  --pd-mist: rgba(240, 245, 230, 0.92);
 
   --pd-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
 }
@@ -84,6 +85,7 @@
   --pd-marker-ring: #6880a8;
   --pd-grain-opacity: 0.13;
   --pd-grain-blend: screen;
+  --pd-mist: rgba(30, 41, 61, 0.9);
 }
 
 $pd-grain: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E";
@@ -206,49 +208,76 @@ body.theme-organic {
   p { margin: 0; color: inherit; }
 }
 
-// The stops sit along a dotted trail. Mobile: trail on the left. Desktop: trail in the middle,
-// stops alternating sides, each bend of the trail curving the other way.
-.pd-stops {
-  --pd-trail-x: 1.1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
+// One continuous road behind the content; every text block floats on a patch of mist.
+.pd-ground { position: relative; isolation: isolate; overflow-x: clip; }
+
+.pd-road {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: visible;
+  // the road fades out at the very end, as if it continued out of sight
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+
+  path {
+    fill: none;
+    stroke: var(--pd-trail);
+    stroke-width: clamp(96px, 11vw, 170px);
+    stroke-linecap: butt;
+    vector-effect: non-scaling-stroke;
+  }
 }
 
-.pd-stop {
+// Mist: a soft, feathered patch of the ground colour behind text, so the road
+// disappears under the words instead of being cut by them.
+.pd-trailhead,
+.pd-stop-text,
+.pd-onward {
   position: relative;
-  --pd-bend-w: 56px;
-  padding: 0 0 clamp(3.5rem, 8vw, 5.5rem) calc(var(--pd-trail-x) + 2.6rem);
 
-  // trail segment from this stop down to the next
   &::before {
     content: "";
     position: absolute;
-    top: 1.4rem;
-    bottom: -0.2rem;
-    left: calc(var(--pd-trail-x) - var(--pd-bend-w) / 2);
-    width: var(--pd-bend-w);
-    background: var(--pd-trail);
-    mask: url($pd-bend) center / 100% 100% no-repeat;
-    -webkit-mask: url($pd-bend) center / 100% 100% no-repeat;
+    inset: -0.5rem -0.75rem;
+    z-index: -1;
+    border-radius: 40%;
+    background: var(--pd-mist);
+    filter: blur(14px);
+    opacity: 0.8;
+
+    @media (min-width: 820px) {
+      inset: -1.5rem -2.5rem;
+      border-radius: 50%;
+      filter: blur(22px);
+      opacity: 1;
+    }
   }
-  &:nth-child(even)::before { transform: scaleX(-1); }
-  &:last-child::before { display: none; }
 }
 
-.pd-marker {
-  position: absolute;
-  top: 0.55rem;
-  left: calc(var(--pd-trail-x) - 9px);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--pd-marker);
-  box-shadow: 0 0 0 3px var(--pd-l4), 0 0 0 4.5px var(--pd-marker-ring);
+.pd-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.pd-stop-text { max-width: 30rem; }
+.pd-stop {
+  padding: 0 0 clamp(4rem, 10vw, 7rem);
+}
+
+.pd-stop-text {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+// On wide screens the stops drift left and right with the road
+@media (min-width: 820px) {
+  .pd-stop:nth-child(odd)  .pd-stop-text { transform: translateX(-28%); }
+  .pd-stop:nth-child(even) .pd-stop-text { transform: translateX(28%); }
+}
 
 .pd-since {
   margin: 0 0 0.25rem;
@@ -283,41 +312,12 @@ body.theme-organic {
   color: var(--pd-ink-faint);
 }
 
-@media (min-width: 820px) {
-  .pd-stops { --pd-trail-x: 50%; }
-
-  .pd-stop {
-    --pd-bend-w: 90px;
-    width: 50%;
-    padding-left: 0;
-    padding-bottom: 4.5rem;
-
-    .pd-stop-text { padding-top: 0.1rem; }
-
-    &:nth-child(odd) {
-      padding-right: 3.5rem;
-      text-align: right;
-      .pd-stop-text { margin-left: auto; }
-      .pd-marker { left: auto; right: -9px; }
-      &::before { left: auto; right: calc(var(--pd-bend-w) / -2); }
-    }
-
-    &:nth-child(even) {
-      margin-left: 50%;
-      padding-left: 3.5rem;
-      .pd-marker { left: -9px; }
-      &::before { left: calc(var(--pd-bend-w) / -2); }
-    }
-  }
-}
-
 // The way onward: podcast, writing, sessions
 .pd-onward {
   max-width: 36rem;
   margin: 1rem auto 0;
   padding-top: 3rem;
   text-align: center;
-  border-top: 1px solid var(--border);
 }
 
 .pd-onward-title {

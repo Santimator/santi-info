@@ -67,6 +67,12 @@
 
   <div class="pd-ground">
 
+    {{/* One continuous path: picks up where the hero's road meets the bottom edge and
+         winds left and right behind everything below. Text floats over it on mist. */}}
+    <svg class="pd-road" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M500,0 C500,70 190,95 190,190 S810,330 810,430 S190,580 190,680 S810,820 810,900 S560,975 520,1000"/>
+    </svg>
+
     <div class="pd-trailhead">{{ .Content }}</div>
 
     {{ with $data.practices.items }}
@@ -74,7 +80,6 @@
       {{ range sort . "years" "asc" }}
       {{ $since := replaceRE `^(\d{4})\s*[–-]\s*present$` "Since $1" .years }}
       <li class="pd-stop">
-        <span class="pd-marker" aria-hidden="true"></span>
         <div class="pd-stop-text">
           <p class="pd-since">{{ $since }}</p>
           <h2 class="pd-stop-name">{{ .name }}</h2>
